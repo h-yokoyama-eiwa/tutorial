@@ -1,0 +1,1012 @@
+dash.exe*                    msys-assuan-0.dll*              sleep.exe*
+ date.exe*                    msys-bz2-1.dll*                 sort.exe*
+ dd.exe*                      msys-cbor-0.8.dll*              split.exe*
+ df.exe*                      msys-com_err-1.dll*             ssh.exe*
+ diff.exe*                    msys-crypt-0.dll*               ssh-add.exe*
+ diff3.exe*                   msys-crypto-1.1.dll*            ssh-agent.exe*
+ dir.exe*                     msys-edit-0.dll*                ssh-copy-id*
+ dircolors.exe*               msys-expat-1.dll*               sshd.exe*
+ dirmngr.exe*                 msys-ffi-7.dll*                 ssh-keygen.exe*
+ dirmngr-client.exe*          msys-fido2-1.dll*               ssh-keyscan.exe*
+ dirname.exe*                 msys-gcc_s-seh-1.dll*           ssh-pageant.exe*
+ docx2txt*                    msys-gcrypt-20.dll*             ssp.exe*
+ docx2txt.pl*                 msys-gettextlib-0-19-8-1.dll*   start*
+ dos2unix.exe*                msys-gettextsrc-0-19-8-1.dll*   stat.exe*
+ du.exe*                      msys-gio-2.0-0.dll*             stdbuf.exe*
+ dumpsexp.exe*                msys-glib-2.0-0.dll*            strace.exe*
+ echo.exe*                    msys-gmodule-2.0-0.dll*         stty.exe*
+ egrep*                       msys-gmp-10.dll*                sum.exe*
+ env.exe*                     msys-gnutls-30.dll*             sync.exe*
+ envsubst.exe*                msys-gobject-2.0-0.dll*         tabs.exe*
+ ex.exe*                      msys-gpg-error-0.dll*           tac.exe*
+ expand.exe*                  msys-gssapi-3.dll*              tail.exe*
+ expr.exe*                    msys-hcrypto-4.dll*             tar.exe*
+ factor.exe*                  msys-heimbase-1.dll*            tee.exe*
+ false.exe*                   msys-heimntlm-0.dll*            test.exe*
+ fgrep*                       msys-hogweed-6.dll*             tic.exe*
+ fido2-assert.exe*            msys-hx509-5.dll*               tig.exe*
+ fido2-cred.exe*              msys-iconv-2.dll*               timeout.exe*
+ fido2-token.exe*             msys-idn2-0.dll*                toe.exe*
+ file.exe*                    msys-intl-8.dll*                touch.exe*
+ find.exe*                    msys-kafs-0.dll*                tput.exe*
+ findssl.sh*                  msys-krb5-26.dll*               tr.exe*
+ fmt.exe*                     msys-ksba-8.dll*                true.exe*
+ fold.exe*                    msys-lz4-1.dll*                 truncate.exe*
+ funzip.exe*                  msys-magic-1.dll*               trust.exe*
+ gapplication.exe*            msys-mpfr-6.dll*                tset.exe*
+ gawk.exe*                    msys-ncursesw6.dll*             tsort.exe*
+ gawk-5.0.0.exe*              msys-nettle-8.dll*              tty.exe*
+ gdbus.exe*                   msys-npth-0.dll*                tzset.exe*
+ gencat.exe*                  msys-p11-kit-0.dll*             u2d.exe*
+ getconf.exe*                 msys-pcre-1.dll*                umount.exe*
+ getemojis*                   msys-perl5_34.dll*              uname.exe*
+ getfacl.exe*                 msys-psl-5.dll*                 uncompress*
+ getopt.exe*                  msys-readline8.dll*             unexpand.exe*
+ gettext.exe*                 msys-roken-18.dll*              uniq.exe*
+ gettext.sh*                  msys-sasl2-3.dll*               unix2dos.exe*
+ gettextize*                  msys-serf-1-0.dll*              unix2mac.exe*
+ gio-querymodules.exe*        msys-smartcols-1.dll*           unlink.exe*
+ git-flow*                    msys-sqlite3-0.dll*             unzip.exe*
+ git-flow-bugfix              msys-ssl-1.1.dll*               unzipsfx.exe*
+ gitflow-common               msys-svn_client-1-0.dll*        update-ca-trust*
+ git-flow-config              msys-svn_delta-1-0.dll*         updatedb*
+ git-flow-feature             msys-svn_diff-1-0.dll*          users.exe*
+ git-flow-hotfix              msys-svn_fs_fs-1-0.dll*         vdir.exe*
+ git-flow-init                msys-svn_fs_util-1-0.dll*       vendor_perl/
+ git-flow-log                 msys-svn_fs_x-1-0.dll*          vi*
+ git-flow-release             msys-svn_fs-1-0.dll*            view.exe*
+ gitflow-shFlags              msys-svn_ra_local-1-0.dll*      vim.exe*
+ git-flow-support             msys-svn_ra_serf-1-0.dll*       vimdiff.exe*
+ git-flow-version             msys-svn_ra_svn-1-0.dll*        vimtutor*
+ gkill.exe*                   msys-svn_ra-1-0.dll*            watchgnupg.exe*
+ glib-compile-schemas.exe*    msys-svn_repos-1-0.dll*         wc.exe*
+ gobject-query.exe*           msys-svn_subr-1-0.dll*          which.exe*
+ gpg.exe*                     msys-svn_swig_perl-1-0.dll*     who.exe*
+ gpg-agent.exe*               msys-svn_wc-1-0.dll*            whoami.exe*
+ gpgconf.exe*                 msys-tasn1-6.dll*               winpty.dll*
+ gpg-connect-agent.exe*       msys-ticw6.dll*                 winpty.exe*
+ gpg-error.exe*               msys-unistring-2.dll*           winpty-agent.exe*
+ gpgparsemail.exe*            msys-uuid-1.dll*                winpty-debugserver.exe*
+ gpgscm.exe*                  msys-wind-0.dll*                wordpad*
+ gpgsm.exe*                   msys-z.dll*                     xargs.exe*
+ gpgsplit.exe*                mv.exe*                         xgettext.exe*
+ gpgtar.exe*                  nano.exe*                       xxd.exe*
+ gpgv.exe*                    nettle-hash.exe*                yat2m.exe*
+ gpg-wks-server.exe*          nettle-lfib-stream.exe*         yes.exe*
+ grep.exe*                    nettle-pbkdf2.exe*              zcat*
+ groups.exe*                  ngettext.exe*                   zcmp*
+ gsettings.exe*               nice.exe*                       zdiff*
+ gunzip*                      nl.exe*                         zegrep*
+ gzexe*                       nohup.exe*                      zfgrep*
+ gzip.exe*                    notepad*                        zforce*
+ head.exe*                    nproc.exe*                      zgrep*
+ hmac256.exe*                 numfmt.exe*                     zipgrep*
+ hostid.exe*                  od.exe*                         zipinfo.exe*
+ hostname.exe*                openssl.exe*                    zless*
+ iconv.exe*                   p11-kit.exe*                    zmore*
+ id.exe*                      passwd.exe*                     znew*
+ infocmp.exe*                 paste.exe*
+
+FD-158@DESKTOP-2AS8COK MINGW64 /bin
+$ cd ..
+
+FD-158@DESKTOP-2AS8COK MINGW64 /
+$ ls
+bin/  dev/  git-bash.exe*  LICENSE.txt  proc/              tmp/          unins000.exe*  usr/
+cmd/  etc/  git-cmd.exe*   mingw64/     ReleaseNotes.html  unins000.dat  unins000.msg
+
+FD-158@DESKTOP-2AS8COK MINGW64 /
+$ cd dev
+Error: Current working directory is a virtual Cygwin directory which does
+not exist for a native Windows application.
+Can't start native Windows application from here.
+
+
+FD-158@DESKTOP-2AS8COK MINGW64 /dev
+$ cd mingw64
+bash: cd: mingw64: No such file or directory
+Error: Current working directory is a virtual Cygwin directory which does
+not exist for a native Windows application.
+Can't start native Windows application from here.
+
+
+FD-158@DESKTOP-2AS8COK MINGW64 /dev
+$ cd usr
+bash: cd: usr: No such file or directory
+Error: Current working directory is a virtual Cygwin directory which does
+not exist for a native Windows application.
+Can't start native Windows application from here.
+
+
+FD-158@DESKTOP-2AS8COK MINGW64 /dev
+$ ls
+clipboard  cons0    fd@      null    sda   sda3  stderr@  tty      zero
+conin      console  full     ptmx    sda1  sda4  stdin@   urandom
+conout     dsp      mqueue/  random  sda2  shm/  stdout@  windows
+Error: Current working directory is a virtual Cygwin directory which does
+not exist for a native Windows application.
+Can't start native Windows application from here.
+
+
+FD-158@DESKTOP-2AS8COK MINGW64 /dev
+$ cd .
+Error: Current working directory is a virtual Cygwin directory which does
+not exist for a native Windows application.
+Can't start native Windows application from here.
+
+
+FD-158@DESKTOP-2AS8COK MINGW64 /dev
+$ cd ..
+
+FD-158@DESKTOP-2AS8COK MINGW64 /
+$ ls
+bin/  dev/  git-bash.exe*  LICENSE.txt  proc/              tmp/          unins000.exe*  usr/
+cmd/  etc/  git-cmd.exe*   mingw64/     ReleaseNotes.html  unins000.dat  unins000.msg
+
+FD-158@DESKTOP-2AS8COK MINGW64 /
+$ cd usr
+
+FD-158@DESKTOP-2AS8COK MINGW64 /usr
+$ ls
+bin/  etc/  lib/  libexec/  share/  ssl/
+
+FD-158@DESKTOP-2AS8COK MINGW64 /usr
+$ cd bin
+
+FD-158@DESKTOP-2AS8COK MINGW64 /usr/bin
+$ ls
+'[.exe'*                      infotocap.exe*                  patch.exe*
+ addgnupghome*                install.exe*                    pathchk.exe*
+ applygnupgdefaults*          join.exe*                       perl.exe*
+ arch.exe*                    kbxutil.exe*                    perl5.34.0.exe*
+ astextplain*                 kill.exe*                       pinentry.exe*
+ autopoint*                   ldd.exe*                        pinentry-w32.exe*
+ awk.exe*                     ldh.exe*                        pinky.exe*
+ b2sum.exe*                   less.exe*                       pkcs1-conv.exe*
+ backup*                      lessecho.exe*                   pldd.exe*
+ base32.exe*                  lesskey.exe*                    pluginviewer.exe*
+ base64.exe*                  link.exe*                       pr.exe*
+ basename.exe*                ln.exe*                         printenv.exe*
+ basenc.exe*                  locale.exe*                     printf.exe*
+ bash.exe*                    locate.exe*                     ps.exe*
+ bashbug*                     logname.exe*                    psl.exe*
+ bunzip2.exe*                 ls.exe*                         psl-make-dafsa*
+ bzcat.exe*                   lsattr.exe*                     ptx.exe*
+ bzcmp*                       mac2unix.exe*                   pwd.exe*
+ bzdiff*                      md5sum.exe*                     readlink.exe*
+ bzegrep*                     minidumper.exe*                 realpath.exe*
+ bzfgrep*                     mintheme*                       rebase.exe*
+ bzgrep*                      mintty.exe*                     rebaseall*
+ bzip2.exe*                   mkdir.exe*                      recode-sr-latin.exe*
+ bzip2recover.exe*            mkfifo.exe*                     regtool.exe*
+ bzless*                      mkgroup.exe*                    reset.exe*
+ bzmore*                      mknod.exe*                      restore*
+ c_rehash*                    mkpasswd.exe*                   rm.exe*
+ captoinfo.exe*               mktemp.exe*                     rmdir.exe*
+ cat.exe*                     mount.exe*                      rnano.exe*
+ chattr.exe*                  mpicalc.exe*                    runcon.exe*
+ chcon.exe*                   msgattrib.exe*                  rview.exe*
+ chgrp.exe*                   msgcat.exe*                     rvim.exe*
+ chmod.exe*                   msgcmp.exe*                     scp.exe*
+ chown.exe*                   msgcomm.exe*                    sdiff.exe*
+ chroot.exe*                  msgconv.exe*                    sed.exe*
+ cksum.exe*                   msgen.exe*                      seq.exe*
+ clear.exe*                   msgexec.exe*                    setfacl.exe*
+ cmp.exe*                     msgfilter.exe*                  setmetamode.exe*
+ column.exe*                  msgfmt.exe*                     sexp-conv.exe*
+ comm.exe*                    msggrep.exe*                    sftp.exe*
+ core_perl/                   msginit.exe*                    sh.exe*
+ cp.exe*                      msgmerge.exe*                   sha1sum.exe*
+ csplit.exe*                  msgunfmt.exe*                   sha224sum.exe*
+ cut.exe*                     msguniq.exe*                    sha256sum.exe*
+ cygcheck.exe*                msys-2.0.dll*                   sha384sum.exe*
+ cygpath.exe*                 msys-apr-1-0.dll*               sha512sum.exe*
+ cygwin-console-helper.exe*   msys-aprutil-1-0.dll*           shred.exe*
+ d2u.exe*                     msys-asn1-8.dll*                shuf.exe*
+ dash.exe*                    msys-assuan-0.dll*              sleep.exe*
+ date.exe*                    msys-bz2-1.dll*                 sort.exe*
+ dd.exe*                      msys-cbor-0.8.dll*              split.exe*
+ df.exe*                      msys-com_err-1.dll*             ssh.exe*
+ diff.exe*                    msys-crypt-0.dll*               ssh-add.exe*
+ diff3.exe*                   msys-crypto-1.1.dll*            ssh-agent.exe*
+ dir.exe*                     msys-edit-0.dll*                ssh-copy-id*
+ dircolors.exe*               msys-expat-1.dll*               sshd.exe*
+ dirmngr.exe*                 msys-ffi-7.dll*                 ssh-keygen.exe*
+ dirmngr-client.exe*          msys-fido2-1.dll*               ssh-keyscan.exe*
+ dirname.exe*                 msys-gcc_s-seh-1.dll*           ssh-pageant.exe*
+ docx2txt*                    msys-gcrypt-20.dll*             ssp.exe*
+ docx2txt.pl*                 msys-gettextlib-0-19-8-1.dll*   start*
+ dos2unix.exe*                msys-gettextsrc-0-19-8-1.dll*   stat.exe*
+ du.exe*                      msys-gio-2.0-0.dll*             stdbuf.exe*
+ dumpsexp.exe*                msys-glib-2.0-0.dll*            strace.exe*
+ echo.exe*                    msys-gmodule-2.0-0.dll*         stty.exe*
+ egrep*                       msys-gmp-10.dll*                sum.exe*
+ env.exe*                     msys-gnutls-30.dll*             sync.exe*
+ envsubst.exe*                msys-gobject-2.0-0.dll*         tabs.exe*
+ ex.exe*                      msys-gpg-error-0.dll*           tac.exe*
+ expand.exe*                  msys-gssapi-3.dll*              tail.exe*
+ expr.exe*                    msys-hcrypto-4.dll*             tar.exe*
+ factor.exe*                  msys-heimbase-1.dll*            tee.exe*
+ false.exe*                   msys-heimntlm-0.dll*            test.exe*
+ fgrep*                       msys-hogweed-6.dll*             tic.exe*
+ fido2-assert.exe*            msys-hx509-5.dll*               tig.exe*
+ fido2-cred.exe*              msys-iconv-2.dll*               timeout.exe*
+ fido2-token.exe*             msys-idn2-0.dll*                toe.exe*
+ file.exe*                    msys-intl-8.dll*                touch.exe*
+ find.exe*                    msys-kafs-0.dll*                tput.exe*
+ findssl.sh*                  msys-krb5-26.dll*               tr.exe*
+ fmt.exe*                     msys-ksba-8.dll*                true.exe*
+ fold.exe*                    msys-lz4-1.dll*                 truncate.exe*
+ funzip.exe*                  msys-magic-1.dll*               trust.exe*
+ gapplication.exe*            msys-mpfr-6.dll*                tset.exe*
+ gawk.exe*                    msys-ncursesw6.dll*             tsort.exe*
+ gawk-5.0.0.exe*              msys-nettle-8.dll*              tty.exe*
+ gdbus.exe*                   msys-npth-0.dll*                tzset.exe*
+ gencat.exe*                  msys-p11-kit-0.dll*             u2d.exe*
+ getconf.exe*                 msys-pcre-1.dll*                umount.exe*
+ getemojis*                   msys-perl5_34.dll*              uname.exe*
+ getfacl.exe*                 msys-psl-5.dll*                 uncompress*
+ getopt.exe*                  msys-readline8.dll*             unexpand.exe*
+ gettext.exe*                 msys-roken-18.dll*              uniq.exe*
+ gettext.sh*                  msys-sasl2-3.dll*               unix2dos.exe*
+ gettextize*                  msys-serf-1-0.dll*              unix2mac.exe*
+ gio-querymodules.exe*        msys-smartcols-1.dll*           unlink.exe*
+ git-flow*                    msys-sqlite3-0.dll*             unzip.exe*
+ git-flow-bugfix              msys-ssl-1.1.dll*               unzipsfx.exe*
+ gitflow-common               msys-svn_client-1-0.dll*        update-ca-trust*
+ git-flow-config              msys-svn_delta-1-0.dll*         updatedb*
+ git-flow-feature             msys-svn_diff-1-0.dll*          users.exe*
+ git-flow-hotfix              msys-svn_fs_fs-1-0.dll*         vdir.exe*
+ git-flow-init                msys-svn_fs_util-1-0.dll*       vendor_perl/
+ git-flow-log                 msys-svn_fs_x-1-0.dll*          vi*
+ git-flow-release             msys-svn_fs-1-0.dll*            view.exe*
+ gitflow-shFlags              msys-svn_ra_local-1-0.dll*      vim.exe*
+ git-flow-support             msys-svn_ra_serf-1-0.dll*       vimdiff.exe*
+ git-flow-version             msys-svn_ra_svn-1-0.dll*        vimtutor*
+ gkill.exe*                   msys-svn_ra-1-0.dll*            watchgnupg.exe*
+ glib-compile-schemas.exe*    msys-svn_repos-1-0.dll*         wc.exe*
+ gobject-query.exe*           msys-svn_subr-1-0.dll*          which.exe*
+ gpg.exe*                     msys-svn_swig_perl-1-0.dll*     who.exe*
+ gpg-agent.exe*               msys-svn_wc-1-0.dll*            whoami.exe*
+ gpgconf.exe*                 msys-tasn1-6.dll*               winpty.dll*
+ gpg-connect-agent.exe*       msys-ticw6.dll*                 winpty.exe*
+ gpg-error.exe*               msys-unistring-2.dll*           winpty-agent.exe*
+ gpgparsemail.exe*            msys-uuid-1.dll*                winpty-debugserver.exe*
+ gpgscm.exe*                  msys-wind-0.dll*                wordpad*
+ gpgsm.exe*                   msys-z.dll*                     xargs.exe*
+ gpgsplit.exe*                mv.exe*                         xgettext.exe*
+ gpgtar.exe*                  nano.exe*                       xxd.exe*
+ gpgv.exe*                    nettle-hash.exe*                yat2m.exe*
+ gpg-wks-server.exe*          nettle-lfib-stream.exe*         yes.exe*
+ grep.exe*                    nettle-pbkdf2.exe*              zcat*
+ groups.exe*                  ngettext.exe*                   zcmp*
+ gsettings.exe*               nice.exe*                       zdiff*
+ gunzip*                      nl.exe*                         zegrep*
+ gzexe*                       nohup.exe*                      zfgrep*
+ gzip.exe*                    notepad*                        zforce*
+ head.exe*                    nproc.exe*                      zgrep*
+ hmac256.exe*                 numfmt.exe*                     zipgrep*
+ hostid.exe*                  od.exe*                         zipinfo.exe*
+ hostname.exe*                openssl.exe*                    zless*
+ iconv.exe*                   p11-kit.exe*                    zmore*
+ id.exe*                      passwd.exe*                     znew*
+ infocmp.exe*                 paste.exe*
+
+FD-158@DESKTOP-2AS8COK MINGW64 /usr/bin
+$ cd ..
+
+FD-158@DESKTOP-2AS8COK MINGW64 /usr
+$ ls
+bin/  etc/  lib/  libexec/  share/  ssl/
+
+FD-158@DESKTOP-2AS8COK MINGW64 /usr
+$ cd lib
+
+FD-158@DESKTOP-2AS8COK MINGW64 /usr/lib
+$ ls
+awk/        gawk/     gnupg/    p11-kit/  pkcs11/  ssh/  terminfo/
+coreutils/  gettext/  openssl/  perl5/    sasl2/   tar/  winpty.lib
+
+FD-158@DESKTOP-2AS8COK MINGW64 /usr/lib
+$ cd ~
+
+FD-158@DESKTOP-2AS8COK MINGW64 ~
+$ pwd
+/c/Users/FD-158
+
+FD-158@DESKTOP-2AS8COK MINGW64 ~
+$ cd Doduments
+bash: cd: Doduments: No such file or directory
+
+FD-158@DESKTOP-2AS8COK MINGW64 ~
+$ cd Documents
+
+FD-158@DESKTOP-2AS8COK MINGW64 ~/Documents
+$ ls
+ cloneProject/  'My Videos'@                        tutorial/    tutorial5/
+ desktop.ini    'Office のカスタム テンプレート'/   tutorial2/   usr2/
+'My Music'@      project/                           tutorial3/
+'My Pictures'@   stepup-tutorial/                   tutorial4/
+
+FD-158@DESKTOP-2AS8COK MINGW64 ~/Documents
+$ cd tutorial
+
+FD-158@DESKTOP-2AS8COK MINGW64 ~/Documents/tutorial (master)
+$ cd ../tutorial2
+
+FD-158@DESKTOP-2AS8COK MINGW64 ~/Documents/tutorial2 (main)
+$ cd ../turorial
+bash: cd: ../turorial: No such file or directory
+
+FD-158@DESKTOP-2AS8COK MINGW64 ~/Documents/tutorial2 (main)
+$ cd ../tutorial
+
+FD-158@DESKTOP-2AS8COK MINGW64 ~/Documents/tutorial (master)
+$ man ls
+bash: man: command not found
+
+FD-158@DESKTOP-2AS8COK MINGW64 ~/Documents/tutorial (master)
+$ help ls
+bash: help: no help topics match `ls'.  Try `help help' or `man -k ls' or `info ls'.
+
+FD-158@DESKTOP-2AS8COK MINGW64 ~/Documents/tutorial (master)
+$ help help
+help: help [-dms] [pattern ...]
+    Display information about builtin commands.
+
+    Displays brief summaries of builtin commands.  If PATTERN is
+    specified, gives detailed help on all commands matching PATTERN,
+    otherwise the list of help topics is printed.
+
+    Options:
+      -d        output short description for each topic
+      -m        display usage in pseudo-manpage format
+      -s        output only a short usage synopsis for each topic matching
+                PATTERN
+
+    Arguments:
+      PATTERN   Pattern specifiying a help topic
+
+    Exit Status:
+    Returns success unless PATTERN is not found or an invalid option is given.
+
+FD-158@DESKTOP-2AS8COK MINGW64 ~/Documents/tutorial (master)
+$ man -k ls
+bash: man: command not found
+
+FD-158@DESKTOP-2AS8COK MINGW64 ~/Documents/tutorial (master)
+$ info ls
+bash: info: command not found
+
+FD-158@DESKTOP-2AS8COK MINGW64 ~/Documents/tutorial (master)
+$ ls
+gas_edu/  github/  sample.txt  unix_linux/  よく使う記述.txt
+
+FD-158@DESKTOP-2AS8COK MINGW64 ~/Documents/tutorial (master)
+$ cd unix_linux
+
+FD-158@DESKTOP-2AS8COK MINGW64 ~/Documents/tutorial/unix_linux (master)
+$ vi 疑問点.txt
+
+FD-158@DESKTOP-2AS8COK MINGW64 ~/Documents/tutorial/unix_linux (master)
+$ vi 疑問点.txt
+
+FD-158@DESKTOP-2AS8COK MINGW64 ~/Documents/tutorial/unix_linux (master)
+$ rm 疑問点.txt
+
+FD-158@DESKTOP-2AS8COK MINGW64 ~/Documents/tutorial/unix_linux (master)
+$ ls
+
+FD-158@DESKTOP-2AS8COK MINGW64 ~/Documents/tutorial/unix_linux (master)
+$ git branch
+  add-sort-func1
+  add-sort-func2
+* master
+
+FD-158@DESKTOP-2AS8COK MINGW64 ~/Documents/tutorial/unix_linux (master)
+$ git branch study
+
+FD-158@DESKTOP-2AS8COK MINGW64 ~/Documents/tutorial/unix_linux (master)
+$ git branch
+  add-sort-func1
+  add-sort-func2
+* master
+  study
+
+FD-158@DESKTOP-2AS8COK MINGW64 ~/Documents/tutorial/unix_linux (master)
+$ git checkout study
+Switched to branch 'study'
+
+FD-158@DESKTOP-2AS8COK MINGW64 ~/Documents/tutorial/unix_linux (study)
+$ git branch
+  add-sort-func1
+  add-sort-func2
+  master
+* study
+
+FD-158@DESKTOP-2AS8COK MINGW64 ~/Documents/tutorial/unix_linux (study)
+$ vi memo.txt
+
+FD-158@DESKTOP-2AS8COK MINGW64 ~/Documents/tutorial/unix_linux (study)
+$ date
+2022年 3月 19日 土曜日 17:29:41
+
+FD-158@DESKTOP-2AS8COK MINGW64 ~/Documents/tutorial/unix_linux (study)
+$ date > date.txt
+
+FD-158@DESKTOP-2AS8COK MINGW64 ~/Documents/tutorial/unix_linux (study)
+$ vi date.txt
+
+FD-158@DESKTOP-2AS8COK MINGW64 ~/Documents/tutorial/unix_linux (study)
+$ vi memo.txt
+
+FD-158@DESKTOP-2AS8COK MINGW64 ~/Documents/tutorial/unix_linux (study)
+$ ls
+date.txt  memo.txt
+
+FD-158@DESKTOP-2AS8COK MINGW64 ~/Documents/tutorial/unix_linux (study)
+$ more memo.txt
+bash: more: command not found
+
+FD-158@DESKTOP-2AS8COK MINGW64 ~/Documents/tutorial/unix_linux (study)
+$ less memo.txt
+
+FD-158@DESKTOP-2AS8COK MINGW64 ~/Documents/tutorial/unix_linux (study)
+$ cat memo.txt
+manコマンドはgitbashでは使えないが、参照サイトはあくまでUNIX/Linuxのコマンド説明のため、
+windows環境下のgitbashでは使えないコマンドがあるという認識で良いか？
+
+suコマンドは怖いので試さない。
+
+FD-158@DESKTOP-2AS8COK MINGW64 ~/Documents/tutorial/unix_linux (study)
+$ kls
+bash: kls: command not found
+
+FD-158@DESKTOP-2AS8COK MINGW64 ~/Documents/tutorial/unix_linux (study)
+$ ls
+date.txt  memo.txt
+
+FD-158@DESKTOP-2AS8COK MINGW64 ~/Documents/tutorial/unix_linux (study)
+$ cat date.txt
+2022年 3月 19日 土曜日 17:29:51    
+
+FD-158@DESKTOP-2AS8COK MINGW64 ~/Documents/tutorial/unix_linux (study)
+$ tr 2022 2023 <date.txt
+3033年 3月 19日 土曜日 17:39:51    
+
+FD-158@DESKTOP-2AS8COK MINGW64 ~/Documents/tutorial/unix_linux (study)
+$ cat date.txt
+2022年 3月 19日 土曜日 17:29:51    
+
+FD-158@DESKTOP-2AS8COK MINGW64 ~/Documents/tutorial/unix_linux (study)
+$ git --help
+usage: git [--version] [--help] [-C <path>] [-c <name>=<value>]
+           [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]
+           [-p | --paginate | -P | --no-pager] [--no-replace-objects] [--bare]
+           [--git-dir=<path>] [--work-tree=<path>] [--namespace=<name>]
+           [--super-prefix=<path>] [--config-env=<name>=<envvar>]
+           <command> [<args>]
+
+These are common Git commands used in various situations:
+
+start a working area (see also: git help tutorial)
+   clone     Clone a repository into a new directory
+   init      Create an empty Git repository or reinitialize an existing one
+
+work on the current change (see also: git help everyday)
+   add       Add file contents to the index
+   mv        Move or rename a file, a directory, or a symlink
+   restore   Restore working tree files
+   rm        Remove files from the working tree and from the index
+
+examine the history and state (see also: git help revisions)
+   bisect    Use binary search to find the commit that introduced a bug
+   diff      Show changes between commits, commit and working tree, etc
+   grep      Print lines matching a pattern
+   log       Show commit logs
+   show      Show various types of objects
+   status    Show the working tree status
+
+grow, mark and tweak your common history
+   branch    List, create, or delete branches
+   commit    Record changes to the repository
+   merge     Join two or more development histories together
+   rebase    Reapply commits on top of another base tip
+   reset     Reset current HEAD to the specified state
+   switch    Switch branches
+   tag       Create, list, delete or verify a tag object signed with GPG
+
+collaborate (see also: git help workflows)
+   fetch     Download objects and refs from another repository
+   pull      Fetch from and integrate with another repository or a local branch
+   push      Update remote refs along with associated objects
+
+'git help -a' and 'git help -g' list available subcommands and some
+concept guides. See 'git help <command>' or 'git help <concept>'
+to read about a specific subcommand or concept.
+See 'git help git' for an overview of the system.
+
+FD-158@DESKTOP-2AS8COK MINGW64 ~/Documents/tutorial/unix_linux (study)
+$ cat date.txt
+2022年 3月 19日 土曜日 17:29:51    
+
+FD-158@DESKTOP-2AS8COK MINGW64 ~/Documents/tutorial/unix_linux (study)
+$ tr "2022" "2023" <date.txt
+3033年 3月 19日 土曜日 17:39:51
+
+FD-158@DESKTOP-2AS8COK MINGW64 ~/Documents/tutorial/unix_linux (study)
+$ tr 3月 4月 <date.txt
+2022年 4月 19日 土曜日 17:29:51
+
+FD-158@DESKTOP-2AS8COK MINGW64 ~/Documents/tutorial/unix_linux (study)
+$ tr 2022年 2023年 <date.txt
+3033年 3月 19日 土曜日 17:39:51
+
+FD-158@DESKTOP-2AS8COK MINGW64 ~/Documents/tutorial/unix_linux (study)
+$ vi memo.txt
+
+FD-158@DESKTOP-2AS8COK MINGW64 ~/Documents/tutorial/unix_linux (study)
+$ cat date.txt
+2022年 3月 19日 土曜日 17:29:51    
+
+FD-158@DESKTOP-2AS8COK MINGW64 ~/Documents/tutorial/unix_linux (study)
+$ cut -c 5 date
+cut: date: No such file or directory
+
+FD-158@DESKTOP-2AS8COK MINGW64 ~/Documents/tutorial/unix_linux (study)
+$ cut -c 5 date.txt
+□
+
+FD-158@DESKTOP-2AS8COK MINGW64 ~/Documents/tutorial/unix_linux (study)
+$ cut -f 2 -d ' ' date.txt
+3月
+
+FD-158@DESKTOP-2AS8COK MINGW64 ~/Documents/tutorial/unix_linux (study)
+$ ls
+date.txt  memo.txt
+
+FD-158@DESKTOP-2AS8COK MINGW64 ~/Documents/tutorial/unix_linux (study)
+$ cd ..
+
+FD-158@DESKTOP-2AS8COK MINGW64 ~/Documents/tutorial (study)
+$ ls
+gas_edu/  github/  sample.txt  unix_linux/  よく使う記述.txt
+
+FD-158@DESKTOP-2AS8COK MINGW64 ~/Documents/tutorial (study)
+$ ls unix_linux
+date.txt  memo.txt
+
+FD-158@DESKTOP-2AS8COK MINGW64 ~/Documents/tutorial (study)
+$ cd unix_linux
+
+FD-158@DESKTOP-2AS8COK MINGW64 ~/Documents/tutorial/unix_linux (study)
+$ ls
+date.txt  memo.txt
+
+FD-158@DESKTOP-2AS8COK MINGW64 ~/Documents/tutorial/unix_linux (study)
+$ ls date.txt
+date.txt
+
+FD-158@DESKTOP-2AS8COK MINGW64 ~/Documents/tutorial/unix_linux (study)
+$ ls ttt.txt
+ls: cannot access 'ttt.txt': No such file or directory
+
+FD-158@DESKTOP-2AS8COK MINGW64 ~/Documents/tutorial/unix_linux (study)
+$ ls -l
+total 2
+-rw-r--r-- 1 FD-158 197121  42  3月 19 17:29 date.txt
+-rw-r--r-- 1 FD-158 197121 593  3月 19 17:41 memo.txt
+
+FD-158@DESKTOP-2AS8COK MINGW64 ~/Documents/tutorial/unix_linux (study)
+$ ls -l -h
+total 2.0K
+-rw-r--r-- 1 FD-158 197121  42  3月 19 17:29 date.txt
+-rw-r--r-- 1 FD-158 197121 593  3月 19 17:41 memo.txt
+
+FD-158@DESKTOP-2AS8COK MINGW64 ~/Documents/tutorial/unix_linux (study)
+$ ls -a
+./  ../  date.txt  memo.txt
+
+FD-158@DESKTOP-2AS8COK MINGW64 ~/Documents/tutorial/unix_linux (study)
+$ cd ..
+
+FD-158@DESKTOP-2AS8COK MINGW64 ~/Documents/tutorial (study)
+$ ls
+gas_edu/  github/  sample.txt  unix_linux/  よく使う記述.txt
+
+FD-158@DESKTOP-2AS8COK MINGW64 ~/Documents/tutorial (study)
+$ ls -R
+.:
+gas_edu/  github/  sample.txt  unix_linux/  よく使う記述.txt
+
+./gas_edu:
+学習内容.txt
+
+./github:
+sort.js
+
+./unix_linux:
+date.txt  memo.txt
+
+FD-158@DESKTOP-2AS8COK MINGW64 ~/Documents/tutorial (study)
+$ ls -r
+よく使う記述.txt  unix_linux/  sample.txt  github/  gas_edu/
+
+FD-158@DESKTOP-2AS8COK MINGW64 ~/Documents/tutorial (study)
+$ cd unix_linux
+
+FD-158@DESKTOP-2AS8COK MINGW64 ~/Documents/tutorial/unix_linux (study)
+$ ls /bin
+'[.exe'*                      infotocap.exe*                  patch.exe*
+ addgnupghome*                install.exe*                    pathchk.exe*
+ applygnupgdefaults*          join.exe*                       perl.exe*
+ arch.exe*                    kbxutil.exe*                    perl5.34.0.exe*
+ astextplain*                 kill.exe*                       pinentry.exe*
+ autopoint*                   ldd.exe*                        pinentry-w32.exe*
+ awk.exe*                     ldh.exe*                        pinky.exe*
+ b2sum.exe*                   less.exe*                       pkcs1-conv.exe*
+ backup*                      lessecho.exe*                   pldd.exe*
+ base32.exe*                  lesskey.exe*                    pluginviewer.exe*
+ base64.exe*                  link.exe*                       pr.exe*
+ basename.exe*                ln.exe*                         printenv.exe*
+ basenc.exe*                  locale.exe*                     printf.exe*
+ bash.exe*                    locate.exe*                     ps.exe*
+ bashbug*                     logname.exe*                    psl.exe*
+ bunzip2.exe*                 ls.exe*                         psl-make-dafsa*
+ bzcat.exe*                   lsattr.exe*                     ptx.exe*
+ bzcmp*                       mac2unix.exe*                   pwd.exe*
+ bzdiff*                      md5sum.exe*                     readlink.exe*
+ bzegrep*                     minidumper.exe*                 realpath.exe*
+ bzfgrep*                     mintheme*                       rebase.exe*
+ bzgrep*                      mintty.exe*                     rebaseall*
+ bzip2.exe*                   mkdir.exe*                      recode-sr-latin.exe*
+ bzip2recover.exe*            mkfifo.exe*                     regtool.exe*
+ bzless*                      mkgroup.exe*                    reset.exe*
+ bzmore*                      mknod.exe*                      restore*
+ c_rehash*                    mkpasswd.exe*                   rm.exe*
+ captoinfo.exe*               mktemp.exe*                     rmdir.exe*
+ cat.exe*                     mount.exe*                      rnano.exe*
+ chattr.exe*                  mpicalc.exe*                    runcon.exe*
+ chcon.exe*                   msgattrib.exe*                  rview.exe*
+ chgrp.exe*                   msgcat.exe*                     rvim.exe*
+ chmod.exe*                   msgcmp.exe*                     scp.exe*
+ chown.exe*                   msgcomm.exe*                    sdiff.exe*
+ chroot.exe*                  msgconv.exe*                    sed.exe*
+ cksum.exe*                   msgen.exe*                      seq.exe*
+ clear.exe*                   msgexec.exe*                    setfacl.exe*
+ cmp.exe*                     msgfilter.exe*                  setmetamode.exe*
+ column.exe*                  msgfmt.exe*                     sexp-conv.exe*
+ comm.exe*                    msggrep.exe*                    sftp.exe*
+ core_perl/                   msginit.exe*                    sh.exe*
+ cp.exe*                      msgmerge.exe*                   sha1sum.exe*
+ csplit.exe*                  msgunfmt.exe*                   sha224sum.exe*
+ cut.exe*                     msguniq.exe*                    sha256sum.exe*
+ cygcheck.exe*                msys-2.0.dll*                   sha384sum.exe*
+ cygpath.exe*                 msys-apr-1-0.dll*               sha512sum.exe*
+ cygwin-console-helper.exe*   msys-aprutil-1-0.dll*           shred.exe*
+ d2u.exe*                     msys-asn1-8.dll*                shuf.exe*
+ dash.exe*                    msys-assuan-0.dll*              sleep.exe*
+ date.exe*                    msys-bz2-1.dll*                 sort.exe*
+ dd.exe*                      msys-cbor-0.8.dll*              split.exe*
+ df.exe*                      msys-com_err-1.dll*             ssh.exe*
+ diff.exe*                    msys-crypt-0.dll*               ssh-add.exe*
+ diff3.exe*                   msys-crypto-1.1.dll*            ssh-agent.exe*
+ dir.exe*                     msys-edit-0.dll*                ssh-copy-id*
+ dircolors.exe*               msys-expat-1.dll*               sshd.exe*
+ dirmngr.exe*                 msys-ffi-7.dll*                 ssh-keygen.exe*
+ dirmngr-client.exe*          msys-fido2-1.dll*               ssh-keyscan.exe*
+ dirname.exe*                 msys-gcc_s-seh-1.dll*           ssh-pageant.exe*
+ docx2txt*                    msys-gcrypt-20.dll*             ssp.exe*
+ docx2txt.pl*                 msys-gettextlib-0-19-8-1.dll*   start*
+ dos2unix.exe*                msys-gettextsrc-0-19-8-1.dll*   stat.exe*
+ du.exe*                      msys-gio-2.0-0.dll*             stdbuf.exe*
+ dumpsexp.exe*                msys-glib-2.0-0.dll*            strace.exe*
+ echo.exe*                    msys-gmodule-2.0-0.dll*         stty.exe*
+ egrep*                       msys-gmp-10.dll*                sum.exe*
+ env.exe*                     msys-gnutls-30.dll*             sync.exe*
+ envsubst.exe*                msys-gobject-2.0-0.dll*         tabs.exe*
+ ex.exe*                      msys-gpg-error-0.dll*           tac.exe*
+ expand.exe*                  msys-gssapi-3.dll*              tail.exe*
+ expr.exe*                    msys-hcrypto-4.dll*             tar.exe*
+ factor.exe*                  msys-heimbase-1.dll*            tee.exe*
+ false.exe*                   msys-heimntlm-0.dll*            test.exe*
+ fgrep*                       msys-hogweed-6.dll*             tic.exe*
+ fido2-assert.exe*            msys-hx509-5.dll*               tig.exe*
+ fido2-cred.exe*              msys-iconv-2.dll*               timeout.exe*
+ fido2-token.exe*             msys-idn2-0.dll*                toe.exe*
+ file.exe*                    msys-intl-8.dll*                touch.exe*
+ find.exe*                    msys-kafs-0.dll*                tput.exe*
+ findssl.sh*                  msys-krb5-26.dll*               tr.exe*
+ fmt.exe*                     msys-ksba-8.dll*                true.exe*
+ fold.exe*                    msys-lz4-1.dll*                 truncate.exe*
+ funzip.exe*                  msys-magic-1.dll*               trust.exe*
+ gapplication.exe*            msys-mpfr-6.dll*                tset.exe*
+ gawk.exe*                    msys-ncursesw6.dll*             tsort.exe*
+ gawk-5.0.0.exe*              msys-nettle-8.dll*              tty.exe*
+ gdbus.exe*                   msys-npth-0.dll*                tzset.exe*
+ gencat.exe*                  msys-p11-kit-0.dll*             u2d.exe*
+ getconf.exe*                 msys-pcre-1.dll*                umount.exe*
+ getemojis*                   msys-perl5_34.dll*              uname.exe*
+ getfacl.exe*                 msys-psl-5.dll*                 uncompress*
+ getopt.exe*                  msys-readline8.dll*             unexpand.exe*
+ gettext.exe*                 msys-roken-18.dll*              uniq.exe*
+ gettext.sh*                  msys-sasl2-3.dll*               unix2dos.exe*
+ gettextize*                  msys-serf-1-0.dll*              unix2mac.exe*
+ gio-querymodules.exe*        msys-smartcols-1.dll*           unlink.exe*
+ git-flow*                    msys-sqlite3-0.dll*             unzip.exe*
+ git-flow-bugfix              msys-ssl-1.1.dll*               unzipsfx.exe*
+ gitflow-common               msys-svn_client-1-0.dll*        update-ca-trust*
+ git-flow-config              msys-svn_delta-1-0.dll*         updatedb*
+ git-flow-feature             msys-svn_diff-1-0.dll*          users.exe*
+ git-flow-hotfix              msys-svn_fs_fs-1-0.dll*         vdir.exe*
+ git-flow-init                msys-svn_fs_util-1-0.dll*       vendor_perl/
+ git-flow-log                 msys-svn_fs_x-1-0.dll*          vi*
+ git-flow-release             msys-svn_fs-1-0.dll*            view.exe*
+ gitflow-shFlags              msys-svn_ra_local-1-0.dll*      vim.exe*
+ git-flow-support             msys-svn_ra_serf-1-0.dll*       vimdiff.exe*
+ git-flow-version             msys-svn_ra_svn-1-0.dll*        vimtutor*
+ gkill.exe*                   msys-svn_ra-1-0.dll*            watchgnupg.exe*
+ glib-compile-schemas.exe*    msys-svn_repos-1-0.dll*         wc.exe*
+ gobject-query.exe*           msys-svn_subr-1-0.dll*          which.exe*
+ gpg.exe*                     msys-svn_swig_perl-1-0.dll*     who.exe*
+ gpg-agent.exe*               msys-svn_wc-1-0.dll*            whoami.exe*
+ gpgconf.exe*                 msys-tasn1-6.dll*               winpty.dll*
+ gpg-connect-agent.exe*       msys-ticw6.dll*                 winpty.exe*
+ gpg-error.exe*               msys-unistring-2.dll*           winpty-agent.exe*
+ gpgparsemail.exe*            msys-uuid-1.dll*                winpty-debugserver.exe*
+ gpgscm.exe*                  msys-wind-0.dll*                wordpad*
+ gpgsm.exe*                   msys-z.dll*                     xargs.exe*
+ gpgsplit.exe*                mv.exe*                         xgettext.exe*
+ gpgtar.exe*                  nano.exe*                       xxd.exe*
+ gpgv.exe*                    nettle-hash.exe*                yat2m.exe*
+ gpg-wks-server.exe*          nettle-lfib-stream.exe*         yes.exe*
+ grep.exe*                    nettle-pbkdf2.exe*              zcat*
+ groups.exe*                  ngettext.exe*                   zcmp*
+ gsettings.exe*               nice.exe*                       zdiff*
+ gunzip*                      nl.exe*                         zegrep*
+ gzexe*                       nohup.exe*                      zfgrep*
+ gzip.exe*                    notepad*                        zforce*
+ head.exe*                    nproc.exe*                      zgrep*
+ hmac256.exe*                 numfmt.exe*                     zipgrep*
+ hostid.exe*                  od.exe*                         zipinfo.exe*
+ hostname.exe*                openssl.exe*                    zless*
+ iconv.exe*                   p11-kit.exe*                    zmore*
+ id.exe*                      passwd.exe*                     znew*
+ infocmp.exe*                 paste.exe*
+
+FD-158@DESKTOP-2AS8COK MINGW64 ~/Documents/tutorial/unix_linux (study)
+$ ls
+date.txt  memo.txt
+
+FD-158@DESKTOP-2AS8COK MINGW64 ~/Documents/tutorial/unix_linux (study)
+$ cp date.txt dateCp.txt -i
+
+FD-158@DESKTOP-2AS8COK MINGW64 ~/Documents/tutorial/unix_linux (study)
+$ ls
+date.txt  dateCp.txt  memo.txt
+
+FD-158@DESKTOP-2AS8COK MINGW64 ~/Documents/tutorial/unix_linux (study)
+$ at dateCp.txt
+この AT コマンドは廃止されました。代わりに schtasks.exe を使用してください。
+
+無効なコマンド
+
+AT コマンドは、指定された日時にコマンドとプログラムがコンピューターで
+実行されるようにスケジュールします。AT コマンドを使用するには、
+Schedule サービスが実行中でなければなりません。
+
+AT [\\コンピューター名] [ [id] [/DELETE] | /DELETE [/YES]]
+AT [\\コンピューター名] 時刻 [/INTERACTIVE]
+   [ /EVERY:日付[,...] | /NEXT:日付[,...]] "コマンド"
+
+\\コンピューター名 リモート コンピューターを指定します。このパラメーターを
+                     省略したときは、ローカル コンピューターでコマンドが
+                     スケジュールされます。
+id                   スケジュールされたコマンドに割り当てられた識別番号です。
+/delete              スケジュールされたコマンドを取り消します。
+                     id を指定しなかったときは、コンピューターでスケジュール
+                     されているすべてのコマンドが取り消されます。
+/yes                 確認せずにすべてのジョブ コマンドを取り消すときに
+                     使用します。
+時刻                 コマンドが実行される時刻を指定します。
+/interactive         ジョブの実行中、ジョブはログオンしているユーザーの
+                     デスクトップとの対話を許可します。
+/every:日付[,...]    毎週指定した曜日に、または毎月指定した日にコマンドが
+                     実行されます。
+                     日付を省略したときは、その月の今日の日付が使用されます。
+/next:日付[,...]     指定したコマンドが次の日付 (たとえば、次の火曜日) に
+                     実行されます。日付を省略したときは、その月の今日の日付が
+                     使用されます。
+"コマンド"           実行する Windows NT コマンド、またはバッチ プログラム
+                     です。
+
+
+FD-158@DESKTOP-2AS8COK MINGW64 ~/Documents/tutorial/unix_linux (study)
+$ cat dateCp.txt -i
+cat: unknown option -- i
+Try 'cat --help' for more information.
+
+FD-158@DESKTOP-2AS8COK MINGW64 ~/Documents/tutorial/unix_linux (study)
+$ cat dateCp.txt
+2022年 3月 19日 土曜日 17:29:51    
+
+FD-158@DESKTOP-2AS8COK MINGW64 ~/Documents/tutorial/unix_linux (study)
+$ cp date.txt dateCp.txt 
+
+FD-158@DESKTOP-2AS8COK MINGW64 ~/Documents/tutorial/unix_linux (study)
+$ cp date.txt dateCp.txt -i
+cp: overwrite 'dateCp.txt'? n
+
+FD-158@DESKTOP-2AS8COK MINGW64 ~/Documents/tutorial/unix_linux (study)
+$ date >date.txt
+
+FD-158@DESKTOP-2AS8COK MINGW64 ~/Documents/tutorial/unix_linux (study)
+$ cat date.txt
+2022年 3月 19日 土曜日 17:54:09    
+
+FD-158@DESKTOP-2AS8COK MINGW64 ~/Documents/tutorial/unix_linux (study)
+$ cat dateCp.txt
+2022年 3月 19日 土曜日 17:29:51    
+
+FD-158@DESKTOP-2AS8COK MINGW64 ~/Documents/tutorial/unix_linux (study)
+$ cp date.txt dateCp.txt -i
+cp: overwrite 'dateCp.txt'? no
+
+FD-158@DESKTOP-2AS8COK MINGW64 ~/Documents/tutorial/unix_linux (study)
+$ cat date.txt
+2022年 3月 19日 土曜日 17:54:09    
+
+FD-158@DESKTOP-2AS8COK MINGW64 ~/Documents/tutorial/unix_linux (study)
+$ cat dateCp.txt
+2022年 3月 19日 土曜日 17:29:51    
+
+FD-158@DESKTOP-2AS8COK MINGW64 ~/Documents/tutorial/unix_linux (study)
+$ cp date.txt dateCp.txt -i
+cp: overwrite 'dateCp.txt'? yes
+
+FD-158@DESKTOP-2AS8COK MINGW64 ~/Documents/tutorial/unix_linux (study)
+$ cat date.txt
+2022年 3月 19日 土曜日 17:54:09    
+
+FD-158@DESKTOP-2AS8COK MINGW64 ~/Documents/tutorial/unix_linux (study)
+$ cat dateCp.txt
+2022年 3月 19日 土曜日 17:54:09    
+
+FD-158@DESKTOP-2AS8COK MINGW64 ~/Documents/tutorial/unix_linux (study)
+$ mkdir move
+
+FD-158@DESKTOP-2AS8COK MINGW64 ~/Documents/tutorial/unix_linux (study)
+$ ls
+date.txt  dateCp.txt  memo.txt  move/
+
+FD-158@DESKTOP-2AS8COK MINGW64 ~/Documents/tutorial/unix_linux (study)
+$ mv dateCp.txt cateCopy.txt -i
+
+FD-158@DESKTOP-2AS8COK MINGW64 ~/Documents/tutorial/unix_linux (study)
+$ ls
+cateCopy.txt  date.txt  memo.txt  move/
+
+FD-158@DESKTOP-2AS8COK MINGW64 ~/Documents/tutorial/unix_linux (study)
+$ mv cateCopy.txt dateCopy.txt
+
+FD-158@DESKTOP-2AS8COK MINGW64 ~/Documents/tutorial/unix_linux (study)
+$ ls
+date.txt  dateCopy.txt  memo.txt  move/
+
+FD-158@DESKTOP-2AS8COK MINGW64 ~/Documents/tutorial/unix_linux (study)
+$ mv dateCopy.txt move/dateCopy.txt
+
+FD-158@DESKTOP-2AS8COK MINGW64 ~/Documents/tutorial/unix_linux (study)
+$ ls
+date.txt  memo.txt  move/
+
+FD-158@DESKTOP-2AS8COK MINGW64 ~/Documents/tutorial/unix_linux (study)
+$ ls -R
+.:
+date.txt  memo.txt  move/
+
+./move:
+dateCopy.txt
+
+FD-158@DESKTOP-2AS8COK MINGW64 ~/Documents/tutorial/unix_linux (study)
+$ rmdir move
+rmdir: failed to remove 'move': Directory not empty
+
+FD-158@DESKTOP-2AS8COK MINGW64 ~/Documents/tutorial/unix_linux (study)
+$ cd move
+
+FD-158@DESKTOP-2AS8COK MINGW64 ~/Documents/tutorial/unix_linux/move (study)
+$ ls
+dateCopy.txt
+
+FD-158@DESKTOP-2AS8COK MINGW64 ~/Documents/tutorial/unix_linux/move (study)
+$ rm dateCopy.txt -i
+rm: remove regular file 'dateCopy.txt'? yes
+
+FD-158@DESKTOP-2AS8COK MINGW64 ~/Documents/tutorial/unix_linux/move (study)
+$ ls
+
+FD-158@DESKTOP-2AS8COK MINGW64 ~/Documents/tutorial/unix_linux/move (study)
+$ cd ..
+
+FD-158@DESKTOP-2AS8COK MINGW64 ~/Documents/tutorial/unix_linux (study)
+$ ls
+date.txt  memo.txt  move/
+
+FD-158@DESKTOP-2AS8COK MINGW64 ~/Documents/tutorial/unix_linux (study)
+$ rmdir move
+
+FD-158@DESKTOP-2AS8COK MINGW64 ~/Documents/tutorial/unix_linux (study)
+$ ls
+date.txt  memo.txt
+
+FD-158@DESKTOP-2AS8COK MINGW64 ~/Documents/tutorial/unix_linux (study)
+$ touch a.txt b.txt c.txt
+
+FD-158@DESKTOP-2AS8COK MINGW64 ~/Documents/tutorial/unix_linux (study)
+$ ls
+a.txt  b.txt  c.txt  date.txt  memo.txt
+
+FD-158@DESKTOP-2AS8COK MINGW64 ~/Documents/tutorial/unix_linux (study)
+$ cat memo.txt
+manコマンドはgitbashでは使えないが、参照サイトはあくまでUNIX/Linuxのコマンド説明のため、
+windows環境下のgitbashでは使えないコマンドがあるという認識で良いか？
+
+suコマンドは怖いので試さない。
+
+　「tr 012 abc」を実行すると「0」を「a」に、「1」を「b」に、「2」を「c」に置き換えます。      
+「012」という連続した文字列を「abc」に置き換えるのではなく、
+常に1文字対1文字での置き換えとなるので、両者の長さはそろえる必要があります。
+
+FD-158@DESKTOP-2AS8COK MINGW64 ~/Documents/tutorial/unix_linux (study)
+$ grep tr memo.txt
+　「tr 012 abc」を実行すると「0」を「a」に、「1」を「b」に、「2」を「c」に置き換えます。
+
+FD-158@DESKTOP-2AS8COK MINGW64 ~/Documents/tutorial/unix_linux (study)
+$ find . -name *.txt
+find: paths must precede expression: `b.txt'
+find: possible unquoted pattern after predicate `-name'?
+
+FD-158@DESKTOP-2AS8COK MINGW64 ~/Documents/tutorial/unix_linux (study)
+$ find . -name "*.txt"
+./a.txt
+./b.txt
+./c.txt
+./date.txt
+./memo.txt
+
+FD-158@DESKTOP-2AS8COK MINGW64 ~/Documents/tutorial/unix_linux (study)
+$ find . -name '*.txt'
+./a.txt
+./b.txt
+./c.txt
+./date.txt
+./memo.txt
+
+FD-158@DESKTOP-2AS8COK MINGW64 ~/Documents/tutorial/unix_linux (study)
+$ vi memo.txt
+
+FD-158@DESKTOP-2AS8COK MINGW64 ~/Documents/tutorial/unix_linux (study)
+$ ps
+      PID    PPID    PGID     WINPID   TTY         UID    STIME COMMAND
+      392       1     392       9544  cons0     197609 17:11:52 /usr/bin/bash
+     1136     392    1136       3096  cons0     197609 18:10:13 /usr/bin/ps
+
+FD-158@DESKTOP-2AS8COK MINGW64 ~/Documents/tutorial/unix_linux (study)
+$ ls
+a.txt  b.txt  c.txt  date.txt  memo.txt
+
+FD-158@DESKTOP-2AS8COK MINGW64 ~/Documents/tutorial/unix_linux (study)
+$ vi memo.txt
+
+FD-158@DESKTOP-2AS8COK MINGW64 ~/Documents/tutorial/unix_linux (study)
+$ ls
+a.txt  b.txt  c.txt  date.txt  memo.txt
+
+FD-158@DESKTOP-2AS8COK MINGW64 ~/Documents/tutorial/unix_linux (study)
+$ manコマンドはgitbashでは使えないが、参照サイトはあくまでUNIX/Linuxのコマンド説明のため、     
+
+bash: manコマンドはgitbashでは使えないが、参照サイトはあくまでUNIX/Linuxのコマンド説明のため、: No such file or directory
+
+FD-158@DESKTOP-2AS8COK MINGW64 ~/Documents/tutorial/unix_linux (study)
+$
