@@ -1,5 +1,9 @@
 manコマンドはgitbashでは使えないが、参照サイトはあくまでUNIX/Linuxのコマンド説明のため、
 windows環境下のgitbashでは使えないコマンドがあるという認識で良いか？
+　→その認識でOK
+実行できないコマンドは、WSL2を使用してLinux仮想環境を構築することで確認可能。
+＜参考動画＞
+https://www.youtube.com/watch?v=SnJNEtn1Es://www.youtube.com/watch?v=SnJNEtn1Es8
 
 suコマンドは怖いので試さない。
 

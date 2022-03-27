@@ -1,0 +1,4 @@
+UNIX/Linux入門の「6.ファイルシステム」から「10.Linuxとは」までを読んだ。
+学習開始前にLinuxの仮想環境構築を行った。
+https://www.youtube.com/watch?v=SnJNEtn1Es8
+
