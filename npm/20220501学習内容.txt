@@ -1,0 +1,247 @@
+
+【初心者向け】NPMとpackage.jsonを概念的に理解する
+「dependency の編集」から「GitHub でパッケージのコードを見るときの注意点」までを読んだ。
+
+npm の基本的な使い方
+「npmとは」を読んだ。
+
+＜以下はbashのコマンド履歴＞
+
+ セッションの内容が 11:50:31 の 2022/5/1 で復元されました 
+
+
+FD-158@DESKTOP-2AS8COK MINGW64 ~/fdbot
+$ cd ..
+
+FD-158@DESKTOP-2AS8COK MINGW64 ~
+$ ls
+'3D Objects'/            'Local Settings'@                                                                               OneDrive/
+ AppData/                 MicrosoftEdgeBackups/                                                                          Pictures/
+'Application Data'@       Music/                                                                                         PrintHood@
+ Contacts/               'My Documents'@                                                                                 Recent@
+ Cookies@                 NetHood@                                                                                      'Saved Games'/
+ Desktop/                 NTUSER.DAT                                                                                     Searches/
+ Documents/               ntuser.dat.LOG1                                                                                SendTo@
+ Downloads/               ntuser.dat.LOG2                                                                                Templates@
+ Favorites/               NTUSER.DAT{2dc126c5-8b6e-11eb-8d1b-f15bb77a51eb}.TM.blf                                        Videos/
+ fdbot/                   NTUSER.DAT{2dc126c5-8b6e-11eb-8d1b-f15bb77a51eb}.TMContainer00000000000000000001.regtrans-ms  'スタート メニュー'@        
+ IntelGraphicsProfiles/   NTUSER.DAT{2dc126c5-8b6e-11eb-8d1b-f15bb77a51eb}.TMContainer00000000000000000002.regtrans-ms
+ Links/                   ntuser.ini
+
+FD-158@DESKTOP-2AS8COK MINGW64 ~
+$ cd documents
+
+FD-158@DESKTOP-2AS8COK MINGW64 ~/documents
+$ ls
+ cloneProject/  'My Music'@     'My Videos'@                        project/           tutorial/    tutorial3/   tutorial5/
+ desktop.ini    'My Pictures'@  'Office のカスタム テンプレート'/   stepup-tutorial/   tutorial2/   tutorial4/   usr2/
+
+FD-158@DESKTOP-2AS8COK MINGW64 ~/documents
+$ cd tutorial
+
+FD-158@DESKTOP-2AS8COK MINGW64 ~/documents/tutorial (npm_study)
+$ ls
+gas_edu/  github/  npm/  sample.txt  unix_linux/  よく使う記述.txt
+
+FD-158@DESKTOP-2AS8COK MINGW64 ~/documents/tutorial (npm_study)
+$ cd npm
+
+FD-158@DESKTOP-2AS8COK MINGW64 ~/documents/tutorial/npm (npm_study)
+$ ls
+20220409学習内容.txt  package.json
+
+FD-158@DESKTOP-2AS8COK MINGW64 ~/documents/tutorial/npm (npm_study)
+$ lm -help
+bash: lm: command not found
+
+FD-158@DESKTOP-2AS8COK MINGW64 ~/documents/tutorial/npm (npm_study)
+$ more -help
+bash: more: command not found
+
+FD-158@DESKTOP-2AS8COK MINGW64 ~/documents/tutorial/npm (npm_study)
+$ less -help
+Number is required after -h
+There is no -l option ("less --help" for help)
+Missing filename ("less --help" for help)
+
+FD-158@DESKTOP-2AS8COK MINGW64 ~/documents/tutorial/npm (npm_study)
+$ less -h
+Value is required after -h (--max-back-scroll)
+
+FD-158@DESKTOP-2AS8COK MINGW64 ~/documents/tutorial/npm (npm_study)
+$ ls
+20220409学習内容.txt  package.json
+
+FD-158@DESKTOP-2AS8COK MINGW64 ~/documents/tutorial/npm (npm_study)
+$ less 20220409学習内容.txt
+
+FD-158@DESKTOP-2AS8COK MINGW64 ~/documents/tutorial/npm (npm_study)
+$ npm install react@latest
+
+added 3 packages, and audited 4 packages in 5s
+
+found 0 vulnerabilities
+
+FD-158@DESKTOP-2AS8COK MINGW64 ~/documents/tutorial/npm (npm_study)
+$ ls
+20220409学習内容.txt  node_modules/  package.json  package-lock.json
+
+FD-158@DESKTOP-2AS8COK MINGW64 ~/documents/tutorial/npm (npm_study)
+$ less package.json
+
+FD-158@DESKTOP-2AS8COK MINGW64 ~/documents/tutorial/npm (npm_study)
+$ npm uninstall react
+
+removed 3 packages, and audited 1 package in 2s
+
+found 0 vulnerabilities
+
+FD-158@DESKTOP-2AS8COK MINGW64 ~/documents/tutorial/npm (npm_study)
+$ less package.json
+
+FD-158@DESKTOP-2AS8COK MINGW64 ~/documents/tutorial/npm (npm_study)
+$ jls
+bash: jls: command not found
+
+FD-158@DESKTOP-2AS8COK MINGW64 ~/documents/tutorial/npm (npm_study)
+$ ls
+20220409学習内容.txt  node_modules/  package.json  package-lock.json
+
+FD-158@DESKTOP-2AS8COK MINGW64 ~/documents/tutorial/npm (npm_study)
+{
+  "name": "npm",
+  "version": "1.0.0",
+  "lockfileVersion": 2,
+  "requires": true,
+  "packages": {
+    "": {
+      "name": "npm",
+      "version": "1.0.0",
+      "license": "ISC",
+      "dependencies": {
+        "react": "^18.1.0"
+      }
+    },
+    "node_modules/js-tokens": {
+      "version": "4.0.0",
+      "resolved": "https://registry.npmjs.org/js-tokens/-/js-tokens-4.0.0.tgz",
+      "integrity": "sha512-RdJUflcE3cUzKiMqQgsCu06FPu9UdIJO0beYbPhHN4k6apgJtifcoCtT9bcxOpYBtpD2kCM6Sbzg4CausW/PKQ=="
+    },
+    "node_modules/loose-envify": {
+      "version": "1.4.0",
+      "resolved": "https://registry.npmjs.org/loose-envify/-/loose-envify-1.4.0.tgz",
+      "integrity": "sha512-lyuxPGr/Wfhrlem2CL/UcnUc1zcqKAImBDzukY7Y5F/yQiNdko6+fRLevlw1HgMySw7f611UIY408EtxRSoK3Q==",
+      "dependencies": {
+        "js-tokens": "^3.0.0 || ^4.0.0"
+      },
+      "bin": {
+        "loose-envify": "cli.js"
+      }
+    },
+    "node_modules/react": {
+      "version": "18.1.0",
+      "resolved": "https://registry.npmjs.org/react/-/react-18.1.0.tgz",
+      "integrity": "sha512-4oL8ivCz5ZEPyclFQXaNksK3adutVS8l2xzZU0cqEFrE9Sb7fC0EFK5uEk74wIreL1DERyjvsU915j1pcT2uEQ==",
+      "dependencies": {
+        "loose-envify": "^1.1.0"
+      },
+      "engines": {
+        "node": ">=0.10.0"
+      }
+    }
+  },
+  "dependencies": {
+    "js-tokens": {
+      "version": "4.0.0",
+      "resolved": "https://registry.npmjs.org/js-tokens/-/js-tokens-4.0.0.tgz",
+      "integrity": "sha512-RdJUflcE3cUzKiMqQgsCu06FPu9UdIJO0beYbPhHN4k6apgJtifcoCtT9bcxOpYBtpD2kCM6Sbzg4CausW/PKQ=="
+$ less package-lock.json
+
+FD-158@DESKTOP-2AS8COK MINGW64 ~/documents/tutorial/npm (npm_study)
+$ mpn install react@latest
+bash: mpn: command not found
+
+FD-158@DESKTOP-2AS8COK MINGW64 ~/documents/tutorial/npm (npm_study)
+$ npm install react@latest
+
+added 3 packages, and audited 4 packages in 3s
+
+found 0 vulnerabilities
+
+FD-158@DESKTOP-2AS8COK MINGW64 ~/documents/tutorial/npm (npm_study)
+$ ls
+20220409学習内容.txt  node_modules/  package.json  package-lock.json
+
+FD-158@DESKTOP-2AS8COK MINGW64 ~/documents/tutorial/npm (npm_study)
+$ less package-lock.json
+
+FD-158@DESKTOP-2AS8COK MINGW64 ~/documents/tutorial/npm (npm_study)
+$ npm uninstall react
+
+removed 3 packages, and audited 1 package in 1s
+
+found 0 vulnerabilities
+
+FD-158@DESKTOP-2AS8COK MINGW64 ~/documents/tutorial/npm (npm_study)
+$ ls
+20220409学習内容.txt  node_modules/  package.json  package-lock.json
+
+FD-158@DESKTOP-2AS8COK MINGW64 ~/documents/tutorial/npm (npm_study)
+$ less package-lock.json
+
+FD-158@DESKTOP-2AS8COK MINGW64 ~/documents/tutorial/npm (npm_study)
+$ npm --version
+8.3.0
+
+FD-158@DESKTOP-2AS8COK MINGW64 ~/documents/tutorial/npm (npm_study)
+$ npm -v
+8.3.0
+
+FD-158@DESKTOP-2AS8COK MINGW64 ~/documents/tutorial/npm (npm_study)
+$ npm version
+{
+  npm: '8.3.0',
+  node: '17.3.0',
+  v8: '9.6.180.15-node.12',
+  uv: '1.42.0',
+  zlib: '1.2.11',
+  brotli: '1.0.9',
+  ares: '1.18.1',
+  modules: '102',
+  nghttp2: '1.45.1',
+  napi: '8',
+  llhttp: '6.0.4',
+  openssl: '3.0.1+quic',
+  cldr: '40.0',
+  icu: '70.1',
+  tz: '2021a3',
+  unicode: '14.0',
+  ngtcp2: '0.1.0-DEV',
+  nghttp3: '0.1.0-DEV'
+}
+
+FD-158@DESKTOP-2AS8COK MINGW64 ~/documents/tutorial/npm (npm_study)
+$ npm help init
+
+FD-158@DESKTOP-2AS8COK MINGW64 ~/documents/tutorial/npm (npm_study)
+$ npm init -h
+npm init
+
+Create a package.json file
+
+Usage:
+npm init [--force|-f|--yes|-y|--scope]
+npm init <@scope> (same as `npx <@scope>/create`)
+npm init [<@scope>/]<name> (same as `npx [<@scope>/]create-<name>`)
+
+Options:
+[-y|--yes] [-f|--force]
+[-w|--workspace <workspace-name> [-w|--workspace <workspace-name> ...]]
+[-ws|--workspaces] [--include-workspace-root]
+
+aliases: create, innit
+
+Run "npm help init" for more info
+
+FD-158@DESKTOP-2AS8COK MINGW64 ~/documents/tutorial/npm (npm_study)
+$
