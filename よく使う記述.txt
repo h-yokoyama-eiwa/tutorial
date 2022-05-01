@@ -20,6 +20,24 @@
    2行目
   */
 
+<clasp>
+前提1：googleアカウントの設定でGoogle Apps Script APIを有効にしておく。
+前提2：node.jsがインストールされている必要がある。https://nodejs.org/ja/
+
+npm install @google/clasp -g ⇒ インストールコマンド
+clasp login ⇒ ログイン
+clasp logout ⇒ ログアウト
+clasp create newProject ⇒ GASプロジェクトの新規作成
+clasp clone <スクリプトID> ⇒ 既存のGASプロジェクトをクローンする
+clasp open ⇒ プロジェクトをブラウザで開く
+clasp pull ⇒ WEBエディタ上のファイルを取得する
+clasp push ⇒ WEBエディタ上にファイルを送る
+
+<.claspignore>push対象から除外する条件を記述する。
+**/** ⇒ 全ファイルを除外する
+!*.js ⇒ .jsファイルは除外しない
+!appsscript.json ⇒ appssctipt.jsonは除外しない
+
 <Git>
 **ローカル整える系**
 git checkout *** ⇒ ローカルブランチを***に切り替える
@@ -33,6 +51,22 @@ git commit -m "***" ⇒ addしたものを***のログ名でローカルリポ�
 git push origin *** ⇒ ローカルブランチ***をリモートブランチに変更を上げる
 
 <unix/linuxコマンド>
+> ⇒ 標準出力の変更
+< ⇒ 標準入力の変更
+| ⇒ 左辺のコマンドの出力を右辺のコマンドの入力にする
+cd ⇒ ディレクトリの移動
+cd~ ⇒ 初期ディレクトリに移動
+cd ../ ⇒ 一つ上のディレクトリに移動
+pwd ⇒ 現在のディレクトリを表示
+more test.txt ⇒ test.txtの内容を表示する（エンターキーで続きが表示される）
+less test.txt ⇒ test.txtの内容を表示する（エンターキーまたはマウスホイールで続きが表示される）
+cat test.txt ⇒ test.txtの内容を表示する（ファイルの内容をすべて表示）
+ls ⇒ カレントディレクトリの内容を表示する
+ls <ディレクトリ名> ⇒ 指定したディレクトリの内容を表示する
+cp -i a b ⇒ aファイルをbファイルにコピーする（-iオプションはコピー先が存在する場合に上書きするか尋ねるオプション）
+mv -i a b ⇒ aファイルをbファイルに移動する（-iオプションは同上。ファイル名変更にも用いる）
+rm -i test.txt ⇒ test.txtを削除（-iオプションは同上）
+mkdir <ディレクトリ名> ⇒ （次回以降記述）
 
 <vi>
 参考 ⇒ https://docs.oracle.com/cd/E19253-01/816-3946/editorvi-tbl-83/index.html
