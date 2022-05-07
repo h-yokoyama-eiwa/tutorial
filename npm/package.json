@@ -4,9 +4,17 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+	  "start": "node index.js",
+	  "foo": "echo 'Hellow from Foo!'",
+	  "sass-ver": "sass --version"
   },
-  "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "jquery": "^3.6.0",
+    "sass": "^1.22.12"
+  },
+  "devDependencies": {
+    "typescript": "^4.6.4"
+  }
 }

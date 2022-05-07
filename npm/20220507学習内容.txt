@@ -1,0 +1,1185 @@
+npm の基本的な使い方
+「パッケージのインストール」から「script フィールド」まで実際にコマンドを打ちながら読んだ。
+
+＜以下はbashのコマンド履歴＞
+FD-158@DESKTOP-2AS8COK MINGW64 ~/Documents/tutorial (master)
+$ ls
+gas_edu/  github/  npm/  sample.txt  unix_linux/  よく使う記述.txt
+
+FD-158@DESKTOP-2AS8COK MINGW64 ~/Documents/tutorial (master)
+$ git fetch --all
+Fetching tutorial
+Enter passphrase for key '/c/Users/FD-158/.ssh/id_rsa': 
+From github.com:h-yokoyama-eiwa/tutorial
+   e049feb..8639e48  master     -> tutorial/master
+Fetching origin
+Enter passphrase for key '/c/Users/FD-158/.ssh/id_rsa': 
+
+FD-158@DESKTOP-2AS8COK MINGW64 ~/Documents/tutorial (master)
+$ git log
+commit 8639e4805f724c0bd72504f64dfee4fda6781fa8 (HEAD -> master, tutorial/master, origin/master)
+Author: h-yokoyama-eiwa <h-yokoyama@esm.co.jp>
+Date:   Sun May 1 16:42:11 2022 +0900
+
+    20220501追記
+
+commit e049feb833ddcab0cca61ec31dc482ab4931b623
+Author: h-yokoyama-eiwa <h-yokoyama@esm.co.jp>
+Date:   Sat Apr 2 16:56:16 2022 +0900
+
+    gasとhtmlの記述追加
+
+commit 2d3b1dc187e2cf7be35eb54e059f6cb01da574fa
+Merge: 8bac3d6 0cb42f8
+Author: h-yokoyama-eiwa <67628682+h-yokoyama-eiwa@users.noreply.github.com>
+Date:   Tue Mar 29 20:57:16 2022 +0900
+
+    Merge pull request #5 from h-yokoyama-eiwa/study
+
+
+FD-158@DESKTOP-2AS8COK MINGW64 ~/Documents/tutorial (master)
+$ git branch
+  add-sort-func1
+  add-sort-func2
+* master
+  npm_study
+  study
+
+FD-158@DESKTOP-2AS8COK MINGW64 ~/Documents/tutorial (master)
+$ git checkout npm_study
+Switched to branch 'npm_study'
+
+FD-158@DESKTOP-2AS8COK MINGW64 ~/Documents/tutorial (npm_study)
+$ git pull origin npm_study
+Enter passphrase for key '/c/Users/FD-158/.ssh/id_rsa': 
+From github.com:h-yokoyama-eiwa/tutorial
+ * branch            npm_study  -> FETCH_HEAD
+Already up to date.
+
+FD-158@DESKTOP-2AS8COK MINGW64 ~/Documents/tutorial (npm_study)
+$ ls
+gas_edu/  github/  npm/  sample.txt  unix_linux/  よく使う記述.txt
+
+FD-158@DESKTOP-2AS8COK MINGW64 ~/Documents/tutorial (npm_study)
+$ git log
+commit 9c5fa238a8b6d596d16449fa5f7ef65dbe5ca8c9 (HEAD -> npm_study, tutorial/npm_study, origin/npm_study)
+Author: h-yokoyama-eiwa <h-yokoyama@esm.co.jp>
+Date:   Sun May 1 16:04:05 2022 +0900
+
+    20220501の学習内容を反映
+
+commit 8564ce6f0f5b2f9d86d57a1a506052c96cb19655
+Author: h-yokoyama-eiwa <h-yokoyama@esm.co.jp>
+Date:   Sat Apr 9 16:40:59 2022 +0900
+
+    npmの学習を開始
+
+commit e049feb833ddcab0cca61ec31dc482ab4931b623
+Author: h-yokoyama-eiwa <h-yokoyama@esm.co.jp>
+Date:   Sat Apr 2 16:56:16 2022 +0900
+
+    gasとhtmlの記述追加
+
+commit 2d3b1dc187e2cf7be35eb54e059f6cb01da574fa
+
+FD-158@DESKTOP-2AS8COK MINGW64 ~/Documents/tutorial (npm_study)
+$ ls 
+gas_edu/  github/  npm/  sample.txt  unix_linux/  よく使う記述.txt
+
+FD-158@DESKTOP-2AS8COK MINGW64 ~/Documents/tutorial (npm_study)
+$ cd npm
+
+FD-158@DESKTOP-2AS8COK MINGW64 ~/Documents/tutorial/npm (npm_study)
+$ ls
+20220409学習内容.txt  20220501学習内容.txt  node_modules/  package.json  package-lock.json
+
+FD-158@DESKTOP-2AS8COK MINGW64 ~/Documents/tutorial/npm (npm_study)
+$ npm root -g
+C:\Users\FD-158\AppData\Roaming\npm\node_modules
+
+FD-158@DESKTOP-2AS8COK MINGW64 ~/Documents/tutorial/npm (npm_study)
+$ npm root
+C:\Users\FD-158\Documents\tutorial\npm\node_modules
+
+FD-158@DESKTOP-2AS8COK MINGW64 ~/Documents/tutorial/npm (npm_study)
+$ npm list
+npm@1.0.0 C:\Users\FD-158\Documents\tutorial\npm
+└── (empty)
+
+
+FD-158@DESKTOP-2AS8COK MINGW64 ~/Documents/tutorial/npm (npm_study)
+$ npm list -g --depth=0
+C:\Users\FD-158\AppData\Roaming\npm
+└── @google/clasp@2.4.1
+
+
+FD-158@DESKTOP-2AS8COK MINGW64 ~/Documents/tutorial/npm (npm_study)
+$ npm list -g
+C:\Users\FD-158\AppData\Roaming\npm
+└── @google/clasp@2.4.1
+
+
+FD-158@DESKTOP-2AS8COK MINGW64 ~/Documents/tutorial/npm (npm_study)
+$ ls
+20220409学習内容.txt  20220501学習内容.txt  node_modules/  package.json  package-lock.json
+
+FD-158@DESKTOP-2AS8COK MINGW64 ~/Documents/tutorial/npm (npm_study)
+$ less package.json
+
+FD-158@DESKTOP-2AS8COK MINGW64 ~/Documents/tutorial/npm (npm_study)
+$ less package.json
+
+FD-158@DESKTOP-2AS8COK MINGW64 ~/Documents/tutorial/npm (npm_study)
+$ ls
+20220409学習内容.txt  20220501学習内容.txt  node_modules/  package.json  package-lock.json
+
+FD-158@DESKTOP-2AS8COK MINGW64 ~/Documents/tutorial/npm (npm_study)
+$ less package-look.json
+package-look.json: No such file or directory
+
+FD-158@DESKTOP-2AS8COK MINGW64 ~/Documents/tutorial/npm (npm_study)
+$ less package-lock.json
+
+FD-158@DESKTOP-2AS8COK MINGW64 ~/Documents/tutorial/npm (npm_study)
+$ rm package.json
+
+FD-158@DESKTOP-2AS8COK MINGW64 ~/Documents/tutorial/npm (npm_study)
+$ ls
+20220409学習内容.txt  20220501学習内容.txt  node_modules/  package-lock.json
+
+FD-158@DESKTOP-2AS8COK MINGW64 ~/Documents/tutorial/npm (npm_study)
+$ rm package-lock.json
+
+FD-158@DESKTOP-2AS8COK MINGW64 ~/Documents/tutorial/npm (npm_study)
+$ ls
+20220409学習内容.txt  20220501学習内容.txt  node_modules/
+
+FD-158@DESKTOP-2AS8COK MINGW64 ~/Documents/tutorial/npm (npm_study)
+$ cd node_modules
+
+FD-158@DESKTOP-2AS8COK MINGW64 ~/Documents/tutorial/npm/node_modules (npm_study)
+$ ls
+
+FD-158@DESKTOP-2AS8COK MINGW64 ~/Documents/tutorial/npm/node_modules (npm_study)
+$ cd ..
+
+FD-158@DESKTOP-2AS8COK MINGW64 ~/Documents/tutorial/npm (npm_study)
+$ rm node_modules
+rm: cannot remove 'node_modules': Is a directory
+
+FD-158@DESKTOP-2AS8COK MINGW64 ~/Documents/tutorial/npm (npm_study)
+$ ls
+20220409学習内容.txt  20220501学習内容.txt  node_modules/
+
+FD-158@DESKTOP-2AS8COK MINGW64 ~/Documents/tutorial/npm (npm_study)
+$ vi memo.txt
+
+FD-158@DESKTOP-2AS8COK MINGW64 ~/Documents/tutorial/npm (npm_study)
+$ rmdir node_modules
+rmdir: failed to remove 'node_modules': Directory not empty
+
+FD-158@DESKTOP-2AS8COK MINGW64 ~/Documents/tutorial/npm (npm_study)
+$ ls node_modules
+
+FD-158@DESKTOP-2AS8COK MINGW64 ~/Documents/tutorial/npm (npm_study)
+$ cd node_modules
+
+FD-158@DESKTOP-2AS8COK MINGW64 ~/Documents/tutorial/npm/node_modules (npm_study)
+$ ls 
+
+FD-158@DESKTOP-2AS8COK MINGW64 ~/Documents/tutorial/npm/node_modules (npm_study)
+$ cd ..
+
+FD-158@DESKTOP-2AS8COK MINGW64 ~/Documents/tutorial/npm (npm_study)
+$ rm node_modules -f
+rm: cannot remove 'node_modules': Is a directory
+
+FD-158@DESKTOP-2AS8COK MINGW64 ~/Documents/tutorial/npm (npm_study)
+$ rm -r node_mudules
+rm: cannot remove 'node_mudules': No such file or directory
+
+FD-158@DESKTOP-2AS8COK MINGW64 ~/Documents/tutorial/npm (npm_study)
+$ rmdir -r node_modules
+rmdir: unknown option -- r
+Try 'rmdir --help' for more information.
+
+FD-158@DESKTOP-2AS8COK MINGW64 ~/Documents/tutorial/npm (npm_study)
+$ rmdir node_modules
+rmdir: failed to remove 'node_modules': Directory not empty
+
+FD-158@DESKTOP-2AS8COK MINGW64 ~/Documents/tutorial/npm (npm_study)
+$ rm -r node_modules
+
+FD-158@DESKTOP-2AS8COK MINGW64 ~/Documents/tutorial/npm (npm_study)
+$ ls
+20220409学習内容.txt  20220501学習内容.txt  memo.txt
+
+FD-158@DESKTOP-2AS8COK MINGW64 ~/Documents/tutorial/npm (npm_study)
+$ npm init
+This utility will walk you through creating a package.json file.
+It only covers the most common items, and tries to guess sensible defaults.
+
+See `npm help init` for definitive documentation on these fields
+and exactly what they do.
+
+Use `npm install <pkg>` afterwards to install a package and
+save it as a dependency in the package.json file.
+
+Press ^C at any time to quit.
+package name: (npm)
+version: (1.0.0)
+description:
+entry point: (index.js)
+test command:
+git repository:
+keywords:
+author:
+license: (ISC)
+About to write to C:\Users\FD-158\Documents\tutorial\npm\package.json:
+
+{
+  "name": "npm",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+{
+  "name": "npm",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}
+...skipping...
+}
+
+
+Is this OK? (yes) y
+
+FD-158@DESKTOP-2AS8COK MINGW64 ~/Documents/tutorial/npm (npm_study)
+$ les
+bash: les: command not found
+
+FD-158@DESKTOP-2AS8COK MINGW64 ~/Documents/tutorial/npm (npm_study)
+$ ls
+20220409学習内容.txt  20220501学習内容.txt  memo.txt  package.json
+
+FD-158@DESKTOP-2AS8COK MINGW64 ~/Documents/tutorial/npm (npm_study)
+$ less packaga.json
+packaga.json: No such file or directory
+
+FD-158@DESKTOP-2AS8COK MINGW64 ~/Documents/tutorial/npm (npm_study)
+$ less package.json
+
+FD-158@DESKTOP-2AS8COK MINGW64 ~/Documents/tutorial/npm (npm_study)
+$ npm help package.json
+
+FD-158@DESKTOP-2AS8COK MINGW64 ~/Documents/tutorial/npm (npm_study)
+$ npm install jquery
+
+added 1 package, and audited 2 packages in 5s
+
+found 0 vulnerabilities
+
+FD-158@DESKTOP-2AS8COK MINGW64 ~/Documents/tutorial/npm (npm_study)
+$ ls[
+> ^C
+
+FD-158@DESKTOP-2AS8COK MINGW64 ~/Documents/tutorial/npm (npm_study)
+$ ls
+20220409学習内容.txt  20220501学習内容.txt  memo.txt  node_modules/  package.json  package-lock.json
+
+FD-158@DESKTOP-2AS8COK MINGW64 ~/Documents/tutorial/npm (npm_study)
+$ ls node_modeules
+ls: cannot access 'node_modeules': No such file or directory
+
+FD-158@DESKTOP-2AS8COK MINGW64 ~/Documents/tutorial/npm (npm_study)
+$ ls node_modules
+jquery/
+
+FD-158@DESKTOP-2AS8COK MINGW64 ~/Documents/tutorial/npm (npm_study)
+$ less package.json
+
+{
+  "name": "npm",
+  "version": "1.0.0",
+  "lockfileVersion": 2,
+  "requires": true,
+  "packages": {
+    "": {
+      "name": "npm",
+      "version": "1.0.0",
+      "license": "ISC",
+      "dependencies": {
+        "jquery": "^3.6.0",
+        "sass": "^1.22.12"
+      }
+    },
+    "node_modules/anymatch": {
+      "version": "3.1.2",
+      "resolved": "https://registry.npmjs.org/anymatch/-/anymatch-3.1.2.tgz",
+      "integrity": "sha512-P43ePfOAIupkguHUycrc4qJ9kz8ZiuOUijaETwX7THt0Y/GNK7v0aa8rY816xWjZ7rJdA5XdMcpVFTKMq+RvWg==",
+FD-158@DESKTOP-2AS8COK MINGW64 ~/Documents/tutorial/npm (npm_study)
+$ npm install sass@1.22.12
+
+added 15 packages, and audited 17 packages in 5s
+
+2 packages are looking for funding
+  run `npm fund` for details
+
+found 0 vulnerabilities
+
+FD-158@DESKTOP-2AS8COK MINGW64 ~/Documents/tutorial/npm (npm_study)
+$ ls
+20220409学習内容.txt  20220501学習内容.txt  memo.txt  node_modules/  package.json  package-lock.json
+
+FD-158@DESKTOP-2AS8COK MINGW64 ~/Documents/tutorial/npm (npm_study)
+$ less package.json
+
+FD-158@DESKTOP-2AS8COK MINGW64 ~/Documents/tutorial/npm (npm_study)
+$ less package-lock.json
+
+FD-158@DESKTOP-2AS8COK MINGW64 ~/Documents/tutorial/npm (npm_study)
+$ cat package-lock.json
+{
+  "name": "npm",
+  "version": "1.0.0",
+  "lockfileVersion": 2,
+  "requires": true,
+  "packages": {
+    "": {
+      "name": "npm",
+      "version": "1.0.0",
+      "license": "ISC",
+      "dependencies": {
+        "jquery": "^3.6.0",
+        "sass": "^1.22.12"
+      }
+    },
+    "node_modules/anymatch": {
+      "version": "3.1.2",
+      "resolved": "https://registry.npmjs.org/anymatch/-/anymatch-3.1.2.tgz",
+      "integrity": "sha512-P43ePfOAIupkguHUycrc4qJ9kz8ZiuOUijaETwX7THt0Y/GNK7v0aa8rY816xWjZ7rJdA5XdMcpVFTKMq+RvWg==",
+      "dependencies": {
+        "normalize-path": "^3.0.0",
+        "picomatch": "^2.0.4"
+      },
+      "engines": {
+        "node": ">= 8"
+      }
+    },
+    "node_modules/binary-extensions": {
+      "version": "2.2.0",
+      "resolved": "https://registry.npmjs.org/binary-extensions/-/binary-extensions-2.2.0.tgz",
+      "integrity": "sha512-jDctJ/IVQbZoJykoeHbhXpOlNBqGNcwXJKJog42E5HDPUwQTSdjCHdihjj0DlnheQ7blbT6dHOafNAiS8ooQKA==",
+      "engines": {
+        "node": ">=8"
+      }
+    },
+    "node_modules/braces": {
+      "version": "3.0.2",
+      "resolved": "https://registry.npmjs.org/braces/-/braces-3.0.2.tgz",
+      "integrity": "sha512-b8um+L1RzM3WDSzvhm6gIz1yfTbBt6YTlcEKAvsmqCZZFw46z626lVj9j1yEPW33H5H+lBQpZMP1k8l+78Ha0A==",
+      "dependencies": {
+        "fill-range": "^7.0.1"
+      },
+      "engines": {
+        "node": ">=8"
+      }
+    },
+    "node_modules/chokidar": {
+      "version": "3.5.3",
+      "resolved": "https://registry.npmjs.org/chokidar/-/chokidar-3.5.3.tgz",
+      "integrity": "sha512-Dr3sfKRP6oTcjf2JmUmFJfeVMvXBdegxB0iVQ5eb2V10uFJUCAS8OByZdVAyVb8xXNz3GjjTgj9kLWsZTqE6kw==",
+      "funding": [
+        {
+          "type": "individual",
+          "url": "https://paulmillr.com/funding/"
+        }
+      ],
+      "dependencies": {
+        "anymatch": "~3.1.2",
+        "braces": "~3.0.2",
+        "glob-parent": "~5.1.2",
+        "is-binary-path": "~2.1.0",
+        "is-glob": "~4.0.1",
+        "normalize-path": "~3.0.0",
+        "readdirp": "~3.6.0"
+      },
+      "engines": {
+        "node": ">= 8.10.0"
+      },
+      "optionalDependencies": {
+        "fsevents": "~2.3.2"
+      }
+    },
+    "node_modules/fill-range": {
+      "version": "7.0.1",
+      "resolved": "https://registry.npmjs.org/fill-range/-/fill-range-7.0.1.tgz",
+      "integrity": "sha512-qOo9F+dMUmC2Lcb4BbVvnKJxTPjCm+RRpe4gDuGrzkL7mEVl/djYSu2OdQ2Pa302N4oqkSg9ir6jaLWJ2USVpQ==",
+      "dependencies": {
+        "to-regex-range": "^5.0.1"
+      },
+      "engines": {
+        "node": ">=8"
+      }
+    },
+    "node_modules/fsevents": {
+      "version": "2.3.2",
+      "resolved": "https://registry.npmjs.org/fsevents/-/fsevents-2.3.2.tgz",
+      "integrity": "sha512-xiqMQR4xAeHTuB9uWm+fFRcIOgKBMiOBP+eXiyT7jsgVCq1bkVygt00oASowB7EdtpOHaaPgKt812P9ab+DDKA==",
+      "hasInstallScript": true,
+      "optional": true,
+      "os": [
+        "darwin"
+      ],
+      "engines": {
+        "node": "^8.16.0 || ^10.6.0 || >=11.0.0"
+      }
+    },
+    "node_modules/glob-parent": {
+      "version": "5.1.2",
+      "resolved": "https://registry.npmjs.org/glob-parent/-/glob-parent-5.1.2.tgz",
+      "integrity": "sha512-AOIgSQCepiJYwP3ARnGx+5VnTu2HBYdzbGP45eLw1vr3zB3vZLeyed1sC9hnbcOc9/SrMyM5RPQrkGz4aS9Zow==",
+      "dependencies": {
+        "is-glob": "^4.0.1"
+      },
+      "engines": {
+        "node": ">= 6"
+      }
+    },
+    "node_modules/is-binary-path": {
+      "version": "2.1.0",
+      "resolved": "https://registry.npmjs.org/is-binary-path/-/is-binary-path-2.1.0.tgz",
+      "integrity": "sha512-ZMERYes6pDydyuGidse7OsHxtbI7WVeUEozgR/g7rd0xUimYNlvZRE/K2MgZTjWy725IfelLeVcEM97mmtRGXw==",
+      "dependencies": {
+        "binary-extensions": "^2.0.0"
+      },
+      "engines": {
+        "node": ">=8"
+      }
+    },
+    "node_modules/is-extglob": {
+      "version": "2.1.1",
+      "resolved": "https://registry.npmjs.org/is-extglob/-/is-extglob-2.1.1.tgz",
+      "integrity": "sha1-qIwCU1eR8C7TfHahueqXc8gz+MI=",
+      "engines": {
+        "node": ">=0.10.0"
+      }
+    },
+    "node_modules/is-glob": {
+      "version": "4.0.3",
+      "resolved": "https://registry.npmjs.org/is-glob/-/is-glob-4.0.3.tgz",
+      "integrity": "sha512-xelSayHH36ZgE7ZWhli7pW34hNbNl8Ojv5KVmkJD4hBdD3th8Tfk9vYasLM+mXWOZhFkgZfxhLSnrwRr4elSSg==",
+      "dependencies": {
+        "is-extglob": "^2.1.1"
+      },
+      "engines": {
+        "node": ">=0.10.0"
+      }
+    },
+    "node_modules/is-number": {
+      "version": "7.0.0",
+      "resolved": "https://registry.npmjs.org/is-number/-/is-number-7.0.0.tgz",
+      "integrity": "sha512-41Cifkg6e8TylSpdtTpeLVMqvSBEVzTttHvERD741+pnZ8ANv0004MRL43QKPDlK9cGvNp6NZWZUBlbGXYxxng==",
+      "engines": {
+        "node": ">=0.12.0"
+      }
+    },
+    "node_modules/jquery": {
+      "version": "3.6.0",
+      "resolved": "https://registry.npmjs.org/jquery/-/jquery-3.6.0.tgz",
+      "integrity": "sha512-JVzAR/AjBvVt2BmYhxRCSYysDsPcssdmTFnzyLEts9qNwmjmu4JTAMYubEfwVOSwpQ1I1sKKFcxhZCI2buerfw=="
+    },
+    "node_modules/normalize-path": {
+      "version": "3.0.0",
+      "resolved": "https://registry.npmjs.org/normalize-path/-/normalize-path-3.0.0.tgz",
+      "integrity": "sha512-6eZs5Ls3WtCisHWp9S2GUy8dqkpGi4BVSz3GaqiE6ezub0512ESztXUwUB6C6IKbQkY2Pnb/mD4WYojCRwcwLA==",
+      "engines": {
+        "node": ">=0.10.0"
+      }
+    },
+    "node_modules/picomatch": {
+      "version": "2.3.1",
+      "resolved": "https://registry.npmjs.org/picomatch/-/picomatch-2.3.1.tgz",
+      "integrity": "sha512-JU3teHTNjmE2VCGFzuY8EXzCDVwEqB2a8fsIvwaStHhAWJEeVd1o1QD80CU6+ZdEXXSLbSsuLwJjkCBWqRQUVA==",
+      "engines": {
+        "node": ">=8.6"
+      },
+      "funding": {
+        "url": "https://github.com/sponsors/jonschlinkert"
+      }
+    },
+    "node_modules/readdirp": {
+      "version": "3.6.0",
+      "resolved": "https://registry.npmjs.org/readdirp/-/readdirp-3.6.0.tgz",
+      "integrity": "sha512-hOS089on8RduqdbhvQ5Z37A0ESjsqz6qnRcffsMU3495FuTdqSm+7bhJ29JvIOsBDEEnan5DPu9t3To9VRlMzA==",
+      "dependencies": {
+        "picomatch": "^2.2.1"
+      },
+      "engines": {
+        "node": ">=8.10.0"
+      }
+    },
+    "node_modules/sass": {
+      "version": "1.22.12",
+      "resolved": "https://registry.npmjs.org/sass/-/sass-1.22.12.tgz",
+      "integrity": "sha512-u5Rxn+dKTPCW5/11kMNxtmqKsxCjcpnqj9CaJoru1NqeJ0DOa9rOM00e0HqmseTAatGkKoLY+jaNecMYevu1gg==",
+      "dependencies": {
+        "chokidar": ">=2.0.0 <4.0.0"
+      },
+      "bin": {
+        "sass": "sass.js"
+      },
+      "engines": {
+        "node": ">=8.9.0"
+      }
+    },
+    "node_modules/to-regex-range": {
+      "version": "5.0.1",
+      "resolved": "https://registry.npmjs.org/to-regex-range/-/to-regex-range-5.0.1.tgz",
+      "integrity": "sha512-65P7iz6X5yEr1cwcgvQxbbIw7Uk3gOy5dIdtZ4rDveLqhrdJP+Li/Hx6tyK0NEb+2GCyneCMJiGqrADCSNk8sQ==",
+      "dependencies": {
+        "is-number": "^7.0.0"
+      },
+      "engines": {
+        "node": ">=8.0"
+      }
+    }
+  },
+  "dependencies": {
+    "anymatch": {
+      "version": "3.1.2",
+      "resolved": "https://registry.npmjs.org/anymatch/-/anymatch-3.1.2.tgz",
+      "integrity": "sha512-P43ePfOAIupkguHUycrc4qJ9kz8ZiuOUijaETwX7THt0Y/GNK7v0aa8rY816xWjZ7rJdA5XdMcpVFTKMq+RvWg==",
+      "requires": {
+        "normalize-path": "^3.0.0",
+        "picomatch": "^2.0.4"
+      }
+    },
+    "binary-extensions": {
+      "version": "2.2.0",
+      "resolved": "https://registry.npmjs.org/binary-extensions/-/binary-extensions-2.2.0.tgz",
+      "integrity": "sha512-jDctJ/IVQbZoJykoeHbhXpOlNBqGNcwXJKJog42E5HDPUwQTSdjCHdihjj0DlnheQ7blbT6dHOafNAiS8ooQKA=="
+    },
+    "braces": {
+      "version": "3.0.2",
+      "resolved": "https://registry.npmjs.org/braces/-/braces-3.0.2.tgz",
+      "integrity": "sha512-b8um+L1RzM3WDSzvhm6gIz1yfTbBt6YTlcEKAvsmqCZZFw46z626lVj9j1yEPW33H5H+lBQpZMP1k8l+78Ha0A==",
+      "requires": {
+        "fill-range": "^7.0.1"
+      }
+    },
+    "chokidar": {
+      "version": "3.5.3",
+      "resolved": "https://registry.npmjs.org/chokidar/-/chokidar-3.5.3.tgz",
+      "integrity": "sha512-Dr3sfKRP6oTcjf2JmUmFJfeVMvXBdegxB0iVQ5eb2V10uFJUCAS8OByZdVAyVb8xXNz3GjjTgj9kLWsZTqE6kw==",
+      "requires": {
+        "anymatch": "~3.1.2",
+        "braces": "~3.0.2",
+        "fsevents": "~2.3.2",
+        "glob-parent": "~5.1.2",
+        "is-binary-path": "~2.1.0",
+        "is-glob": "~4.0.1",
+        "normalize-path": "~3.0.0",
+        "readdirp": "~3.6.0"
+      }
+    },
+    "fill-range": {
+      "version": "7.0.1",
+      "resolved": "https://registry.npmjs.org/fill-range/-/fill-range-7.0.1.tgz",
+      "integrity": "sha512-qOo9F+dMUmC2Lcb4BbVvnKJxTPjCm+RRpe4gDuGrzkL7mEVl/djYSu2OdQ2Pa302N4oqkSg9ir6jaLWJ2USVpQ==",
+      "requires": {
+        "to-regex-range": "^5.0.1"
+      }
+    },
+    "fsevents": {
+      "version": "2.3.2",
+      "resolved": "https://registry.npmjs.org/fsevents/-/fsevents-2.3.2.tgz",
+      "integrity": "sha512-xiqMQR4xAeHTuB9uWm+fFRcIOgKBMiOBP+eXiyT7jsgVCq1bkVygt00oASowB7EdtpOHaaPgKt812P9ab+DDKA==",
+      "optional": true
+    },
+    "glob-parent": {
+      "version": "5.1.2",
+      "resolved": "https://registry.npmjs.org/glob-parent/-/glob-parent-5.1.2.tgz",
+      "integrity": "sha512-AOIgSQCepiJYwP3ARnGx+5VnTu2HBYdzbGP45eLw1vr3zB3vZLeyed1sC9hnbcOc9/SrMyM5RPQrkGz4aS9Zow==",
+      "requires": {
+        "is-glob": "^4.0.1"
+      }
+    },
+    "is-binary-path": {
+      "version": "2.1.0",
+      "resolved": "https://registry.npmjs.org/is-binary-path/-/is-binary-path-2.1.0.tgz",
+      "integrity": "sha512-ZMERYes6pDydyuGidse7OsHxtbI7WVeUEozgR/g7rd0xUimYNlvZRE/K2MgZTjWy725IfelLeVcEM97mmtRGXw==",
+      "requires": {
+        "binary-extensions": "^2.0.0"
+      }
+    },
+    "is-extglob": {
+      "version": "2.1.1",
+      "resolved": "https://registry.npmjs.org/is-extglob/-/is-extglob-2.1.1.tgz",
+      "integrity": "sha1-qIwCU1eR8C7TfHahueqXc8gz+MI="
+    },
+    "is-glob": {
+      "version": "4.0.3",
+      "resolved": "https://registry.npmjs.org/is-glob/-/is-glob-4.0.3.tgz",
+      "integrity": "sha512-xelSayHH36ZgE7ZWhli7pW34hNbNl8Ojv5KVmkJD4hBdD3th8Tfk9vYasLM+mXWOZhFkgZfxhLSnrwRr4elSSg==",
+      "requires": {
+        "is-extglob": "^2.1.1"
+      }
+    },
+    "is-number": {
+      "version": "7.0.0",
+      "resolved": "https://registry.npmjs.org/is-number/-/is-number-7.0.0.tgz",
+      "integrity": "sha512-41Cifkg6e8TylSpdtTpeLVMqvSBEVzTttHvERD741+pnZ8ANv0004MRL43QKPDlK9cGvNp6NZWZUBlbGXYxxng=="
+    },
+    "jquery": {
+      "version": "3.6.0",
+      "resolved": "https://registry.npmjs.org/jquery/-/jquery-3.6.0.tgz",
+      "integrity": "sha512-JVzAR/AjBvVt2BmYhxRCSYysDsPcssdmTFnzyLEts9qNwmjmu4JTAMYubEfwVOSwpQ1I1sKKFcxhZCI2buerfw=="
+    },
+    "normalize-path": {
+      "version": "3.0.0",
+      "resolved": "https://registry.npmjs.org/normalize-path/-/normalize-path-3.0.0.tgz",
+      "integrity": "sha512-6eZs5Ls3WtCisHWp9S2GUy8dqkpGi4BVSz3GaqiE6ezub0512ESztXUwUB6C6IKbQkY2Pnb/mD4WYojCRwcwLA=="
+    },
+    "picomatch": {
+      "version": "2.3.1",
+      "resolved": "https://registry.npmjs.org/picomatch/-/picomatch-2.3.1.tgz",
+      "integrity": "sha512-JU3teHTNjmE2VCGFzuY8EXzCDVwEqB2a8fsIvwaStHhAWJEeVd1o1QD80CU6+ZdEXXSLbSsuLwJjkCBWqRQUVA=="
+    },
+    "readdirp": {
+      "version": "3.6.0",
+      "resolved": "https://registry.npmjs.org/readdirp/-/readdirp-3.6.0.tgz",
+      "integrity": "sha512-hOS089on8RduqdbhvQ5Z37A0ESjsqz6qnRcffsMU3495FuTdqSm+7bhJ29JvIOsBDEEnan5DPu9t3To9VRlMzA==",
+      "requires": {
+        "picomatch": "^2.2.1"
+      }
+    },
+    "sass": {
+      "version": "1.22.12",
+      "resolved": "https://registry.npmjs.org/sass/-/sass-1.22.12.tgz",
+      "integrity": "sha512-u5Rxn+dKTPCW5/11kMNxtmqKsxCjcpnqj9CaJoru1NqeJ0DOa9rOM00e0HqmseTAatGkKoLY+jaNecMYevu1gg==",
+      "requires": {
+        "chokidar": ">=2.0.0 <4.0.0"
+      }
+    },
+    "to-regex-range": {
+      "version": "5.0.1",
+      "resolved": "https://registry.npmjs.org/to-regex-range/-/to-regex-range-5.0.1.tgz",
+      "integrity": "sha512-65P7iz6X5yEr1cwcgvQxbbIw7Uk3gOy5dIdtZ4rDveLqhrdJP+Li/Hx6tyK0NEb+2GCyneCMJiGqrADCSNk8sQ==",
+      "requires": {
+        "is-number": "^7.0.0"
+      }
+    }
+  }
+}
+
+FD-158@DESKTOP-2AS8COK MINGW64 ~/Documents/tutorial/npm (npm_study)
+$ cat package.json
+{
+  "name": "npm",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "jquery": "^3.6.0",
+    "sass": "^1.22.12"
+  }
+}
+
+FD-158@DESKTOP-2AS8COK MINGW64 ~/Documents/tutorial/npm (npm_study)
+$ ls
+20220409学習内容.txt  20220501学習内容.txt  memo.txt  node_modules/  package.json  package-lock.json
+
+FD-158@DESKTOP-2AS8COK MINGW64 ~/Documents/tutorial/npm (npm_study)
+$ cd ..
+
+FD-158@DESKTOP-2AS8COK MINGW64 ~/Documents/tutorial (npm_study)
+$ ls
+gas_edu/  github/  npm/  sample.txt  unix_linux/  よく使う記述.txt
+
+FD-158@DESKTOP-2AS8COK MINGW64 ~/Documents/tutorial (npm_study)
+$ mkdir npm_copy
+
+FD-158@DESKTOP-2AS8COK MINGW64 ~/Documents/tutorial (npm_study)
+$ ls
+gas_edu/  github/  npm/  npm_copy/  sample.txt  unix_linux/  よく使う記述.txt
+
+FD-158@DESKTOP-2AS8COK MINGW64 ~/Documents/tutorial (npm_study)
+$ cd npm
+
+FD-158@DESKTOP-2AS8COK MINGW64 ~/Documents/tutorial/npm (npm_study)
+$ ls
+20220409学習内容.txt  20220501学習内容.txt  memo.txt  node_modules/  package.json  package-lock.json
+
+FD-158@DESKTOP-2AS8COK MINGW64 ~/Documents/tutorial/npm (npm_study)
+$ cp package.json ../npm_copy/package.json
+
+FD-158@DESKTOP-2AS8COK MINGW64 ~/Documents/tutorial/npm (npm_study)
+$ ls
+20220409学習内容.txt  20220501学習内容.txt  memo.txt  node_modules/  package.json  package-lock.json
+
+FD-158@DESKTOP-2AS8COK MINGW64 ~/Documents/tutorial/npm (npm_study)
+$ cd ..
+
+FD-158@DESKTOP-2AS8COK MINGW64 ~/Documents/tutorial (npm_study)
+$ ls
+gas_edu/  github/  npm/  npm_copy/  sample.txt  unix_linux/  よく使う記述.txt
+
+FD-158@DESKTOP-2AS8COK MINGW64 ~/Documents/tutorial (npm_study)
+$ cd npm_copy
+
+FD-158@DESKTOP-2AS8COK MINGW64 ~/Documents/tutorial/npm_copy (npm_study)
+$ ls
+package.json
+
+FD-158@DESKTOP-2AS8COK MINGW64 ~/Documents/tutorial/npm_copy (npm_study)
+$ npm install
+
+added 18 packages, and audited 19 packages in 6s
+
+2 packages are looking for funding
+  run `npm fund` for details
+
+found 0 vulnerabilities
+
+FD-158@DESKTOP-2AS8COK MINGW64 ~/Documents/tutorial/npm_copy (npm_study)
+$ ls
+node_modules/  package.json  package-lock.json
+
+FD-158@DESKTOP-2AS8COK MINGW64 ~/Documents/tutorial/npm_copy (npm_study)
+$ cat package.json
+{
+  "name": "npm",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "jquery": "^3.6.0",
+    "sass": "^1.22.12"
+  }
+}
+
+FD-158@DESKTOP-2AS8COK MINGW64 ~/Documents/tutorial/npm_copy (npm_study)
+$ ls
+node_modules/  package.json  package-lock.json
+
+FD-158@DESKTOP-2AS8COK MINGW64 ~/Documents/tutorial/npm_copy (npm_study)
+$ ls node_modules
+anymatch/           braces/    fill-range/   immutable/       is-extglob/  is-number/  normalize-path/  readdirp/  source-map-js/
+binary-extensions/  chokidar/  glob-parent/  is-binary-path/  is-glob/     jquery/     picomatch/       sass/      to-regex-range/
+
+FD-158@DESKTOP-2AS8COK MINGW64 ~/Documents/tutorial/npm_copy (npm_study)
+$ npm ls sass
+npm@1.0.0 C:\Users\FD-158\Documents\tutorial\npm_copy
+└── sass@1.51.0
+
+
+FD-158@DESKTOP-2AS8COK MINGW64 ~/Documents/tutorial/npm_copy (npm_study)
+$ cd ..
+
+FD-158@DESKTOP-2AS8COK MINGW64 ~/Documents/tutorial (npm_study)
+$ ls
+gas_edu/  github/  npm/  npm_copy/  sample.txt  unix_linux/  よく使う記述.txt
+
+FD-158@DESKTOP-2AS8COK MINGW64 ~/Documents/tutorial (npm_study)
+$ cd npm
+
+FD-158@DESKTOP-2AS8COK MINGW64 ~/Documents/tutorial/npm (npm_study)
+$ ls
+20220409学習内容.txt  20220501学習内容.txt  memo.txt  node_modules/  package.json  package-lock.json
+
+FD-158@DESKTOP-2AS8COK MINGW64 ~/Documents/tutorial/npm (npm_study)
+$ npm install typescript  --save-dev
+
+added 1 package, and audited 18 packages in 11s
+
+2 packages are looking for funding
+  run `npm fund` for details
+
+found 0 vulnerabilities
+
+FD-158@DESKTOP-2AS8COK MINGW64 ~/Documents/tutorial/npm (npm_study)
+$ cat package.json
+{
+  "name": "npm",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "jquery": "^3.6.0",
+    "sass": "^1.22.12"
+  },
+  "devDependencies": {
+    "typescript": "^4.6.4"
+  }
+}
+
+FD-158@DESKTOP-2AS8COK MINGW64 ~/Documents/tutorial/npm (npm_study)
+$ cd ..
+
+FD-158@DESKTOP-2AS8COK MINGW64 ~/Documents/tutorial (npm_study)
+$ ls
+gas_edu/  github/  npm/  npm_copy/  sample.txt  unix_linux/  よく使う記述.txt
+
+FD-158@DESKTOP-2AS8COK MINGW64 ~/Documents/tutorial (npm_study)
+$ mkdir npm_copy2
+
+FD-158@DESKTOP-2AS8COK MINGW64 ~/Documents/tutorial (npm_study)
+$ ls
+gas_edu/  github/  npm/  npm_copy/  npm_copy2/  sample.txt  unix_linux/  よく使う記述.txt
+
+FD-158@DESKTOP-2AS8COK MINGW64 ~/Documents/tutorial (npm_study)
+$ cd npm
+
+FD-158@DESKTOP-2AS8COK MINGW64 ~/Documents/tutorial/npm (npm_study)
+$ ls
+20220409学習内容.txt  20220501学習内容.txt  memo.txt  node_modules/  package.json  package-lock.json
+
+FD-158@DESKTOP-2AS8COK MINGW64 ~/Documents/tutorial/npm (npm_study)
+$ cp package.json ../npm_copy2/package.json
+
+FD-158@DESKTOP-2AS8COK MINGW64 ~/Documents/tutorial/npm (npm_study)
+$ ls
+20220409学習内容.txt  20220501学習内容.txt  memo.txt  node_modules/  package.json  package-lock.json
+
+FD-158@DESKTOP-2AS8COK MINGW64 ~/Documents/tutorial/npm (npm_study)
+$ cd ..
+
+FD-158@DESKTOP-2AS8COK MINGW64 ~/Documents/tutorial (npm_study)
+$ ls
+gas_edu/  github/  npm/  npm_copy/  npm_copy2/  sample.txt  unix_linux/  よく使う記述.txt
+
+FD-158@DESKTOP-2AS8COK MINGW64 ~/Documents/tutorial (npm_study)
+$ cd npm_copy2
+
+FD-158@DESKTOP-2AS8COK MINGW64 ~/Documents/tutorial/npm_copy2 (npm_study)
+$ ls
+package.json
+
+FD-158@DESKTOP-2AS8COK MINGW64 ~/Documents/tutorial/npm_copy2 (npm_study)
+$ npm install
+
+added 19 packages, and audited 20 packages in 9s
+
+2 packages are looking for funding
+  run `npm fund` for details
+
+found 0 vulnerabilities
+
+FD-158@DESKTOP-2AS8COK MINGW64 ~/Documents/tutorial/npm_copy2 (npm_study)
+$ ls
+node_modules/  package.json  package-lock.json
+
+FD-158@DESKTOP-2AS8COK MINGW64 ~/Documents/tutorial/npm_copy2 (npm_study)
+$ cat package.json
+{
+  "name": "npm",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "jquery": "^3.6.0",
+    "sass": "^1.22.12"
+  },
+  "devDependencies": {
+    "typescript": "^4.6.4"
+  }
+}
+
+FD-158@DESKTOP-2AS8COK MINGW64 ~/Documents/tutorial/npm_copy2 (npm_study)
+$ ls node_modules
+anymatch/           braces/    fill-range/   immutable/       is-extglob/  is-number/  normalize-path/  readdirp/  source-map-js/   typescript/
+binary-extensions/  chokidar/  glob-parent/  is-binary-path/  is-glob/     jquery/     picomatch/       sass/      to-regex-range/
+
+FD-158@DESKTOP-2AS8COK MINGW64 ~/Documents/tutorial/npm_copy2 (npm_study)
+$ ls
+node_modules/  package.json  package-lock.json
+
+FD-158@DESKTOP-2AS8COK MINGW64 ~/Documents/tutorial/npm_copy2 (npm_study)
+$ rm -r node_modules
+
+FD-158@DESKTOP-2AS8COK MINGW64 ~/Documents/tutorial/npm_copy2 (npm_study)
+$ ls
+package.json  package-lock.json
+
+FD-158@DESKTOP-2AS8COK MINGW64 ~/Documents/tutorial/npm_copy2 (npm_study)
+$ rm package-lock.json
+
+FD-158@DESKTOP-2AS8COK MINGW64 ~/Documents/tutorial/npm_copy2 (npm_study)
+$ ls
+package.json
+
+FD-158@DESKTOP-2AS8COK MINGW64 ~/Documents/tutorial/npm_copy2 (npm_study)
+$ npm install --production
+
+added 18 packages, and audited 19 packages in 4s
+
+2 packages are looking for funding
+  run `npm fund` for details
+
+found 0 vulnerabilities
+
+FD-158@DESKTOP-2AS8COK MINGW64 ~/Documents/tutorial/npm_copy2 (npm_study)
+$ ls
+node_modules/  package.json  package-lock.json
+
+FD-158@DESKTOP-2AS8COK MINGW64 ~/Documents/tutorial/npm_copy2 (npm_study)
+$ ls node_modules
+anymatch/           braces/    fill-range/   immutable/       is-extglob/  is-number/  normalize-path/  readdirp/  source-map-js/
+binary-extensions/  chokidar/  glob-parent/  is-binary-path/  is-glob/     jquery/     picomatch/       sass/      to-regex-range/
+
+FD-158@DESKTOP-2AS8COK MINGW64 ~/Documents/tutorial/npm_copy2 (npm_study)
+$ npm serch sass
+Unknown command: "serch"
+
+Did you mean this?
+    npm search # Search for packages
+
+To see a list of supported npm commands, run:
+  npm help
+
+FD-158@DESKTOP-2AS8COK MINGW64 ~/Documents/tutorial/npm_copy2 (npm_study)
+$ npm search sass
+NAME                      | DESCRIPTION          | AUTHOR          | DATE       | VERSION  | KEYWORDS
+sass                      | A pure JavaScript…   | =nex3 =xzyfer…  | 2022-04-26 | 1.51.0   | style scss sass preprocessor css
+node-sass                 | Wrapper around…      | =saperski…      | 2021-12-27 | 7.0.1    | css libsass preprocessor sass scss style
+sass-loader               | Sass loader for…     | =evilebottnawi… | 2022-02-15 | 12.6.0   | sass libsass webpack loader
+bootstrap                 | The most popular…    | =bootstrap-adm… | 2021-10-09 | 5.1.3    | css sass mobile-first responsive front-end framework web
+node-sass-middleware      | Connect middleware…  | =andrewnez…     | 2022-02-16 | 1.0.1    | sass css libsass
+stylelint                 | A mighty, modern…    | =ntwb…          | 2022-05-04 | 14.8.2   | css-in-js css less lint linter markdown sass scss stylelint sugarss     
+gulp-sass                 | Gulp plugin for sass | =dlmanning…     | 2021-12-31 | 5.1.0    | gulpplugin sass gulp
+resolve-url-loader        | Webpack loader that… | =bholloway      | 2022-01-17 | 5.0.0    | webpack loader css normalize rewrite resolve url sass relative file     
+sass-true                 | Unit testing for…    | =jerivas…       | 2022-03-02 | 6.1.0    | unit-test test sass libsass TDD eyeglass-module
+bootstrap-sass            | bootstrap-sass is a… | =bootstrap-adm… | 2022-02-28 | 3.4.3    | bootstrap sass css eyeglass-module
+sass-lookup               | Get the file…        | =pahen…         | 2018-11-18 | 3.0.0    | sass lookup dependency import resolution
+node-bourbon              | node-sass wrapper…   | =iamlacroix     | 2016-03-21 | 4.2.8    | sass css
+foundation-sites          | The most advanced…   | =gakimball…     | 2021-11-02 | 6.7.4    | css scss sass js responsive mobile-first framework eyeglass-module handlgrunt-sass-globbing       | @import file map…    | =dbecker        | 2016-04-12 | 1.5.1    | gruntplugin sass libsass postcss less node-sass glob gobbing sass-globbipostcss-scss              | SCSS parser for…     | =ai             | 2022-04-24 | 4.0.4    | css postcss postcss-syntax parser scss sass
+stylelint-config-sass-gui | Sharable stylelint…  | =bjankord       | 2021-10-31 | 9.0.1    | stylelint stylelint-config stylelint-scss scss sass guidelines lint lintdelines                   |                      |                 |            |          |
+postcss-nested            | PostCSS plugin to…   | =ai             | 2021-07-28 | 5.0.6    | postcss css postcss-plugin sass nested
+node-sass-chokidar        | A thin wrapper…      | =wayman         | 2020-06-15 | 1.5.0    | node-sass chokidar node-sass-chokidar libsass
+@styled-jsx/plugin-sass   | Plugin to add Sass…  | =martondev…     | 2021-11-21 | 4.0.2    | styled-jsx-plugin styled-jsx sass scss css-in-js
+@epegzz/sass-vars-loader  | A SASS vars loader…  | =epegzz         | 2021-04-05 | 6.1.0    | scss sass js json vars ts typescript variables webpack loader
+
+FD-158@DESKTOP-2AS8COK MINGW64 ~/Documents/tutorial/npm_copy2 (npm_study)
+$ npm view jquery
+
+jquery@3.6.0 | MIT | deps: none | versions: 53
+JavaScript library for DOM operations
+https://jquery.com
+
+keywords: jquery, javascript, browser, library
+
+dist
+.tarball: https://registry.npmjs.org/jquery/-/jquery-3.6.0.tgz
+.shasum: c72a09f15c1bdce142f49dbf1170bdf8adac2470
+.integrity: sha512-JVzAR/AjBvVt2BmYhxRCSYysDsPcssdmTFnzyLEts9qNwmjmu4JTAMYubEfwVOSwpQ1I1sKKFcxhZCI2buerfw==
+.unpackedSize: 1.3 MB
+
+maintainers:
+- dmethvin <dave.methvin@gmail.com>
+- timmywil <4timmywil@gmail.com>
+- mgol <m.goleb@gmail.com>
+- openjsfoundation <npm@openjsf.org>
+
+dist-tags:
+beta: 3.6.0    latest: 3.6.0
+
+published a year ago by timmywil <4timmywil@gmail.com>
+
+FD-158@DESKTOP-2AS8COK MINGW64 ~/Documents/tutorial/npm_copy2 (npm_study)
+$ npm view jquery version
+3.6.0
+
+FD-158@DESKTOP-2AS8COK MINGW64 ~/Documents/tutorial/npm_copy2 (npm_study)
+$ npm view jquery versions
+[
+  '1.5.1',        '1.6.2',      '1.6.3',        '1.7.2',
+  '1.7.3',        '1.8.2',      '1.8.3',        '1.9.1',
+  '1.11.0-beta3', '1.11.0-rc1', '1.11.0',       '1.11.1-beta1',
+  '1.11.1-rc1',   '1.11.1-rc2', '1.11.1',       '1.11.2',
+  '1.11.3',       '1.12.0',     '1.12.1',       '1.12.2',
+  '1.12.3',       '1.12.4',     '2.1.0-beta2',  '2.1.0-beta3',
+  '2.1.0-rc1',    '2.1.0',      '2.1.1-beta1',  '2.1.1-rc1',
+  '2.1.1-rc2',    '2.1.1',      '2.1.2',        '2.1.3',
+  '2.1.4',        '2.2.0',      '2.2.1',        '2.2.2',
+  '2.2.3',        '2.2.4',      '3.0.0-alpha1', '3.0.0-beta1',
+  '3.0.0-rc1',    '3.0.0',      '3.1.0',        '3.1.1',
+  '3.2.0',        '3.2.1',      '3.3.0',        '3.3.1',
+  '3.4.0',        '3.4.1',      '3.5.0',        '3.5.1',
+  '3.6.0'
+]
+
+FD-158@DESKTOP-2AS8COK MINGW64 ~/Documents/tutorial/npm_copy2 (npm_study)
+$ cat package.json
+{
+  "name": "npm",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "jquery": "^3.6.0",
+    "sass": "^1.22.12"
+  },
+  "devDependencies": {
+    "typescript": "^4.6.4"
+  }
+}
+
+FD-158@DESKTOP-2AS8COK MINGW64 ~/Documents/tutorial/npm_copy2 (npm_study)
+$ ls
+node_modules/  package.json  package-lock.json
+
+FD-158@DESKTOP-2AS8COK MINGW64 ~/Documents/tutorial/npm_copy2 (npm_study)
+$ cd ..
+
+FD-158@DESKTOP-2AS8COK MINGW64 ~/Documents/tutorial (npm_study)
+$ cd npm
+
+FD-158@DESKTOP-2AS8COK MINGW64 ~/Documents/tutorial/npm (npm_study)
+$ ls
+20220409学習内容.txt  20220501学習内容.txt  memo.txt  node_modules/  package.json  package-lock.json
+
+FD-158@DESKTOP-2AS8COK MINGW64 ~/Documents/tutorial/npm (npm_study)
+$ vi package.json
+
+FD-158@DESKTOP-2AS8COK MINGW64 ~/Documents/tutorial/npm (npm_study)
+$ vi index.js
+
+FD-158@DESKTOP-2AS8COK MINGW64 ~/Documents/tutorial/npm (npm_study)
+$ npm start
+
+> npm@1.0.0 start
+> node index.js
+
+Hellow npm!
+
+FD-158@DESKTOP-2AS8COK MINGW64 ~/Documents/tutorial/npm (npm_study)
+$ ls
+20220409学習内容.txt  20220501学習内容.txt  index.js  memo.txt  node_modules/  package.json  package-lock.json
+
+FD-158@DESKTOP-2AS8COK MINGW64 ~/Documents/tutorial/npm (npm_study)
+$ vi package.json
+
+FD-158@DESKTOP-2AS8COK MINGW64 ~/Documents/tutorial/npm (npm_study)
+$ npm run foo
+npm ERR! code EJSONPARSE
+npm ERR! path C:\Users\FD-158\Documents\tutorial\npm/package.json
+npm ERR! JSON.parse Unexpected string in JSON at position 130 while parsing '{
+npm ERR! JSON.parse   "name": "npm",
+npm ERR! JSON.parse   "version": "1.0.0",'
+npm ERR! JSON.parse Failed to parse JSON data.
+npm ERR! JSON.parse Note: package.json must be actual JSON, not just JavaScript.
+
+npm ERR! A complete log of this run can be found in:
+npm ERR!     C:\Users\FD-158\AppData\Local\npm-cache\_logs\2022-05-07T06_42_41_651Z-debug-0.log
+
+FD-158@DESKTOP-2AS8COK MINGW64 ~/Documents/tutorial/npm (npm_study)
+$ vi package.json
+
+FD-158@DESKTOP-2AS8COK MINGW64 ~/Documents/tutorial/npm (npm_study)
+$ npm run foo
+
+> npm@1.0.0 foo
+> echo 'Hellow from Foo!'
+
+'Hellow from Foo!'
+
+FD-158@DESKTOP-2AS8COK MINGW64 ~/Documents/tutorial/npm (npm_study)
+$ npm run foo --silent
+'Hellow from Foo!'
+
+FD-158@DESKTOP-2AS8COK MINGW64 ~/Documents/tutorial/npm (npm_study)
+$ npm foo
+Unknown command: "foo"
+
+Did you mean this?
+    npm run foo # run the "foo" package script
+
+To see a list of supported npm commands, run:
+  npm help
+
+FD-158@DESKTOP-2AS8COK MINGW64 ~/Documents/tutorial/npm (npm_study)
+$ npm start
+
+> npm@1.0.0 start
+> node index.js
+
+Hellow npm!
+
+FD-158@DESKTOP-2AS8COK MINGW64 ~/Documents/tutorial/npm (npm_study)
+$ vi package.json
+
+FD-158@DESKTOP-2AS8COK MINGW64 ~/Documents/tutorial/npm (npm_study)
+$ npm sass-ver --silent
+Unknown command: "sass-ver"
+
+Did you mean this?
+    npm run sass-ver # run the "sass-ver" package script
+
+To see a list of supported npm commands, run:
+  npm help
+
+FD-158@DESKTOP-2AS8COK MINGW64 ~/Documents/tutorial/npm (npm_study)
+$ npm run sass-ver --silent
+1.22.12 compiled with dart2js 2.5.0
+
+FD-158@DESKTOP-2AS8COK MINGW64 ~/Documents/tutorial/npm (npm_study)
+$ npm help run
+
+FD-158@DESKTOP-2AS8COK MINGW64 ~/Documents/tutorial/npm (npm_study)
+$ npm help script
+Top hits for "script"
+————————————————————————————————————————————————————————————————————————————————
+npm help scripts                                                       script:75
+npm help run-script                                                    script:49
+npm help package-json                                                  script:34
+npm help config                                                        script:33
+npm help start                                                         script:23
+npm help restart                                                       script:23
+npm help install                                                       script:21
+npm help stop                                                          script:20
+npm help test                                                          script:19
+npm help version                                                       script:18
+————————————————————————————————————————————————————————————————————————————————
+(run with -l or --long to see more context)
+
+FD-158@DESKTOP-2AS8COK MINGW64 ~/Documents/tutorial/npm (npm_study)
+$ npm help scripts
+
+FD-158@DESKTOP-2AS8COK MINGW64 ~/Documents/tutorial/npm (npm_study)
+$
