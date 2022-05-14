@@ -4,15 +4,15 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-	  "start": "node index.js",
-	  "foo": "echo 'Hellow from Foo!'",
-	  "sass-ver": "sass --version"
+    "start": "node index.js",
+    "foo": "echo 'Hellow from Foo!'",
+    "sass-ver": "sass --version",
+    "cow": "cowsay"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "jquery": "^3.6.0",
-    "sass": "^1.22.12"
+    "sass": "^1.51.0"
   },
   "devDependencies": {
     "typescript": "^4.6.4"

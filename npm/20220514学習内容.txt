@@ -1,0 +1,555 @@
+npm の基本的な使い方
+「package-lock.json」から「npx」まで実際にコマンドを打ちながら読んだ。
+
+＜以下はbashのコマンド履歴＞
+FD-158@DESKTOP-2AS8COK MINGW64 ~/Documents/tutorial (npm_study)
+$ ls
+gas_edu/  github/  npm/  npm_copy/  npm_copy2/  sample.txt  unix_linux/  よく使う記述.txt
+
+FD-158@DESKTOP-2AS8COK MINGW64 ~/Documents/tutorial (npm_study)
+$ git fetch --all
+Fetching tutorial
+Enter passphrase for key '/c/Users/FD-158/.ssh/id_rsa': 
+From github.com:h-yokoyama-eiwa/tutorial
+   9c5fa23..b3af59d  npm_study  -> tutorial/npm_study
+Fetching origin
+Enter passphrase for key '/c/Users/FD-158/.ssh/id_rsa': 
+
+FD-158@DESKTOP-2AS8COK MINGW64 ~/Documents/tutorial (npm_study)
+$ git pull origin npm_study
+Enter passphrase for key '/c/Users/FD-158/.ssh/id_rsa': 
+git@github.com: Permission denied (publickey).
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+
+FD-158@DESKTOP-2AS8COK MINGW64 ~/Documents/tutorial (npm_study)
+$ ls
+gas_edu/  github/  npm/  npm_copy/  npm_copy2/  sample.txt  unix_linux/  よく使う記述.txt
+
+FD-158@DESKTOP-2AS8COK MINGW64 ~/Documents/tutorial (npm_study)
+$ cd npm
+
+FD-158@DESKTOP-2AS8COK MINGW64 ~/Documents/tutorial/npm (npm_study)
+$ ls
+20220409学習内容.txt  20220501学習内容.txt  20220507学習内容.txt  index.js  memo.txt  node_modules/  package.json  package-lock.json
+
+FD-158@DESKTOP-2AS8COK MINGW64 ~/Documents/tutorial/npm (npm_study)
+$ npm ls
+npm@1.0.0 C:\Users\FD-158\Documents\tutorial\npm
+├── jquery@3.6.0
+├── sass@1.22.12
+└── typescript@4.6.4
+
+
+FD-158@DESKTOP-2AS8COK MINGW64 ~/Documents/tutorial/npm (npm_study)
+$ npm list
+npm@1.0.0 C:\Users\FD-158\Documents\tutorial\npm
+├── jquery@3.6.0
+├── sass@1.22.12
+└── typescript@4.6.4
+
+
+FD-158@DESKTOP-2AS8COK MINGW64 ~/Documents/tutorial/npm (npm_study)
+$ npm la
+npm@1.0.0
+│ C:\Users\FD-158\Documents\tutorial\npm
+│
+├── jquery@3.6.0
+│
+├── sass@1.22.12
+│
+└── typescript@4.6.4
+
+
+
+FD-158@DESKTOP-2AS8COK MINGW64 ~/Documents/tutorial/npm (npm_study)
+$ npm ll
+npm@1.0.0
+│ C:\Users\FD-158\Documents\tutorial\npm
+│
+├── jquery@3.6.0
+│
+├── sass@1.22.12
+│
+└── typescript@4.6.4
+
+
+
+FD-158@DESKTOP-2AS8COK MINGW64 ~/Documents/tutorial/npm (npm_study)
+$ npm ls --long
+npm@1.0.0
+│ C:\Users\FD-158\Documents\tutorial\npm
+│
+├── jquery@3.6.0
+│
+├── sass@1.22.12
+│
+└── typescript@4.6.4
+
+
+
+FD-158@DESKTOP-2AS8COK MINGW64 ~/Documents/tutorial/npm (npm_study)
+$ npm root
+C:\Users\FD-158\Documents\tutorial\npm\node_modules
+
+FD-158@DESKTOP-2AS8COK MINGW64 ~/Documents/tutorial/npm (npm_study)
+$ npm root -g
+C:\Users\FD-158\AppData\Roaming\npm\node_modules
+
+FD-158@DESKTOP-2AS8COK MINGW64 ~/Documents/tutorial/npm (npm_study)
+$ npm bin
+C:\Users\FD-158\Documents\tutorial\npm\node_modules\.bin
+
+FD-158@DESKTOP-2AS8COK MINGW64 ~/Documents/tutorial/npm (npm_study)
+$ npm bin -g
+C:\Users\FD-158\AppData\Roaming\npm
+
+FD-158@DESKTOP-2AS8COK MINGW64 ~/Documents/tutorial/npm (npm_study)
+$ npm outdated
+Package  Current  Wanted  Latest  Location           Depended by
+sass     1.22.12  1.51.0  1.51.0  node_modules/sass  npm
+npm notice 
+npm notice New minor version of npm available! 8.3.0 -> 8.10.0
+npm notice Changelog: https://github.com/npm/cli/releases/tag/v8.10.0
+npm notice Run npm install -g npm@8.10.0 to update!
+npm notice
+
+FD-158@DESKTOP-2AS8COK MINGW64 ~/Documents/tutorial/npm (npm_study)
+$ ^C
+
+ セッションの内容が 17:21:56 の 2022/5/14 で復元されました 
+
+
+FD-158@DESKTOP-2AS8COK MINGW64 ~/Documents/tutorial (npm_study)
+$ npm outdated --long
+
+FD-158@DESKTOP-2AS8COK MINGW64 ~/Documents/tutorial (npm_study)
+$ npm outdated
+
+FD-158@DESKTOP-2AS8COK MINGW64 ~/Documents/tutorial (npm_study)
+$ npm ls
+C:\Users\FD-158\Documents\tutorial
+└── (empty)
+
+
+FD-158@DESKTOP-2AS8COK MINGW64 ~/Documents/tutorial (npm_study)
+$ ls
+gas_edu/  github/  npm/  npm_copy/  npm_copy2/  sample.txt  unix_linux/  よく使う記述.txt
+
+FD-158@DESKTOP-2AS8COK MINGW64 ~/Documents/tutorial (npm_study)
+$ cd npm
+
+FD-158@DESKTOP-2AS8COK MINGW64 ~/Documents/tutorial/npm (npm_study)
+$ ls
+20220409学習内容.txt  20220501学習内容.txt  20220507学習内容.txt  index.js  memo.txt  node_modules/  package.json  package-lock.json
+
+FD-158@DESKTOP-2AS8COK MINGW64 ~/Documents/tutorial/npm (npm_study)
+$ npm outdated
+Package  Current  Wanted  Latest  Location           Depended by
+sass     1.22.12  1.51.0  1.51.0  node_modules/sass  npm
+
+FD-158@DESKTOP-2AS8COK MINGW64 ~/Documents/tutorial/npm (npm_study)
+$ npm outdated --long
+Package  Current  Wanted  Latest  Location           Depended by  Package Type  Homepage
+sass     1.22.12  1.51.0  1.51.0  node_modules/sass  npm          dependencies  https://github.com/sass/dart-sass
+
+FD-158@DESKTOP-2AS8COK MINGW64 ~/Documents/tutorial/npm (npm_study)
+$ npm outdated -g
+
+FD-158@DESKTOP-2AS8COK MINGW64 ~/Documents/tutorial/npm (npm_study)
+$ npm ls
+npm@1.0.0 C:\Users\FD-158\Documents\tutorial\npm
+├── jquery@3.6.0
+├── sass@1.22.12
+└── typescript@4.6.4
+
+
+FD-158@DESKTOP-2AS8COK MINGW64 ~/Documents/tutorial/npm (npm_study)
+$ npm outdated
+Package  Current  Wanted  Latest  Location           Depended by
+sass     1.22.12  1.51.0  1.51.0  node_modules/sass  npm
+
+FD-158@DESKTOP-2AS8COK MINGW64 ~/Documents/tutorial/npm (npm_study)
+$ npm update sass
+
+added 2 packages, changed 1 package, and audited 20 packages in 2s
+
+2 packages are looking for funding
+  run `npm fund` for details
+
+found 0 vulnerabilities
+
+FD-158@DESKTOP-2AS8COK MINGW64 ~/Documents/tutorial/npm (npm_study)
+$ npm ls
+npm@1.0.0 C:\Users\FD-158\Documents\tutorial\npm
+├── jquery@3.6.0
+├── sass@1.51.0
+└── typescript@4.6.4
+
+
+FD-158@DESKTOP-2AS8COK MINGW64 ~/Documents/tutorial/npm (npm_study)
+$ npm outdated
+
+FD-158@DESKTOP-2AS8COK MINGW64 ~/Documents/tutorial/npm (npm_study)
+$ npm install -g npm-check-updates
+npm WARN deprecated libnpmconfig@1.2.1: This module is not used anymore. npm config is parsed by npm itself and by @npmcli/config
+
+added 268 packages, and audited 269 packages in 36s
+
+30 packages are looking for funding
+  run `npm fund` for details
+
+found 0 vulnerabilities
+
+FD-158@DESKTOP-2AS8COK MINGW64 ~/Documents/tutorial/npm (npm_study)
+$ ncu -h
+Usage: cli [options] [filter]
+
+[filter] is a list or regex of package names to check (all others will be ignored).
+
+Options:
+  --color                      Force color in terminal
+  --concurrency <n>            Max number of concurrent HTTP requests to registry. (default: 8)
+  --configFileName <filename>  Config file name (default: .ncurc.{json,yml,js})
+  --configFilePath <path>      Directory of .ncurc config file (default: directory of `packageFile`).
+  --cwd <path>                 Working directory in which npm will be executed.
+  --deep                       Run recursively in current working directory. Alias of (--packageFile '**/package.json').
+  --dep <value>                Check one or more sections of dependencies only: dev, optional, peer, prod, bundle (comma-delimited). (default:
+                               "prod,dev,bundle,optional")
+  --deprecated                 Include deprecated packages.
+  --doctor                     Iteratively installs upgrades and runs tests to identify breaking upgrades. Run "ncu --doctor" for detailed help. Add "-u" to
+                               execute.
+  --doctorInstall <command>    Specifies the install script to use in doctor mode (default: npm install/yarn).
+  --doctorTest <command>       Specifies the test script to use in doctor mode (default: npm test).
+  --enginesNode                Include only packages that satisfy engines.node as specified in the package file.
+  -e, --errorLevel <n>         Set the error level. 1: exits with error code 0 if no errors occur. 2: exits with error code 0 if no packages need updating (useful   
+                               for continuous integration). (default: 1)
+  -f, --filter <matches>       Include only package names matching the given string, wildcard, glob, comma-or-space-delimited list, or /regex/.
+  --filterVersion <matches>    Filter on package version using comma-or-space-delimited list, or /regex/.
+  --format <value>             Enable additional output data, string or comma-delimited list: ownerChanged, repo. ownerChanged: shows if the package owner changed   
+                               between versions. repo: infers and displays links to source code repository. (default: [])
+  -g, --global                 Check global packages instead of in the current project.
+  --greatest                   DEPRECATED. Renamed to "--target greatest".
+  -i, --interactive            Enable interactive prompts for each dependency; implies -u unless one of the json options are set.
+  -j, --jsonAll                Output new package file instead of human-readable message.
+  --jsonDeps                   Like `jsonAll` but only lists `dependencies`, `devDependencies`, `optionalDependencies`, etc of the new package data.
+  --jsonUpgraded               Output upgraded dependencies in json.
+  -l, --loglevel <n>           Amount to log: silent, error, minimal, warn, info, verbose, silly. (default: "warn")
+  --mergeConfig                Merges nested configs with the root config file for --deep or --packageFile options (default: false)').
+  -m, --minimal                Do not upgrade newer versions that are already satisfied by the version range according to semver.
+  -n, --newest                 DEPRECATED. Renamed to "--target newest".
+  -o, --ownerChanged           DEPRECATED. Renamed to "--format ownerChanged".
+  --packageData <value>        Package file data (you can also use stdin).
+  --packageFile <path|glob>    Package file(s) location (default: ./package.json).
+  -p, --packageManager <name>  npm, yarn (default: "npm")
+  --peer                       Check peer dependencies of installed packages and filter updates to compatible versions. Run "ncu --help --peer" for details.
+  --pre <n>                    Include -alpha, -beta, -rc. (default: 0; default with --newest and --greatest: 1).
+  --prefix <path>              Current working directory of npm.
+  -r, --registry <url>         Third-party npm registry.
+  -x, --reject <matches>       Exclude packages matching the given string, wildcard, glob, comma-or-space-delimited list, or /regex/.
+  --rejectVersion <matches>    Exclude package.json versions using comma-or-space-delimited list, or /regex/.
+  --removeRange                Remove version ranges from the final package version.
+  --retry <n>                  Number of times to retry failed requests for package info. (default: 3)
+  --semverLevel <value>        DEPRECATED. Renamed to --target.
+  -s, --silent                 Don't output anything (--loglevel silent).
+  -t, --target <value>         Target version to upgrade to: latest, newest, greatest, minor, patch. Run "ncu --help --target" for details.` (default: "latest")     
+  --timeout <ms>               Global timeout in milliseconds. (default: no global timeout and 30 seconds per npm-registry-fetch).
+  -u, --upgrade                Overwrite package file with upgraded versions instead of just outputting to console.
+  -V, --version                output the version number
+  -h, --help                   display help for command
+
+FD-158@DESKTOP-2AS8COK MINGW64 ~/Documents/tutorial/npm (npm_study)
+$ ncu
+Checking C:\Users\FD-158\Documents\tutorial\npm\package.json
+[====================] 3/3 100%
+
+ sass  ^1.22.12  →  ^1.51.0
+
+Run ncu -u to upgrade package.json
+
+FD-158@DESKTOP-2AS8COK MINGW64 ~/Documents/tutorial/npm (npm_study)
+$ npm outdated
+
+FD-158@DESKTOP-2AS8COK MINGW64 ~/Documents/tutorial/npm (npm_study)
+$ ncu sass
+Checking C:\Users\FD-158\Documents\tutorial\npm\package.json
+[====================] 1/1 100%
+
+ sass  ^1.22.12  →  ^1.51.0
+
+Run ncu -u to upgrade package.json
+
+FD-158@DESKTOP-2AS8COK MINGW64 ~/Documents/tutorial/npm (npm_study)
+$ ncu sass jquery
+Checking C:\Users\FD-158\Documents\tutorial\npm\package.json
+[====================] 2/2 100%
+
+ sass  ^1.22.12  →  ^1.51.0
+
+Run ncu -u to upgrade package.json
+
+FD-158@DESKTOP-2AS8COK MINGW64 ~/Documents/tutorial/npm (npm_study)
+$ ls
+20220409学習内容.txt  20220501学習内容.txt  20220507学習内容.txt  index.js  memo.txt  node_modules/  package.json  package-lock.json
+
+FD-158@DESKTOP-2AS8COK MINGW64 ~/Documents/tutorial/npm (npm_study)
+$ less package.json
+
+FD-158@DESKTOP-2AS8COK MINGW64 ~/Documents/tutorial/npm (npm_study)
+$ more package.json
+bash: more: command not found
+
+FD-158@DESKTOP-2AS8COK MINGW64 ~/Documents/tutorial/npm (npm_study)
+$ cat package.json
+{
+  "name": "npm",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+          "start": "node index.js",
+          "foo": "echo 'Hellow from Foo!'",
+          "sass-ver": "sass --version"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "jquery": "^3.6.0",
+    "sass": "^1.22.12"
+  },
+  "devDependencies": {
+    "typescript": "^4.6.4"
+  }
+}
+
+FD-158@DESKTOP-2AS8COK MINGW64 ~/Documents/tutorial/npm (npm_study)
+$ ncu -u
+Upgrading C:\Users\FD-158\Documents\tutorial\npm\package.json
+[====================] 3/3 100%
+
+ sass  ^1.22.12  →  ^1.51.0
+
+Run npm install to install new versions.
+
+
+FD-158@DESKTOP-2AS8COK MINGW64 ~/Documents/tutorial/npm (npm_study)
+$ cat package.jcon
+cat: package.jcon: No such file or directory
+
+FD-158@DESKTOP-2AS8COK MINGW64 ~/Documents/tutorial/npm (npm_study)
+$ cat package.json
+{
+  "name": "npm",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+          "start": "node index.js",
+          "foo": "echo 'Hellow from Foo!'",
+          "sass-ver": "sass --version"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "jquery": "^3.6.0",
+    "sass": "^1.51.0"
+  },
+  "devDependencies": {
+    "typescript": "^4.6.4"
+  }
+}
+
+FD-158@DESKTOP-2AS8COK MINGW64 ~/Documents/tutorial/npm (npm_study)
+$ npm uninstall jquery
+
+removed 1 package, and audited 19 packages in 1s
+
+2 packages are looking for funding
+  run `npm fund` for details
+
+found 0 vulnerabilities
+
+FD-158@DESKTOP-2AS8COK MINGW64 ~/Documents/tutorial/npm (npm_study)
+$ npm ls
+npm@1.0.0 C:\Users\FD-158\Documents\tutorial\npm
+├── sass@1.51.0
+└── typescript@4.6.4
+
+
+FD-158@DESKTOP-2AS8COK MINGW64 ~/Documents/tutorial/npm (npm_study)
+$ npm install cowsay
+
+added 41 packages, and audited 60 packages in 5s
+
+5 packages are looking for funding
+  run `npm fund` for details
+
+found 0 vulnerabilities
+
+FD-158@DESKTOP-2AS8COK MINGW64 ~/Documents/tutorial/npm (npm_study)
+$ npm ls
+npm@1.0.0 C:\Users\FD-158\Documents\tutorial\npm
+├── cowsay@1.5.0
+├── sass@1.51.0
+└── typescript@4.6.4
+
+
+FD-158@DESKTOP-2AS8COK MINGW64 ~/Documents/tutorial/npm (npm_study)
+$ npx cowsay 'hellow'
+ ________
+< hellow >
+ --------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+FD-158@DESKTOP-2AS8COK MINGW64 ~/Documents/tutorial/npm (npm_study)
+$ ls
+20220409学習内容.txt  20220501学習内容.txt  20220507学習内容.txt  index.js  memo.txt  node_modules/  package.json  package-lock.json
+
+FD-158@DESKTOP-2AS8COK MINGW64 ~/Documents/tutorial/npm (npm_study)
+$ ./node_module/.bin/cowsay
+bash: ./node_module/.bin/cowsay: No such file or directory
+
+FD-158@DESKTOP-2AS8COK MINGW64 ~/Documents/tutorial/npm (npm_study)
+$ ./node_modules/.bin/cowsay
+
+Usage: cli.js [-e eye_string] [-f cowfile] [-h] [-l] [-n] [-T tongue_string] [-W
+column] [-bdgpstwy] text
+
+If any command-line arguments are left over after all switches have been
+processed, they become the cow's message.
+
+If the program is invoked as cowthink then the cow will think its message
+instead of saying it.
+
+
+オプション:
+  --version   バージョンを表示                                            [真偽]
+  -e          Select the appearance of the cow's eyes.        [デフォルト: "oo"]
+  -T          The tongue is configurable similarly to the eyes through -T and
+              tongue_string.                                  [デフォルト: "  "]
+  -W          Specifies roughly where the message should be wrapped. The default
+              is equivalent to -W 40 i.e. wrap words at or before the 40th
+              column.                                    [数値] [デフォルト: 40]
+  -f          Specifies a cow picture file (''cowfile'') to use. It can be
+              either a path to a cow file or the name of one of cows included in
+              the package.                               [デフォルト: "default"]
+  --think     Think the message instead of saying it aloud.               [真偽]
+  -b          Mode: Borg                                                  [真偽]
+  -d          Mode: Dead                                                  [真偽]
+  -g          Mode: Greedy                                                [真偽]
+  -p          Mode: Paranoia                                              [真偽]
+  -s          Mode: Stoned                                                [真偽]
+  -t          Mode: Tired                                                 [真偽]
+  -w          Mode: Wired                                                 [真偽]
+  -y          Mode: Youthful                                              [真偽]
+  -h, --help  ヘルプを表示                                                [真偽]
+  -n          If it is specified, the given message will not be word-wrapped.
+                                                                          [真偽]
+  -r          Select a random cow                                         [真偽]
+  -l          List all cowfiles included in this package.                 [真偽]
+
+FD-158@DESKTOP-2AS8COK MINGW64 ~/Documents/tutorial/npm (npm_study)
+$ ./node_modules/.bin/cowsay 'hwllow'
+ ________
+< hwllow >
+ --------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+FD-158@DESKTOP-2AS8COK MINGW64 ~/Documents/tutorial/npm (npm_study)
+$ $(npm bin)/cowsay 'hellow'
+ ________
+< hellow >
+ --------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+FD-158@DESKTOP-2AS8COK MINGW64 ~/Documents/tutorial/npm (npm_study)
+$ npm bin
+C:\Users\FD-158\Documents\tutorial\npm\node_modules\.bin
+
+FD-158@DESKTOP-2AS8COK MINGW64 ~/Documents/tutorial/npm (npm_study)
+$ ls
+20220409学習内容.txt  20220501学習内容.txt  20220507学習内容.txt  index.js  memo.txt  node_modules/  package.json  package-lock.json
+
+FD-158@DESKTOP-2AS8COK MINGW64 ~/Documents/tutorial/npm (npm_study)
+$ vi package.json
+
+FD-158@DESKTOP-2AS8COK MINGW64 ~/Documents/tutorial/npm (npm_study)
+$ npm run cow 'hellow'
+
+> npm@1.0.0 cow
+> cowsay "hellow"
+
+ ________
+< hellow >
+ --------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+FD-158@DESKTOP-2AS8COK MINGW64 ~/Documents/tutorial/npm (npm_study)
+$ npm uninstall cowsay
+
+removed 41 packages, and audited 19 packages in 1s
+
+2 packages are looking for funding
+  run `npm fund` for details
+
+found 0 vulnerabilities
+
+FD-158@DESKTOP-2AS8COK MINGW64 ~/Documents/tutorial/npm (npm_study)
+$ npm ls
+npm@1.0.0 C:\Users\FD-158\Documents\tutorial\npm
+├── sass@1.51.0
+└── typescript@4.6.4
+
+
+FD-158@DESKTOP-2AS8COK MINGW64 ~/Documents/tutorial/npm (npm_study)
+$ npx cowsay 'hellow'
+Need to install the following packages:
+  cowsay
+Ok to proceed? (y) y
+ ________ 
+< hellow >
+ --------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+FD-158@DESKTOP-2AS8COK MINGW64 ~/Documents/tutorial/npm (npm_study)
+$ ls
+20220409学習内容.txt  20220501学習内容.txt  20220507学習内容.txt  index.js  memo.txt  node_modules/  package.json  package-lock.json
+
+FD-158@DESKTOP-2AS8COK MINGW64 ~/Documents/tutorial/npm (npm_study)
+$ npm ls
+npm@1.0.0 C:\Users\FD-158\Documents\tutorial\npm
+├── sass@1.51.0
+└── typescript@4.6.4
+
+
+FD-158@DESKTOP-2AS8COK MINGW64 ~/Documents/tutorial/npm (npm_study)
+$ npm ls -g
+C:\Users\FD-158\AppData\Roaming\npm
+├── @google/clasp@2.4.1
+└── npm-check-updates@12.5.11
+
+
+FD-158@DESKTOP-2AS8COK MINGW64 ~/Documents/tutorial/npm (npm_study)
+$
