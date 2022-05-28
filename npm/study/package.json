@@ -1,0 +1,20 @@
+{
+  "name": "npm",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "foo": "echo 'Hellow from Foo!'",
+    "sass-ver": "sass --version",
+    "cow": "cowsay"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "sass": "^1.51.0"
+  },
+  "devDependencies": {
+    "typescript": "^4.6.4"
+  }
+}
