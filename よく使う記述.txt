@@ -27,7 +27,7 @@
 npm install @google/clasp -g ⇒ インストールコマンド
 clasp login ⇒ ログイン
 clasp logout ⇒ ログアウト
-clasp create newProject ⇒ GASプロジェクトの新規作成
+clasp create <プロジェクト名> ⇒ GASプロジェクトの新規作成
 clasp clone <スクリプトID> ⇒ 既存のGASプロジェクトをクローンする
 clasp open ⇒ プロジェクトをブラウザで開く
 clasp pull ⇒ WEBエディタ上のファイルを取得する
@@ -51,22 +51,36 @@ git commit -m "***" ⇒ addしたものを***のログ名でローカルリポ�
 git push origin *** ⇒ ローカルブランチ***をリモートブランチに変更を上げる
 
 <unix/linuxコマンド>
+入出力
 > ⇒ 標準出力の変更
 < ⇒ 標準入力の変更
 | ⇒ 左辺のコマンドの出力を右辺のコマンドの入力にする
+
+ディレクトリ関連
 cd ⇒ ディレクトリの移動
 cd~ ⇒ 初期ディレクトリに移動
 cd ../ ⇒ 一つ上のディレクトリに移動
 pwd ⇒ 現在のディレクトリを表示
+
+ファイル表示
 more test.txt ⇒ test.txtの内容を表示する（エンターキーで続きが表示される）
 less test.txt ⇒ test.txtの内容を表示する（エンターキーまたはマウスホイールで続きが表示される）
 cat test.txt ⇒ test.txtの内容を表示する（ファイルの内容をすべて表示）
+
 ls ⇒ カレントディレクトリの内容を表示する
 ls <ディレクトリ名> ⇒ 指定したディレクトリの内容を表示する
+ls -a ⇒ 隠しファイルも表示する
+
+ファイル操作
 cp -i a b ⇒ aファイルをbファイルにコピーする（-iオプションはコピー先が存在する場合に上書きするか尋ねるオプション）
 mv -i a b ⇒ aファイルをbファイルに移動する（-iオプションは同上。ファイル名変更にも用いる）
 rm -i test.txt ⇒ test.txtを削除（-iオプションは同上）
+
+ディレクトリ操作
 mkdir <ディレクトリ名> ⇒ （次回以降記述）
+rm -r ディレクトリ ⇒ ディレクトリ内のファイルもすべて削除
+rm -rf ディレクトリ名 ⇒ （同上）＋確認なし
+rmdir ディレクトリ名 ⇒ ディレクトリを削除（空ディレクトリのみ）
 
 <vi>
 参考 ⇒ https://docs.oracle.com/cd/E19253-01/816-3946/editorvi-tbl-83/index.html
@@ -103,3 +117,21 @@ u ⇒ 前回の変更などコマンドを取り消す
 G ⇒  最終行に移動
 1G ⇒ 先頭行に移動
 xG ⇒ x行目に移動
+
+<npm>
+npm init ⇒ 初期化
+npm install パッケージ名 ⇒ ローカルインストール
+npm install -g パッケージ名 ⇒ グローバルインストール
+npm install パッケージ名@バージョン ⇒ バージョンを指定してインストール
+
+npm view パッケージ version ⇒ 最新バージョンを表示
+npm view パッケージ versions ⇒ インストール可能なバージョンを表示
+
+npm list --depth=0 ⇒ インストールされているパッケージのリストを表示
+
+<nvm>
+nvm list ⇒ nvmで管理しているnode.jsのバージョンを表示
+nvm list available ⇒ インストール可能なバージョンを表示
+nvm install latest ⇒ 最新バージョンをインストール
+nvm install 14.18.3 ⇒ バージョンを指定してインストール
+nvm use 14.18.3 ⇒ バージョンの切り替え

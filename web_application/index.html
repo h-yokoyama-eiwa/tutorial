@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <base target="_top">
+    <script>
+      function count() {
+        let count = document.getElementById('count').innerText;
+        document.getElementById('count').innerText = ++count;
+      }
+    </script>
+  </head>
+  <body>
+    <p id="count">0</p>
+    <form>
+      <input type="button" value="カウント" onclick="count()">
+    </form> 
+  </body>
+</html>
