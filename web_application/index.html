@@ -7,11 +7,15 @@
     <p id="count">0</p>
     <form>
       <input type="button" value="カウント" onclick="count()">
+      <input type="button" value="リセット" onclick="resetCount()">
     </form> 
     <script>
       function count() {
         let count = document.getElementById('count').innerText;
         document.getElementById('count').innerText = ++count;
+      }
+      function resetCount() {
+        document.getElementById('count').innerText = 0;
       }
     </script>
   </body>
