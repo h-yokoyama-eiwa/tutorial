@@ -10,6 +10,7 @@
       <form>
         <input type="button" value="カウント" onclick="count()">
         <input type="button" value="リセット" onclick="resetCount()">
+        <input type="button" value="保存" onclick="saveCount()">
       </form>
     </div> 
     <script>
@@ -19,6 +20,10 @@
       }
       function resetCount() {
         document.getElementById('count').innerText = 0;
+      }
+      function saveCount() {
+        const saveVlue = document.getElementById('count').innerText;
+        google.script.run.saveCountToSpreadsheet(saveVlue);
       }
     </script>
   </body>
