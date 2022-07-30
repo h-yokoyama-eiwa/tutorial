@@ -6,6 +6,9 @@
 2行目のコメント
 -->
 
+**CSSの取り込み**
+<?!= HtmlService.createHtmlOutputFromFile('css').getContent(); ?>
+
 <GAS>
 **ログ出力**
   console.log('Hello!');

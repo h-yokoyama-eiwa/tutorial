@@ -2,13 +2,16 @@
 <html>
   <head>
     <base target="_top">
+    <?!= HtmlService.createHtmlOutputFromFile('css').getContent(); ?>
   </head>
   <body>
-    <p id="count">0</p>
-    <form>
-      <input type="button" value="カウント" onclick="count()">
-      <input type="button" value="リセット" onclick="resetCount()">
-    </form> 
+    <div>
+      <p id="count">0</p>
+      <form>
+        <input type="button" value="カウント" onclick="count()">
+        <input type="button" value="リセット" onclick="resetCount()">
+      </form>
+    </div> 
     <script>
       function count() {
         let count = document.getElementById('count').innerText;
