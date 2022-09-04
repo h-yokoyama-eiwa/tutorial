@@ -5,27 +5,14 @@
     <?!= HtmlService.createHtmlOutputFromFile('css').getContent(); ?>
   </head>
   <body>
-    <div>
-      <p id="count"><?= value ?></p>
+    <div id="app">
+      <p>{{ value }}</p>
       <form>
-        <input type="button" value="カウント" onclick="count()">
-        <input type="button" value="リセット" onclick="resetCount()">
-        <input type="button" value="保存" onclick="saveCount()">
+        <input type="button" value="カウント" v-on:click="count">
+        <input type="button" value="リセット" v-on:click="resetCount">
+        <input type="button" value="保存" v-on:click="saveCount">
       </form>
     </div> 
-    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
-    <script>
-      function count() {
-        let count = document.getElementById('count').innerText;
-        document.getElementById('count').innerText = ++count;
-      }
-      function resetCount() {
-        document.getElementById('count').innerText = 0;
-      }
-      function saveCount() {
-        const saveVlue = document.getElementById('count').innerText;
-        google.script.run.saveCountToSpreadsheet(saveVlue);
-      }
-    </script>
+    <?!= HtmlService.createHtmlOutputFromFile('vue').getContent(); ?>
   </body>
 </html>
