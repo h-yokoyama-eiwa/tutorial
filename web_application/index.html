@@ -5,7 +5,7 @@
     <?!= HtmlService.createHtmlOutputFromFile('css').getContent(); ?>
   </head>
   <body>
-    <div id="app">
+    <div id="app" v-cloak>
       <p>{{ value }}</p>
       <form>
         <input type="button" value="カウント" v-on:click="count">
