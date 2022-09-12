@@ -1,24 +1,26 @@
 <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
 <script>
-  google.script.run.withSuccessHandler(initializeVue).getCountFromSpreadsheet();
-
-  function initializeVue(SheetValue){
-    var app = new Vue({
-      el: '#app',
-      data: {
-        value: SheetValue
+  var app = new Vue({
+    el: '#app',
+    data: {
+      value: ''
+    },
+    created: function () {
+      google.script.run.withSuccessHandler(this.initValue).getCountFromSpreadsheet();
+    },
+    methods: {
+      initValue: function (sheetValue) {
+        this.value = sheetValue
       },
-      methods: {
-        count: function(){
-          this.value += 1
-        },
-        resetCount: function(){
-          this.value = 0
-        },
-        saveCount: function(){
-          google.script.run.saveCountToSpreadsheet(this.value);
-        }
+      count: function () {
+        this.value += 1
+      },
+      resetCount: function () {
+        this.value = 0
+      },
+      saveCount: function () {
+        google.script.run.withSuccessHandler(alert("保存しました。")).saveCountToSpreadsheet(this.value);
       }
-    })
-  }
+    }
+  })
 </script>
