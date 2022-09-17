@@ -9,19 +9,20 @@
   </head>
   <body>
     <div id="app">
-      <V-app>
-        <v-card elevation="3" class="yellow accent-2" min-height="300" max-width="600">
-          <p class="white black--text text-body-1 text-center">{{ value }}</p>
-          <!-- <form> -->
-            <v-btn rounded elevation="3" class="amber black--text" v-on:click="count">カウント</v-btn>
-            <v-btn rounded elevation="3" class="amber black--text" v-on:click="resetCount">リセット</v-btn>
-            <v-btn rounded elevation="3" class="amber black--text" v-on:click="saveCount">保存</v-btn>
-            <!-- <input type="button" value="カウント" v-on:click="count">
-            <input type="button" value="リセット" v-on:click="resetCount">
-            <input type="button" value="保存" v-on:click="saveCount"> -->
-          <!-- </form> -->
-        </v-card>
-      </V-app>
+      <v-app>
+        <v-container elevation="3" class="yellow accent-2">
+          <v-row class="blue">
+            <v-col class="green" align="center">
+              <v-card elevation="3" class="red" min-height="100" max-width="500" align="center">
+                <v-card elevation="3" class="white" min-height="50" max-width="300">{{ value }}</v-card>
+                <v-btn rounded elevation="3" class="amber black--text" v-on:click="count">カウント</v-btn>
+                <v-btn rounded elevation="3" class="amber black--text" v-on:click="resetCount">リセット</v-btn>
+                <v-btn rounded elevation="3" class="amber black--text" v-on:click="saveCount">保存</v-btn>    
+              </v-card>
+            </v-col>
+          </v-row>
+        </v-container>
+      </v-app>
     </div> 
     <?!= HtmlService.createHtmlOutputFromFile('vue').getContent(); ?>
   </body>
