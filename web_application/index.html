@@ -10,15 +10,39 @@
   <body>
     <div id="app">
       <v-app>
-        <v-container elevation="3" class="yellow accent-2">
+        <v-container>
           <v-row class="blue">
-            <v-col class="green" align="center">
-              <v-card elevation="3" class="red" min-height="100" max-width="500" align="center">
-                <v-card elevation="3" class="white" min-height="50" max-width="300">{{ value }}</v-card>
-                <v-btn rounded elevation="3" class="amber black--text" v-on:click="count">カウント</v-btn>
-                <v-btn rounded elevation="3" class="amber black--text" v-on:click="resetCount">リセット</v-btn>
-                <v-btn rounded elevation="3" class="amber black--text" v-on:click="saveCount">保存</v-btn>    
+            <v-col class="blue lighten-4">
+            </v-col>
+            <v-col class="blue lighten-1">
+              <!-- <v-card elevation="3" class="red" align="center" height="200" width="500"> -->
+              <v-card elevation="3" class="red" align="center">
+                <v-container>
+                  <v-row class="blue">
+                    <v-col>
+                      <!-- <v-card elevation="3" class="white text-h3" height="50" width="480">{{ value }}</v-card> -->
+                      <v-card elevation="3" class="white text-h3">{{ value }}</v-card>
+                    </v-col>
+                  </v-row>
+                  <v-row>
+                    <v-col class="green lighten-4">
+                    </v-col>
+                  </v-row>
+                  <v-row>
+                    <v-col class="orange lighten-4">
+                      <v-btn rounded elevation="3" class="amber black--text" v-on:click="count">カウント</v-btn>
+                    </v-col>
+                    <v-col class="orange lighten-1">
+                      <v-btn rounded elevation="3" class="amber black--text" v-on:click="resetCount">リセット</v-btn>
+                    </v-col>
+                    <v-col class="orange darken-3">
+                      <v-btn rounded elevation="3" class="amber black--text" v-on:click="saveCount">保存</v-btn>
+                    </v-col>
+                  </v-row>
+                </v-container>
               </v-card>
+            </v-col>
+            <v-col class="blue darken-3">
             </v-col>
           </v-row>
         </v-container>
