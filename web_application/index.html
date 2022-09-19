@@ -2,7 +2,6 @@
 <html>
   <head>
     <base target="_top">
-    <!-- <?!= HtmlService.createHtmlOutputFromFile('css').getContent(); ?> -->
     <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/@mdi/font@4.x/css/materialdesignicons.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.min.css" rel="stylesheet">
@@ -10,45 +9,28 @@
   <body>
     <div id="app">
       <v-app>
-        <v-container>
-          <v-row class="blue">
-            <v-col class="blue lighten-4">
-            </v-col>
-            <v-col class="blue lighten-1">
-              <!-- <v-card elevation="3" class="red" align="center" height="200" width="500"> -->
-              <!-- 通知テスト用にコメント追加（あとで削除する） -->
-                <v-card elevation="3" class="red" align="center">
-                <v-container>
-                  <v-row class="blue">
-                    <v-col>
-                      <!-- <v-card elevation="3" class="white text-h3" height="50" width="480">{{ value }}</v-card> -->
-                      <v-card elevation="3" class="white text-h3">{{ value }}</v-card>
-                    </v-col>
-                  </v-row>
-                  <v-row>
-                    <v-col class="green lighten-4">
-                    </v-col>
-                  </v-row>
-                  <v-row>
-                    <v-col class="orange lighten-4">
-                      <v-btn rounded elevation="3" class="amber black--text" v-on:click="count">カウント</v-btn>
-                    </v-col>
-                    <v-col class="orange lighten-1">
-                      <v-btn rounded elevation="3" class="amber black--text" v-on:click="resetCount">リセット</v-btn>
-                    </v-col>
-                    <v-col class="orange darken-3">
-                      <v-btn rounded elevation="3" class="amber black--text" v-on:click="saveCount">保存</v-btn>
-                    </v-col>
-                  </v-row>
-                </v-container>
-              </v-card>
-            </v-col>
-            <v-col class="blue darken-3">
-            </v-col>
-          </v-row>
-        </v-container>
+        <v-card elevation="3" class="yellow lighten-2 mx-auto" align="center" height="200" width="500">
+          <v-container>
+            <v-row style="height: 130px;" align-content="center">
+              <v-col>
+                <v-card elevation="0" class="white text-h3">{{ value }}</v-card>
+              </v-col>
+            </v-row>
+            <v-row style="height: 70px;" align-content="center">
+              <v-col>
+                <v-btn rounded elevation="3" class="amber black--text" v-on:click="count">カウント</v-btn>
+              </v-col>
+              <v-col>
+                <v-btn rounded elevation="3" class="amber black--text" v-on:click="resetCount">リセット</v-btn>
+              </v-col>
+              <v-col>
+                <v-btn rounded elevation="3" class="amber black--text" v-on:click="saveCount">保存</v-btn>
+              </v-col>
+            </v-row>
+          </v-container>
+        </v-card>
       </v-app>
-    </div> 
+    </div>
     <?!= HtmlService.createHtmlOutputFromFile('vue').getContent(); ?>
   </body>
 </html>
