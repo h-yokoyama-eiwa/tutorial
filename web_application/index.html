@@ -2,17 +2,35 @@
 <html>
   <head>
     <base target="_top">
-    <?!= HtmlService.createHtmlOutputFromFile('css').getContent(); ?>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/@mdi/font@4.x/css/materialdesignicons.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.min.css" rel="stylesheet">
   </head>
   <body>
     <div id="app">
-      <p>{{ value }}</p>
-      <form>
-        <input type="button" value="カウント" v-on:click="count">
-        <input type="button" value="リセット" v-on:click="resetCount">
-        <input type="button" value="保存" v-on:click="saveCount">
-      </form>
-    </div> 
+      <v-app>
+        <v-card elevation="3" class="yellow lighten-2 mx-auto" align="center" height="200" width="500">
+          <v-container>
+            <v-row style="height: 130px;" align-content="center">
+              <v-col>
+                <v-card elevation="0" class="white text-h3">{{ value }}</v-card>
+              </v-col>
+            </v-row>
+            <v-row style="height: 70px;" align-content="center">
+              <v-col>
+                <v-btn rounded elevation="3" class="amber black--text" v-on:click="count">カウント</v-btn>
+              </v-col>
+              <v-col>
+                <v-btn rounded elevation="3" class="amber black--text" v-on:click="resetCount">リセット</v-btn>
+              </v-col>
+              <v-col>
+                <v-btn rounded elevation="3" class="amber black--text" v-on:click="saveCount">保存</v-btn>
+              </v-col>
+            </v-row>
+          </v-container>
+        </v-card>
+      </v-app>
+    </div>
     <?!= HtmlService.createHtmlOutputFromFile('vue').getContent(); ?>
   </body>
 </html>
