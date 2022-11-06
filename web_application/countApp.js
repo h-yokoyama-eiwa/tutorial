@@ -125,53 +125,10 @@ function getCountFromSpreadsheet() {
 }
 
 /**
- * GPCのテーブルにレコードを追加します。
+ * GPCのテーブルにレコードを追加または更新します。
  * @param {number} saveValue 
  */
-function insertRecordToGpc(saveValue) {
-/**
- * gpcの接続コネクションです。
- * @type {object}
- */
-	const gpcConnection = Jdbc.getCloudSqlConnection(GPC_URL, GPC_USER_NAME, GPC_PASSWORD);
-
-/**
- * SQLステートメントです。
- * @type {object}
- */
-	const gpcStatement = gpcConnection.prepareStatement('INSERT INTO counts (id, created_at, updated_at, count) values (?, ?, ?, ?)');
-
-/**
- * 処理時点の日時です。
- * @type {object}
- */
-	const date = new Date();
-
-/**
- * 処理時点の日時（フォーマット変換後）です。
- * @type {string}
- */
-	const currentTime = Utilities.formatDate( date, 'Asia/Tokyo', 'yyyy-MM-dd kk:mm:ss')
-
-// SQLに値を設定する。
-	gpcStatement.setInt(1, 1);
-	gpcStatement.setString(2, currentTime);
-	gpcStatement.setString(3, currentTime);
-	gpcStatement.setInt(4, saveValue);
-
-	// デバッグ用ログ出力
-	const sqlResults = gpcStatement.executeUpdate();
-	Logger.log(sqlResults);
-  
-  gpcStatement.close();
-  gpcConnection.close();
-}
-
-/**
- * GPCのテーブルのレコードを更新します。
- * @param {number} saveValue 
- */
- function updateRecordToGpc(saveValue) {
+ function saveCountToGpc(saveValue) {
 	/**
 	 * gpcの接続コネクションです。
 	 * @type {object}
@@ -179,10 +136,29 @@ function insertRecordToGpc(saveValue) {
 		const gpcConnection = Jdbc.getCloudSqlConnection(GPC_URL, GPC_USER_NAME, GPC_PASSWORD);
 	
 	/**
+	 * レコード更新用SQLです。
+	 * @type {string}
+	 */
+		const updateSql = `
+			INSERT INTO counts (
+				id,
+				created_at,
+				updated_at,
+				count)
+				values (
+					?,
+					?,
+					?,
+					?)
+				ON DUPLICATE KEY UPDATE
+					updated_at = VALUES(updated_at),
+					count = VALUES(count)`;
+	
+	/**
 	 * SQLステートメントです。
 	 * @type {object}
 	 */
-		const gpcStatement = gpcConnection.prepareStatement('UPDATE counts SET updated_at=?, count=? WHERE id=?');
+		const gpcStatement = gpcConnection.prepareStatement(updateSql);
 	
 	/**
 	 * 処理時点の日時です。
@@ -197,17 +173,129 @@ function insertRecordToGpc(saveValue) {
 		const currentTime = Utilities.formatDate( date, 'Asia/Tokyo', 'yyyy-MM-dd kk:mm:ss')
 	
 	// SQLに値を設定する。
-		gpcStatement.setString(1, currentTime);
-		gpcStatement.setInt(2, saveValue);
-		gpcStatement.setInt(3, 1);
+		gpcStatement.setInt(1, 1);
+		gpcStatement.setString(2, currentTime);
+		gpcStatement.setString(3, currentTime);
+		gpcStatement.setInt(4, saveValue);
 	
-	// デバッグ用ログ出力
+		// デバッグ用ログ出力
 		const sqlResults = gpcStatement.executeUpdate();
 		Logger.log(sqlResults);
 		
 		gpcStatement.close();
 		gpcConnection.close();
 	}
+	
+// /**
+//  * GPCのテーブルにレコードを追加します。
+//  * @param {number} saveValue 
+//  */
+// function insertRecordToGpc(saveValue) {
+// /**
+//  * gpcの接続コネクションです。
+//  * @type {object}
+//  */
+// 	const gpcConnection = Jdbc.getCloudSqlConnection(GPC_URL, GPC_USER_NAME, GPC_PASSWORD);
+
+// /**
+//  * レコード挿入用SQLです。
+//  * @type {string}
+//  */
+// 	const insertSql = `
+// 		INSERT INTO counts (
+// 			id,
+// 			created_at,
+// 			updated_at,
+// 			count)
+// 			values (
+// 				?,
+// 				?,
+// 				?,
+// 				?)`;
+
+// /**
+//  * SQLステートメントです。
+//  * @type {object}
+//  */
+// 	const gpcStatement = gpcConnection.prepareStatement(insertSql);
+
+// /**
+//  * 処理時点の日時です。
+//  * @type {object}
+//  */
+// 	const date = new Date();
+
+// /**
+//  * 処理時点の日時（フォーマット変換後）です。
+//  * @type {string}
+//  */
+// 	const currentTime = Utilities.formatDate( date, 'Asia/Tokyo', 'yyyy-MM-dd kk:mm:ss')
+
+// // SQLに値を設定する。
+// 	gpcStatement.setInt(1, 1);
+// 	gpcStatement.setString(2, currentTime);
+// 	gpcStatement.setString(3, currentTime);
+// 	gpcStatement.setInt(4, saveValue);
+
+// 	// デバッグ用ログ出力
+// 	const sqlResults = gpcStatement.executeUpdate();
+// 	Logger.log(sqlResults);
+  
+//   gpcStatement.close();
+//   gpcConnection.close();
+// }
+
+// /**
+//  * GPCのテーブルのレコードを更新します。
+//  * @param {number} saveValue 
+//  */
+//  function updateRecordToGpc(saveValue) {
+// 	/**
+// 	 * gpcの接続コネクションです。
+// 	 * @type {object}
+// 	 */
+// 		const gpcConnection = Jdbc.getCloudSqlConnection(GPC_URL, GPC_USER_NAME, GPC_PASSWORD);
+	
+// /**
+//  * レコード更新用SQLです。
+//  * @type {string}
+//  */
+// 	const updatetSql = `
+// 		UPDATE counts SET
+// 			updated_at=?,
+// 			count=?
+// 			WHERE id=?`
+
+// 	/**
+// 	 * SQLステートメントです。
+// 	 * @type {object}
+// 	 */
+// 		const gpcStatement = gpcConnection.prepareStatement(updatetSql);
+	
+// 	/**
+// 	 * 処理時点の日時です。
+// 	 * @type {object}
+// 	 */
+// 		const date = new Date();
+	
+// 	/**
+// 	 * 処理時点の日時（フォーマット変換後）です。
+// 	 * @type {string}
+// 	 */
+// 		const currentTime = Utilities.formatDate( date, 'Asia/Tokyo', 'yyyy-MM-dd kk:mm:ss')
+	
+// 	// SQLに値を設定する。
+// 		gpcStatement.setString(1, currentTime);
+// 		gpcStatement.setInt(2, saveValue);
+// 		gpcStatement.setInt(3, 1);
+	
+// 	// デバッグ用ログ出力
+// 		const sqlResults = gpcStatement.executeUpdate();
+// 		Logger.log(sqlResults);
+		
+// 		gpcStatement.close();
+// 		gpcConnection.close();
+// 	}
 	
 // 2022.10.29間違えて値を取得する関数を作り始めてしまったので中断
 // GPCのテーブルから値を取得する関数
