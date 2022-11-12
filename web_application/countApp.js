@@ -19,19 +19,19 @@ const GPC_URL = 'jdbc:google:mysql://' + GPC_CONNECTION_NAME + '/' + GPC_DATABAS
 
 // main関数
 function doGet() {
-// ブラウザへ表示するHTMLのテンプレートです。
+	// ブラウザへ表示するHTMLのテンプレートです。
 	const template = HtmlService.createTemplateFromFile('index');
 
-// 処理対象のスプレッドシートです。
+	// 処理対象のスプレッドシートです。
 	const spreadSheet = SpreadsheetApp.openById(SPREAD_SHEET_ID);
 
-// 処理対象のシートです。
+	// 処理対象のシートです。
 	const sheet = spreadSheet.getSheetByName('saveCount');
 
-// 処理対象のセルです。
+	// 処理対象のセルです。
 	const sheetRange = sheet.getRange('A1');
 
-// スプレッドシートから取得した値です。
+	// スプレッドシートから取得した値です。
 	const displayValue = sheetRange.getValue();
 
 	template.value = displayValue;
@@ -44,13 +44,13 @@ function doGet() {
  * @param {number} saveValue 
  */
 function saveCountToSpreadsheet(saveValue) {
-// 処理対象のスプレッドシートです。
+	// 処理対象のスプレッドシートです。
 	const spreadSheet = SpreadsheetApp.openById(SPREAD_SHEET_ID);
 
-// 処理対象のシートです。
+	// 処理対象のシートです。
 	const sheet = spreadSheet.getSheetByName('saveCount');
 
-// 処理対象のセルです。
+	// 処理対象のセルです。
 	const sheetRange = sheet.getRange('A1');
 
 	sheetRange.setValue(saveValue);
@@ -61,13 +61,13 @@ function saveCountToSpreadsheet(saveValue) {
  * @returns {number}
  */
 function getCountFromSpreadsheet() {
-// 処理対象のスプレッドシートです。
+	// 処理対象のスプレッドシートです。
 	const spreadSheet = SpreadsheetApp.openById(SPREAD_SHEET_ID);
 
-// 処理対象のシートです。
+	// 処理対象のシートです。
 	const sheet = spreadSheet.getSheetByName('saveCount');
 
-// 処理対象のセルです。
+	// 処理対象のセルです。
 	const sheetRange = sheet.getRange('A1');
 
 	return sheetRange.getValue();
