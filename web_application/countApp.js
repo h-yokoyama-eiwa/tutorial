@@ -146,6 +146,9 @@ function getCountFromGpc(selectId) {
 		}
 	}
 
+	// デバッグ用ログ出力
+	Logger.log(count);
+
 	sqlResults.close();
 	gpcStatement.close();
 	gpcConnection.close();
