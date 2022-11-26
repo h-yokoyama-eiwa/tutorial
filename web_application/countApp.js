@@ -119,28 +119,42 @@ function saveCountToGpc(saveValue) {
 	gpcStatement.close();
 	gpcConnection.close();
 }
-	
-// // 2022.10.29間違えて値を取得する関数を作り始めてしまったので中断
-// // GPCのテーブルから値を取得する関数
-// function getCountFromGpc() {
-// 	const gpcConnection = Jdbc.getCloudSqlConnection(GPC_URL, PGC_USER_NAME, GPC_PASSWORD);
-// 	const gpcStatement = gpcConnection.createStatement();
-// 	const sqlResults = gpcStatement.executeQuery('SELECT * FROM counts'); 
 
-// 	while (sqlResults.next()) {
-// 		const id = sqlResults.getInt('id');
-// 		const createdAt = sqlResults.getString('created_at');
-// 		const updatedAt = sqlResults.getString('updated_at');
-// 		const count = sqlResults.getInt('count');
+/**
+ * GPCのテーブルから値を取得します。
+ * @param {number} selectId
+ */
+function getCountFromGpc(selectId) {
+	// gpcの接続コネクションです。
+	const gpcConnection = Jdbc.getCloudSqlConnection(GPC_URL, GPC_USER_NAME, GPC_PASSWORD);
 
-// 		// 中断位置（↓ここから）
-// 		Logger.log('%s t %s t %s', id, createdAt, updatedAt, count);
-// 	}
+	// GPCステートメントです。
+	const gpcStatement = gpcConnection.createStatement();
 
-// 	results.close();
-// 	statement.close();
-// 	connection.close();
-// }
+	// SQLの実行結果です。
+	const sqlResults = gpcStatement.executeQuery('SELECT * FROM counts'); 
+
+	let id = 0;
+	let count = 0;
+
+	while (sqlResults.next()) {
+		id = sqlResults.getInt('id');
+
+		if(id === selectId) {
+			count = sqlResults.getInt('count');
+			break;
+		}
+	}
+
+	// デバッグ用ログ出力
+	Logger.log(count);
+
+	sqlResults.close();
+	gpcStatement.close();
+	gpcConnection.close();
+
+	return count;
+}
 
 // GPCのテーブルからレコードを削除する関数（テスト用）
 function deleteRecordFromGpc() {
