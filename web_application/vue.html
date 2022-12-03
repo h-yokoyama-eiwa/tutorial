@@ -8,7 +8,7 @@
       value: ''
     },
     created: function () {
-      google.script.run.withSuccessHandler(this.initValue).getCountFromSpreadsheet();
+      google.script.run.withSuccessHandler(this.initValue).getCountFromGpc(1);
     },
     methods: {
       initValue: function (sheetValue) {
@@ -21,7 +21,7 @@
         this.value = 0
       },
       saveCount: function () {
-        google.script.run.withSuccessHandler(alert("保存しました。")).saveCountToSpreadsheet(this.value);
+        google.script.run.withSuccessHandler(alert("保存しました。")).saveCountToGpc(this.value);
       }
     }
   })
