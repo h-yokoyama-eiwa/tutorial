@@ -4,15 +4,17 @@
   var app = new Vue({
     el: '#app',
     vuetify: new Vuetify(),
-    data: {
-      value: ''
-    },
+    data: () => ({
+      value: ' ',
+      overlay: true,
+    }),
     created: function () {
       google.script.run.withSuccessHandler(this.initValue).getCountFromGpc(1);
     },
     methods: {
       initValue: function (sheetValue) {
         this.value = sheetValue
+        this.finishOverlay()
       },
       count: function () {
         this.value += 1
@@ -22,6 +24,9 @@
       },
       saveCount: function () {
         google.script.run.withSuccessHandler(alert("保存しました。")).saveCountToGpc(this.value);
+      },
+      finishOverlay: function () {
+        this.overlay = false
       }
     }
   })
