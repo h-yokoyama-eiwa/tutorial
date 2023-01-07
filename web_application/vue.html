@@ -8,13 +8,28 @@
       value: ' ',
       overlay: true,
     }),
-    created: function () {
-      google.script.run.withSuccessHandler(this.initValue).getCountFromGpc(1);
+    created: async function () {
+      await this.loadValue().then(this.onFulfilled, this.onRejected)
+      this.overlay = false
     },
     methods: {
-      initValue: function (sheetValue) {
+      loadValue: async function () {
+        return new Promise (function(resolve, reject){
+          google.script.run
+            .withSuccessHandler(function(result){
+              resolve(result)
+            })
+            .withFailureHandler(function(error){
+              reject(error)
+            })
+            .getCountFromGpc(1);
+        })
+      },
+      onFulfilled: function (sheetValue) {
         this.value = sheetValue
-        this.finishOverlay()
+      },
+      onRejected: function (error) {
+        alert("エラーが発生しました。")
       },
       count: function () {
         this.value += 1
@@ -24,9 +39,6 @@
       },
       saveCount: function () {
         google.script.run.withSuccessHandler(alert("保存しました。")).saveCountToGpc(this.value);
-      },
-      finishOverlay: function () {
-        this.overlay = false
       }
     }
   })
