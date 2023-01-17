@@ -5,15 +5,15 @@
     el: '#app',
     vuetify: new Vuetify(),
     data: () => ({
-      value: ' ',
+      count: ' ',
       overlay: true,
     }),
     created: async function () {
-      await this.loadValue().then(this.loadOnFulfilled, this.onRejected)
+      await this.loadCount().then(this.loadOnFulfilled, this.onRejected)
       this.overlay = false
     },
     methods: {
-      loadValue: async function () {
+      loadCount: async function () {
         return new Promise (function(resolve, reject){
           google.script.run
             .withSuccessHandler(function(result){
@@ -27,10 +27,10 @@
       },
       saveCount: async function () {
         this.overlay = true
-        await this.saveValue(this.value).then(this.saveOnFulfilled, this.onRejected)
+        await this.saveOnDatabase(this.count).then(this.saveOnFulfilled, this.onRejected)
         this.overlay = false
       },
-      saveValue: async function (value) {
+      saveOnDatabase: async function (value) {
         return new Promise (function(resolve, reject){
           google.script.run
             .withSuccessHandler(function(result){
@@ -42,8 +42,8 @@
             .saveCountToGpc(value);
         })
       },
-      loadOnFulfilled: function (sheetValue) {
-        this.value = sheetValue
+      loadOnFulfilled: function (value) {
+        this.count = value
       },
       saveOnFulfilled: function () {
         alert("保存しました。")
@@ -51,11 +51,11 @@
       onRejected: function (error) {
         alert("エラーが発生しました。")
       },
-      count: function () {
-        this.value += 1
+      countUp: function () {
+        this.count += 1
       },
       resetCount: function () {
-        this.value = 0
+        this.count = 0
       }
     }
   })
