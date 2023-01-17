@@ -4,10 +4,12 @@
   var app = new Vue({
     el: '#app',
     vuetify: new Vuetify(),
-    data: () => ({
-      count: ' ',
-      overlay: true,
-    }),
+    data: function () {
+      return {
+        count: ' ',
+        overlay: true
+      }
+    },
     created: async function () {
       await this.loadCount().then(this.loadOnFulfilled, this.onRejected)
       this.overlay = false
