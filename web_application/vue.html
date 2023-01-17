@@ -9,7 +9,7 @@
       overlay: true,
     }),
     created: async function () {
-      await this.loadValue().then(this.onFulfilled, this.onRejected)
+      await this.loadValue().then(this.loadOnFulfilled, this.onRejected)
       this.overlay = false
     },
     methods: {
@@ -25,8 +25,28 @@
             .getCountFromGpc(1);
         })
       },
-      onFulfilled: function (sheetValue) {
+      saveCount: async function () {
+        this.overlay = true
+        await this.saveValue(this.value).then(this.saveOnFulfilled, this.onRejected)
+        this.overlay = false
+      },
+      saveValue: async function (value) {
+        return new Promise (function(resolve, reject){
+          google.script.run
+            .withSuccessHandler(function(result){
+              resolve(result)
+            })
+            .withFailureHandler(function(error){
+              reject(error)
+            })
+            .saveCountToGpc(value);
+        })
+      },
+      loadOnFulfilled: function (sheetValue) {
         this.value = sheetValue
+      },
+      saveOnFulfilled: function () {
+        alert("保存しました。")
       },
       onRejected: function (error) {
         alert("エラーが発生しました。")
@@ -36,9 +56,6 @@
       },
       resetCount: function () {
         this.value = 0
-      },
-      saveCount: function () {
-        google.script.run.withSuccessHandler(alert("保存しました。")).saveCountToGpc(this.value);
       }
     }
   })
