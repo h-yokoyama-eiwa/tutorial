@@ -6,12 +6,18 @@
     vuetify: new Vuetify(),
     data: function () {
       return {
-        count: ' ',
-        overlay: true
+        count: '',
+        overlay: false
       }
     },
     created: async function () {
-      await this.loadCount().then(this.loadOnFulfilled, this.onRejected)
+      this.overlay = true
+      try {
+        const value = await this.loadCount()
+        this.loadOnFulfilled(value)
+      } catch {
+        this.onRejected()
+      }
       this.overlay = false
     },
     methods: {
@@ -29,7 +35,12 @@
       },
       saveCount: async function () {
         this.overlay = true
-        await this.saveOnDatabase(this.count).then(this.saveOnFulfilled, this.onRejected)
+        try {
+          await this.saveOnDatabase(this.count)
+          this.saveOnFulfilled()
+        } catch {
+          this.onRejected()
+        }
         this.overlay = false
       },
       saveOnDatabase: async function (value) {
@@ -50,7 +61,7 @@
       saveOnFulfilled: function () {
         alert("保存しました。")
       },
-      onRejected: function (error) {
+      onRejected: function () {
         alert("エラーが発生しました。")
       },
       countUp: function () {
