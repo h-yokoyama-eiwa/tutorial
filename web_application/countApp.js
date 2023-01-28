@@ -122,9 +122,9 @@ function saveCountToGpc(saveValue) {
 
 /**
  * GPCのテーブルから値を取得します。
- * @param {number} selectId
+ * @returns {number}
  */
-function getCountFromGpc(selectId) {
+function getCountFromGpc() {
 	// gpcの接続コネクションです。
 	const gpcConnection = Jdbc.getCloudSqlConnection(GPC_URL, GPC_USER_NAME, GPC_PASSWORD);
 
@@ -140,7 +140,7 @@ function getCountFromGpc(selectId) {
 	while (sqlResults.next()) {
 		id = sqlResults.getInt('id');
 
-		if(id === selectId) {
+		if(id === 1) {
 			count = sqlResults.getInt('count');
 			break;
 		}

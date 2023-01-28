@@ -4,24 +4,25 @@
   var app = new Vue({
     el: '#app',
     vuetify: new Vuetify(),
-    data: function () {
+    data () {
       return {
         count: '',
         overlay: false
       }
     },
-    created: async function () {
+    async created () {
       this.overlay = true
       try {
         const value = await this.loadCount()
         this.loadOnFulfilled(value)
       } catch {
         this.onRejected()
+      } finally {
+        this.overlay = false
       }
-      this.overlay = false
     },
     methods: {
-      loadCount: async function () {
+      async loadCount () {
         return new Promise (function(resolve, reject){
           google.script.run
             .withSuccessHandler(function(result){
@@ -30,20 +31,21 @@
             .withFailureHandler(function(error){
               reject(error)
             })
-            .getCountFromGpc(1);
+            .getCountFromGpc();
         })
       },
-      saveCount: async function () {
+      async saveCount () {
         this.overlay = true
         try {
           await this.saveOnDatabase(this.count)
           this.saveOnFulfilled()
         } catch {
           this.onRejected()
+        } finally {
+          this.overlay = false
         }
-        this.overlay = false
       },
-      saveOnDatabase: async function (value) {
+      async saveOnDatabase (value) {
         return new Promise (function(resolve, reject){
           google.script.run
             .withSuccessHandler(function(result){
@@ -55,19 +57,19 @@
             .saveCountToGpc(value);
         })
       },
-      loadOnFulfilled: function (value) {
+      loadOnFulfilled (value) {
         this.count = value
       },
-      saveOnFulfilled: function () {
+      saveOnFulfilled () {
         alert("保存しました。")
       },
-      onRejected: function () {
+      onRejected () {
         alert("エラーが発生しました。")
       },
-      countUp: function () {
+      countUp () {
         this.count += 1
       },
-      resetCount: function () {
+      resetCount () {
         this.count = 0
       }
     }
