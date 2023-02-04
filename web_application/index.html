@@ -13,12 +13,12 @@
           <v-container>
             <v-row style="height: 130px;" align-content="center">
               <v-col>
-                <v-card elevation="0" class="white text-h3">{{ value }}</v-card>
+                <v-card elevation="0" class="white text-h3">{{ count }}</v-card>
               </v-col>
             </v-row>
             <v-row style="height: 70px;" align-content="center">
               <v-col>
-                <v-btn rounded elevation="3" class="amber black--text" v-on:click="count">カウント</v-btn>
+                <v-btn rounded elevation="3" class="amber black--text" v-on:click="countUp">カウント</v-btn>
               </v-col>
               <v-col>
                 <v-btn rounded elevation="3" class="amber black--text" v-on:click="resetCount">リセット</v-btn>
@@ -29,6 +29,12 @@
             </v-row>
           </v-container>
         </v-card>
+        <v-overlay :value="overlay">
+          <v-progress-circular
+            indeterminate
+            size="100"
+          ></v-progress-circular>
+        </v-overlay>
       </v-app>
     </div>
     <?!= HtmlService.createHtmlOutputFromFile('vue').getContent(); ?>

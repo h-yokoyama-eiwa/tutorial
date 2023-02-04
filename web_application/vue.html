@@ -4,24 +4,73 @@
   var app = new Vue({
     el: '#app',
     vuetify: new Vuetify(),
-    data: {
-      value: ''
+    data () {
+      return {
+        count: '',
+        overlay: false
+      }
     },
-    created: function () {
-      google.script.run.withSuccessHandler(this.initValue).getCountFromGpc(1);
+    async created () {
+      this.overlay = true
+      try {
+        const value = await this.loadCount()
+        this.loadOnFulfilled(value)
+      } catch {
+        this.onRejected()
+      } finally {
+        this.overlay = false
+      }
     },
     methods: {
-      initValue: function (sheetValue) {
-        this.value = sheetValue
+      async loadCount () {
+        return new Promise (function(resolve, reject){
+          google.script.run
+            .withSuccessHandler(function(result){
+              resolve(result)
+            })
+            .withFailureHandler(function(error){
+              reject(error)
+            })
+            .getCountFromGpc();
+        })
       },
-      count: function () {
-        this.value += 1
+      async saveCount () {
+        this.overlay = true
+        try {
+          await this.saveOnDatabase(this.count)
+          this.saveOnFulfilled()
+        } catch {
+          this.onRejected()
+        } finally {
+          this.overlay = false
+        }
       },
-      resetCount: function () {
-        this.value = 0
+      async saveOnDatabase (value) {
+        return new Promise (function(resolve, reject){
+          google.script.run
+            .withSuccessHandler(function(result){
+              resolve(result)
+            })
+            .withFailureHandler(function(error){
+              reject(error)
+            })
+            .saveCountToGpc(value);
+        })
       },
-      saveCount: function () {
-        google.script.run.withSuccessHandler(alert("保存しました。")).saveCountToGpc(this.value);
+      loadOnFulfilled (value) {
+        this.count = value
+      },
+      saveOnFulfilled () {
+        alert("保存しました。")
+      },
+      onRejected () {
+        alert("エラーが発生しました。")
+      },
+      countUp () {
+        this.count += 1
+      },
+      resetCount () {
+        this.count = 0
       }
     }
   })
