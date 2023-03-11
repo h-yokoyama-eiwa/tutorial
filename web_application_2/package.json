@@ -1,0 +1,77 @@
+{
+  "name": "web_application_2",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "deploy": "npm run build && npm run push",
+    "build": "vue-cli-service build && npm run buildgas",
+    "buildgas": "webpack --progress --config webpack.config.gas.js",
+    "push": "clasp push"
+  },
+  "dependencies": {
+    "babel-loader": "^8.0.6",
+    "core-js": "^3.3.2",
+    "es3ify-webpack-plugin": "^0.1.0",
+    "gas-webpack-plugin": "^1.0.2",
+    "vue": "^2.6.10",
+    "vue-router": "^3.1.3",
+    "vuetify": "^2.1.0",
+    "vuex": "^3.1.2"
+  },
+  "devDependencies": {
+    "@babel/preset-env": "^7.7.6",
+    "@types/google-apps-script": "^1.0.7",
+    "@vue/cli-plugin-babel": "^4.0.0",
+    "@vue/cli-plugin-eslint": "^4.0.0",
+    "@vue/cli-plugin-router": "^4.0.0",
+    "@vue/cli-service": "^4.0.0",
+    "@vue/eslint-config-standard": "^4.0.0",
+    "assert": "^2.0.0",
+    "babel-eslint": "^10.0.3",
+    "babel-preset-gas": "^2.0.4",
+    "eslint": "^5.16.0",
+    "eslint-plugin-vue": "^5.0.0",
+    "html-webpack-inline-source-plugin": "0.0.10",
+    "node-sass": "^4.12.0",
+    "sass": "^1.19.0",
+    "sass-loader": "^8.0.0",
+    "vue-cli-plugin-vuetify": "^2.0.2",
+    "vue-template-compiler": "^2.6.10",
+    "vuetify-loader": "^1.3.0",
+    "webpack-cdn-plugin": "^3.2.0",
+    "webpack-cli": "^3.3.10"
+  },
+  "eslintConfig": {
+    "root": true,
+    "env": {
+      "node": true
+    },
+    "extends": [
+      "plugin:vue/essential",
+      "@vue/standard"
+    ],
+    "rules": {},
+    "parserOptions": {
+      "parser": "babel-eslint"
+    },
+    "overrides": [
+      {
+        "files": [
+          "**/__tests__/*.{j,t}s?(x)"
+        ],
+        "env": {
+          "jest": true
+        }
+      }
+    ]
+  },
+  "postcss": {
+    "plugins": {
+      "autoprefixer": {}
+    }
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions"
+  ]
+}
