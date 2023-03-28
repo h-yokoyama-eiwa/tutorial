@@ -1,16 +1,17 @@
 <template>
-  <v-container>
+  <v-container fluid>
     <v-row>
-      <v-col cols="12">
+      <v-col>
         <v-data-table
           :headers="headers"
           :items="items"
+          class="elevation-1"
         >
           <template v-slot:[`item.edit`]="{ item }">
-            <v-btn @click="editItem(item)">編集</v-btn>
+            <v-icon @click="editItem(item)">edit</v-icon>
           </template>
           <template v-slot:[`item.delete`]="{ item }">
-            <v-btn @click="deleteItem(item)">削除</v-btn>
+            <v-icon @click="deleteItem(item)">delete</v-icon>
           </template>
         </v-data-table>
       </v-col>
@@ -56,6 +57,7 @@ export default {
           width: 50
         }
       ],
+      //3/28:現時点では固定のデータを設定しておく。
       items: [
         {
           title: 'test_title',
@@ -76,9 +78,11 @@ export default {
   computed: {},
   methods: {
     editItem (item) {
+      //まだ編集機能は未実装のため、確認用のログ出力のみ実施
       console.log(`${item.title}:${item.genre}:${item.boughtAt}:${item.buyer}`)
     },
     deleteItem (item) {
+      //まだ削除機能は未実装のため、確認用のログ出力のみ実施
       console.log(`${item.title}:${item.genre}:${item.boughtAt}:${item.buyer}`)
     }
   }
