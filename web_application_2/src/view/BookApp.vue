@@ -1,11 +1,19 @@
 <template>
   <div>
-    書籍管理アプリだよ
+    <Search />
+    <List />
   </div>
 </template>
 
 <script>
+import Search from '@/components/Search'
+import List from '@/components/List'
+
 export default {
+  components: {
+    Search,
+    List
+  },
   data () {
     return {}
   },
