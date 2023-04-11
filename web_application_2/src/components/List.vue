@@ -4,7 +4,7 @@
       <v-col>
         <v-data-table
           :headers="headers"
-          :items="items"
+          :items="books"
           class="elevation-1"
         >
           <template v-slot:[`item.edit`]="{ item }">
@@ -21,6 +21,12 @@
 
 <script>
 export default {
+  props: {
+    books: {
+      type: Array,
+      default: () => []
+    }
+  },
   data () {
     return {
       headers: [
@@ -56,21 +62,6 @@ export default {
           sortable: false,
           width: 50
         }
-      ],
-      //3/28:現時点では固定のデータを設定しておく。
-      items: [
-        {
-          title: 'test_title',
-          genre: 'test_genre',
-          boughtAt: '2022/02/22',
-          buyer: 'test_buyer'
-        },
-        {
-          title: 'テストタイトル',
-          genre: 'テストジャンル',
-          boughtAt: '2022年02月22日',
-          buyer: 'テスト購入者'
-        }
       ]
     }
   },
@@ -78,11 +69,11 @@ export default {
   computed: {},
   methods: {
     editItem (item) {
-      //まだ編集機能は未実装のため、確認用のログ出力のみ実施
+      // まだ編集機能は未実装のため、確認用のログ出力のみ実施
       console.log(`${item.title}:${item.genre}:${item.boughtAt}:${item.buyer}`)
     },
     deleteItem (item) {
-      //まだ削除機能は未実装のため、確認用のログ出力のみ実施
+      // まだ削除機能は未実装のため、確認用のログ出力のみ実施
       console.log(`${item.title}:${item.genre}:${item.boughtAt}:${item.buyer}`)
     }
   }

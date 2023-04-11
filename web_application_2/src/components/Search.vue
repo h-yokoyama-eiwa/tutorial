@@ -11,7 +11,7 @@
         <v-select
           clearable
           label="ジャンル検索"
-          :items="['California', 'Colorado', 'Florida', 'Georgia', 'Texas', 'Wyoming']"
+          :items="genres"
         ></v-select>
       </v-col>
       <v-col cols="12" md="6" lg="6">
@@ -29,6 +29,12 @@ import Add from './Add'
 export default {
   components: {
     Add
+  },
+  props: {
+    genres: {
+      type: Array,
+      default: () => []
+    }
   },
   data () {
     return {}
