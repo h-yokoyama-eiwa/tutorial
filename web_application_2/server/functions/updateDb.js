@@ -13,7 +13,7 @@ export default function updateDb (book) {
 
   // レコード更新用SQL
   const updateSql = `
-    INSERT INTO counts (
+    INSERT INTO books (
       id,
       created_at,
       updated_at,
@@ -47,7 +47,7 @@ export default function updateDb (book) {
 
   //日付のフォーマット変換
   const currentTime = Utilities.formatDate( date, 'Asia/Tokyo', 'yyyy-MM-dd kk:mm:ss')
-  const boughtAt = Utilities.formatDate( book.boughtAt, 'Asia/Tokyo', 'yyyy-MM-dd kk:mm:ss')
+  const boughtAt = Utilities.formatDate( book.boughtAt, 'Asia/Tokyo', 'yyyy-MM-dd')
 
   // SQLに値を設定
   gpcStatement.setInt(1, book.id);
