@@ -1,8 +1,8 @@
 /**
- * DBへ書籍情報を登録する。
- * @param {object} book 
+ * booksテーブルへ書籍情報を登録・更新する。
+ * @param {object} book
  */
-export default function updateDb (book) {
+export default function updateBooksTable (book) {
   // GPCの接続情報
   const GPC_CONNECTION_NAME = 'esm-gcp-study:us-central1:modern-study'; //Instance_connection_name
   const GPC_USER_NAME = 'esm'; //user_name
