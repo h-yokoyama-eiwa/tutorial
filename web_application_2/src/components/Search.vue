@@ -17,7 +17,7 @@
       <v-col cols="12" md="6" lg="6">
         <v-btn>検索</v-btn>
         <v-btn>検索条件クリア</v-btn>
-        <Add />
+        <Add @addBook="addNewBook" />
       </v-col>
     </v-row>
   </v-container>
@@ -41,6 +41,10 @@ export default {
   },
   created () {},
   computed: {},
-  methods: {}
+  methods: {
+    addNewBook (book) {
+      this.$emit('addBook', book)
+    }
+  }
 }
 </script>

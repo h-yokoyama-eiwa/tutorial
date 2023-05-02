@@ -1,6 +1,6 @@
 <template>
   <div>
-    <Search :genres="genres"/>
+    <Search @addBook="addNewBook" :genres="genres"/>
     <List :books="books"/>
   </div>
 </template>
@@ -21,7 +21,7 @@ export default {
           id: '1',
           title: 'test_title',
           genre: 'test_genre',
-          boughtAt: '2022/02/22',
+          boughtAt: '2023-01-02',
           buyer: 'test_buyer',
           review: 'test'
         },
@@ -29,7 +29,7 @@ export default {
           id: '2',
           title: 'テストタイトル',
           genre: 'テストジャンル',
-          boughtAt: '2022年02月22日',
+          boughtAt: '2022-02-22',
           buyer: 'テスト購入者',
           review: 'テスト'
         }
@@ -39,6 +39,29 @@ export default {
   },
   created () {},
   computed: {},
-  methods: {}
+  methods: {
+    maxIdSearch () {
+      return Math.max.apply(null, this.books.map(
+        function (book) {
+          return book.id
+        }
+      ))
+    },
+    addNewBook (book) {
+      const maxId = this.maxIdSearch(this.books)
+      book.id = maxId + 1
+
+      return new Promise(function (resolve, reject) {
+        window.google.script.run
+          .withSuccessHandler(function (result) {
+            resolve(result)
+          })
+          .withFailureHandler(function (error) {
+            reject(error)
+          })
+          .updateBooksTable(book)
+      })
+    }
+  }
 }
 </script>

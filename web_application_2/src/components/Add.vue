@@ -26,6 +26,7 @@
             >
               <v-text-field
                 label="タイトル"
+                v-model="book.title"
               ></v-text-field>
             </v-col>
           </v-row>
@@ -36,6 +37,7 @@
             >
               <v-text-field
                 label="ジャンル"
+                v-model="book.genre"
               ></v-text-field>
             </v-col>
           </v-row>
@@ -54,7 +56,7 @@
               >
                 <template v-slot:activator="{ on, attrs }">
                   <v-text-field
-                    v-model="boughtAt"
+                    v-model="book.boughtAt"
                     label="購入日"
                     prepend-icon="mdi-calendar"
                     readonly
@@ -63,7 +65,7 @@
                   ></v-text-field>
                 </template>
                 <v-date-picker
-                  v-model="boughtAt"
+                  v-model="book.boughtAt"
                   @input="menu = false"
                 ></v-date-picker>
               </v-menu>
@@ -76,6 +78,7 @@
             >
               <v-text-field
                 label="購入者"
+                v-model="book.buyer"
               ></v-text-field>
             </v-col>
           </v-row>
@@ -87,7 +90,7 @@
               <v-textarea
                 name="review"
                 label="レビュー"
-                v-model="reviewText"
+                v-model="book.review"
               ></v-textarea>
             </v-col>
           </v-row>
@@ -98,11 +101,10 @@
 
       <v-card-actions>
         <v-spacer></v-spacer>
-        <!-- 4/23 今時点では登録ボタンを押してもダイアログが閉じるだけ -->
         <v-btn
           color="primary"
           text
-          @click="addBook = false"
+          @click="addNewBook"
         >
           登録
         </v-btn>
@@ -117,12 +119,23 @@ export default {
     return {
       addBook: false,
       menu: false,
-      boughtAt: (new Date(Date.now() - (new Date()).getTimezoneOffset() * 60000)).toISOString().substr(0, 10),
-      reviewText: ''
+      book: {
+        id: 0,
+        title: '',
+        genre: '',
+        boughtAt: (new Date(Date.now() - (new Date()).getTimezoneOffset() * 60000)).toISOString().substr(0, 10),
+        buyer: '',
+        review: ''
+      }
     }
   },
   created () {},
   computed: {},
-  methods: {}
+  methods: {
+    addNewBook () {
+      this.$emit('addBook', this.book)
+      this.addBook = false
+    }
+  }
 }
 </script>
