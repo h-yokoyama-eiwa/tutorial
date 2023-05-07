@@ -40,12 +40,8 @@ export default {
   created () {},
   computed: {},
   methods: {
-    maxIdSearch () {
-      return Math.max.apply(null, this.books.map(
-        function (book) {
-          return book.id
-        }
-      ))
+    maxIdSearch (books) {
+      return Math.max.apply(null, books.map((book) => book.id))
     },
     addNewBook (book) {
       const maxId = this.maxIdSearch(this.books)
