@@ -47,7 +47,6 @@ export default function updateBooksTable (book) {
 
   //日付のフォーマット変換
   const currentTime = Utilities.formatDate( date, 'Asia/Tokyo', 'yyyy-MM-dd kk:mm:ss')
-  const boughtAt = Utilities.formatDate( book.boughtAt, 'Asia/Tokyo', 'yyyy-MM-dd')
 
   // SQLに値を設定
   gpcStatement.setInt(1, book.id);
@@ -55,7 +54,7 @@ export default function updateBooksTable (book) {
   gpcStatement.setString(3, currentTime);
   gpcStatement.setString(4, book.title);
   gpcStatement.setString(5, book.genre);
-  gpcStatement.setString(6, boughtAt);
+  gpcStatement.setString(6, book.boughtAt);
   gpcStatement.setString(7, book.buyer);
   gpcStatement.setString(8, book.review);
 
