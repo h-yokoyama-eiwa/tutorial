@@ -40,13 +40,21 @@ export default {
   created () {},
   computed: {},
   methods: {
-    maxIdSearch (books) {
+    async maxIdSearch (books) {
       return Math.max.apply(null, books.map((book) => book.id))
     },
-    addNewBook (book) {
-      const maxId = this.maxIdSearch(this.books)
-      book.id = maxId + 1
-
+    async addNewBook (book, closeAddBookDialog) {
+      try {
+        const maxId = await this.maxIdSearch(this.books)
+        book.id = maxId + 1
+        await this.saveOnDatabase(book)
+      } catch {
+        this.onRejected()
+      } finally {
+        closeAddBookDialog()
+      }
+    },
+    async saveOnDatabase (book) {
       return new Promise(function (resolve, reject) {
         window.google.script.run
           .withSuccessHandler(function (result) {
@@ -57,6 +65,9 @@ export default {
           })
           .updateBooksTable(book)
       })
+    },
+    onRejected () {
+      alert('エラーが発生しました。')
     }
   }
 }

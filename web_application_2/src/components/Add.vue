@@ -110,6 +110,13 @@
         </v-btn>
       </v-card-actions>
     </v-card>
+    <v-overlay :value="addOverlay">
+      <v-subheader>書籍情報を登録中</v-subheader>
+      <v-progress-linear
+        indeterminate
+        color="cyan"
+      ></v-progress-linear>
+    </v-overlay>
   </v-dialog>
 </template>
 
@@ -126,15 +133,29 @@ export default {
         boughtAt: (new Date(Date.now() - (new Date()).getTimezoneOffset() * 60000)).toISOString().substr(0, 10),
         buyer: '',
         review: ''
-      }
+      },
+      addOverlay: false
     }
   },
   created () {},
   computed: {},
   methods: {
     addNewBook () {
-      this.$emit('addBook', this.book)
+      this.addOverlay = true
+      this.$emit('addBook', this.book, () => this.closeAddBookDialog())
+    },
+    async closeAddBookDialog () {
+      await this.initBook()
+      this.addOverlay = false
       this.addBook = false
+    },
+    async initBook () {
+      this.$set(this.book, 'id', 0)
+      this.$set(this.book, 'title', '')
+      this.$set(this.book, 'genre', '')
+      this.$set(this.book, 'boughtAt', (new Date(Date.now() - (new Date()).getTimezoneOffset() * 60000)).toISOString().substr(0, 10))
+      this.$set(this.book, 'buyer', '')
+      this.$set(this.book, 'review', '')
     }
   }
 }
