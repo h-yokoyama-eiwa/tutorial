@@ -2,6 +2,13 @@
   <div>
     <Search @addBook="addNewBook" :genres="genres"/>
     <List :books="books"/>
+    <v-overlay :value="addOverlay">
+      <v-subheader>書籍情報を登録中</v-subheader>
+      <v-progress-linear
+        indeterminate
+        color="cyan"
+      ></v-progress-linear>
+    </v-overlay>
   </div>
 </template>
 
@@ -34,24 +41,32 @@ export default {
           review: 'テスト'
         }
       ],
-      genres: ['test_genre', 'テストジャンル']
+      genres: ['test_genre', 'テストジャンル'],
+      addOverlay: false
     }
   },
   created () {},
   computed: {},
   methods: {
-    async maxIdSearch (books) {
+    maxIdSearch (books) {
       return Math.max.apply(null, books.map((book) => book.id))
     },
-    async addNewBook (book, closeAddBookDialog) {
+    async addNewBook (book) {
       try {
-        const maxId = await this.maxIdSearch(this.books)
+        this.addOverlay = true
+        const maxId = this.maxIdSearch(this.books)
         book.id = maxId + 1
         await this.saveOnDatabase(book)
       } catch {
         this.onRejected()
       } finally {
-        closeAddBookDialog()
+        this.$set(book, 'id', 0)
+        this.$set(book, 'title', '')
+        this.$set(book, 'genre', '')
+        this.$set(book, 'boughtAt', (new Date(Date.now() - (new Date()).getTimezoneOffset() * 60000)).toISOString().substr(0, 10))
+        this.$set(book, 'buyer', '')
+        this.$set(book, 'review', '')
+        this.addOverlay = false
       }
     },
     async saveOnDatabase (book) {
