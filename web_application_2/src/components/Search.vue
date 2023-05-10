@@ -42,8 +42,8 @@ export default {
   created () {},
   computed: {},
   methods: {
-    addNewBook (book, closeAddBookDialog) {
-      this.$emit('addBook', book, closeAddBookDialog)
+    addNewBook (book) {
+      this.$emit('addBook', book)
     }
   }
 }
