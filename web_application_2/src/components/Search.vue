@@ -42,8 +42,8 @@ export default {
   created () {},
   computed: {},
   methods: {
-    addNewBook () {
-      this.$emit('addBook')
+    addNewBook (book, flag) {
+      this.$emit('addBook', book, flag)
     }
   }
 }
