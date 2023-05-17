@@ -17,19 +17,17 @@
       <v-col cols="12" md="6" lg="6">
         <v-btn>検索</v-btn>
         <v-btn>検索条件クリア</v-btn>
-        <Add @addBook="addNewBook" />
+        <v-btn v-on:click="openAddDialog">
+          新規登録
+        </v-btn>
       </v-col>
     </v-row>
   </v-container>
 </template>
 
 <script>
-import Add from './Add'
 
 export default {
-  components: {
-    Add
-  },
   props: {
     genres: {
       type: Array,
@@ -42,8 +40,8 @@ export default {
   created () {},
   computed: {},
   methods: {
-    addNewBook (book, flag) {
-      this.$emit('addBook', book, flag)
+    openAddDialog () {
+      this.$emit('openAddDialog')
     }
   }
 }
