@@ -50,7 +50,7 @@ export default {
       genres: ['test_genre', 'テストジャンル'],
       addBookDialog: false,
       addOverlay: false,
-      ovlText: '書籍情報を登録中'
+      ovlText: ''
     }
   },
   created () {},
@@ -64,6 +64,7 @@ export default {
     },
     async addNewBook (book) {
       try {
+        this.ovlText = '書籍情報を登録中'
         this.addOverlay = true
         const maxId = this.maxIdSearch(this.books)
         this.$set(book, 'id', maxId + 1)
