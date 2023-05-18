@@ -7,10 +7,13 @@
       width="550"
     >
       <Add @addBook="addNewBook"/>
-      <v-overlay :value="addOverlay">
-        <Overlay :ovlText="ovlText"/>
-      </v-overlay>
     </v-dialog>
+    <v-overlay
+      :value="addOverlay"
+      :z-index="zIndex"
+    >
+      <Overlay :ovlText="ovlText"/>
+    </v-overlay>
   </div>
 </template>
 
@@ -50,7 +53,8 @@ export default {
       genres: ['test_genre', 'テストジャンル'],
       addBookDialog: false,
       addOverlay: false,
-      ovlText: ''
+      ovlText: '',
+      zIndex: 300
     }
   },
   created () {},
