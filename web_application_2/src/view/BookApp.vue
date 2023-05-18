@@ -10,7 +10,7 @@
     </v-dialog>
     <v-overlay
       :value="addOverlay"
-      :z-index="zIndex"
+      :z-index="300"
     >
       <Overlay :ovlText="ovlText"/>
     </v-overlay>
@@ -53,8 +53,7 @@ export default {
       genres: ['test_genre', 'テストジャンル'],
       addBookDialog: false,
       addOverlay: false,
-      ovlText: '',
-      zIndex: 300
+      ovlText: ''
     }
   },
   created () {},
