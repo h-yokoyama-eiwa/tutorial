@@ -7,6 +7,7 @@ import {GPC_CONNECTION_NAME,
 import doGet from './functions/doGet'
 // import sample from './functions/sample'
 import updateBooksTable from './functions/updateBooksTable'
+import getBooks from './functions/getBooks'
 
 global.GPC_CONNECTION_NAME = GPC_CONNECTION_NAME
 global.GPC_USER_NAME = GPC_USER_NAME
@@ -16,3 +17,4 @@ global.GPC_URL = GPC_URL
 global.doGet = doGet
 // global.sample = sample
 global.updateBooksTable = updateBooksTable
+global.getBooks = getBooks
