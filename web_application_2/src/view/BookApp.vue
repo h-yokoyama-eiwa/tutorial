@@ -32,31 +32,16 @@ export default {
   },
   data () {
     return {
-      books: [
-        {
-          id: '1',
-          title: 'test_title',
-          genre: 'test_genre',
-          boughtAt: '2023-01-02',
-          buyer: 'test_buyer',
-          review: 'test'
-        },
-        {
-          id: '2',
-          title: 'テストタイトル',
-          genre: 'テストジャンル',
-          boughtAt: '2022-02-22',
-          buyer: 'テスト購入者',
-          review: 'テスト'
-        }
-      ],
+      books: [],
       genres: ['test_genre', 'テストジャンル'],
       addBookDialog: false,
       addOverlay: false,
       ovlText: ''
     }
   },
-  created () {},
+  async created () {
+    this.books = await this.getBooksFromDatabase()
+  },
   computed: {},
   methods: {
     openAddDialog () {
@@ -95,6 +80,18 @@ export default {
             reject(error)
           })
           .updateBooksTable(book)
+      })
+    },
+    async getBooksFromDatabase () {
+      return new Promise(function (resolve, reject) {
+        window.google.script.run
+          .withSuccessHandler(function (result) {
+            resolve(result)
+          })
+          .withFailureHandler(function (error) {
+            reject(error)
+          })
+          .getBooks()
       })
     },
     onRejected () {
