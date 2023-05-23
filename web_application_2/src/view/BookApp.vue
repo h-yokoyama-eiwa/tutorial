@@ -9,7 +9,7 @@
       <Add @addBook="addNewBook"/>
     </v-dialog>
     <v-overlay
-      :value="addOverlay"
+      :value="overlay"
       :z-index="300"
     >
       <Overlay :ovlText="ovlText"/>
@@ -35,12 +35,20 @@ export default {
       books: [],
       genres: ['test_genre', 'テストジャンル'],
       addBookDialog: false,
-      addOverlay: false,
+      overlay: false,
       ovlText: ''
     }
   },
   async created () {
-    this.books = await this.getBooksFromDatabase()
+    try {
+      this.overlay = true
+      this.ovlText = '書籍情報を取得中'
+      this.books = await this.getBooksFromDatabase()
+    } catch {
+      this.onRejected()
+    } finally {
+      this.overlay = false
+    }
   },
   computed: {},
   methods: {
@@ -53,7 +61,7 @@ export default {
     async addNewBook (book) {
       try {
         this.ovlText = '書籍情報を登録中'
-        this.addOverlay = true
+        this.overlay = true
         const maxId = this.maxIdSearch(this.books)
         this.$set(book, 'id', maxId + 1)
         await this.saveOnDatabase(book)
@@ -66,7 +74,7 @@ export default {
         this.$set(book, 'boughtAt', (new Date(Date.now() - (new Date()).getTimezoneOffset() * 60000)).toISOString().substr(0, 10))
         this.$set(book, 'buyer', '')
         this.$set(book, 'review', '')
-        this.addOverlay = false
+        this.overlay = false
         this.addBookDialog = false
       }
     },
