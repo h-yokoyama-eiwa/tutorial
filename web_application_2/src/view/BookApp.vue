@@ -6,13 +6,13 @@
       v-model="addBookDialog"
       width="550"
     >
-      <Add @addBook="addNewBook"/>
-    </v-dialog>
+      <Form @addBook="addNewBook" formType="add"/>
+     </v-dialog>
     <v-dialog
       v-model="editBookDialog"
       width="550"
     >
-      <Edit @editBook="editBook"/>
+      <Form @editBook="editBook" formType="edit"/>
     </v-dialog>
     <v-overlay
       :value="overlay"
@@ -26,16 +26,14 @@
 <script>
 import Search from '@/components/Search'
 import List from '@/components/List'
-import Add from '@/components/Add'
-import Edit from '@/components/Edit'
+import Form from '@/components/Form'
 import Overlay from '@/components/Overlay'
 
 export default {
   components: {
     Search,
     List,
-    Add,
-    Edit,
+    Form,
     Overlay
   },
   data () {
