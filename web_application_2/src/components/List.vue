@@ -8,7 +8,7 @@
           class="elevation-1"
         >
           <template v-slot:[`item.edit`]="{ item }">
-            <v-icon @click="editItem(item)">edit</v-icon>
+            <v-icon @click="openEditDialog(item)">edit</v-icon>
           </template>
           <template v-slot:[`item.delete`]="{ item }">
             <v-icon @click="deleteItem(item)">delete</v-icon>
@@ -68,9 +68,8 @@ export default {
   created () {},
   computed: {},
   methods: {
-    editItem (item) {
-      // まだ編集機能は未実装のため、確認用のログ出力のみ実施
-      console.log(`${item.title}:${item.genre}:${item.boughtAt}:${item.buyer}`)
+    openEditDialog () {
+      this.$emit('openEditDialog')
     },
     deleteItem (item) {
       // まだ削除機能は未実装のため、確認用のログ出力のみ実施

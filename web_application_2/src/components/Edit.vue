@@ -1,12 +1,7 @@
 <template>
   <v-card>
     <v-card-title class="text-h5 primary dark grey--text text--lighten-5">
-      <div v-if="formType == 'add'">
-        書籍情報の登録
-      </div>
-      <div v-if="formType == 'edit'">
-        書籍情報の修正
-      </div>
+      書籍情報の修正
     </v-card-title>
 
     <v-form>
@@ -94,15 +89,6 @@
     <v-card-actions>
       <v-spacer></v-spacer>
       <v-btn
-        v-if="formType == 'add'"
-        color="primary"
-        text
-        @click="addNewBook"
-      >
-        登録
-      </v-btn>
-      <v-btn
-        v-if="formType == 'edit'"
         color="primary"
         text
         @click="editBook"
@@ -128,10 +114,6 @@ export default {
         buyer: '',
         review: ''
       })
-    },
-    formType: {
-      type: String,
-      default: ''
     }
   },
   data () {
@@ -142,9 +124,6 @@ export default {
   created () {},
   computed: {},
   methods: {
-    addNewBook () {
-      this.$emit('addBook', this.book)
-    },
     editBook () {
       this.$emit('editBook')
     }

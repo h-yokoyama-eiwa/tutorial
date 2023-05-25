@@ -1,12 +1,18 @@
 <template>
   <div>
     <Search @openAddDialog="openAddDialog" :genres="genres"/>
-    <List :books="books"/>
+    <List @openEditDialog="openEditDialog" :books="books"/>
     <v-dialog
       v-model="addBookDialog"
       width="550"
     >
-      <Add @addBook="addNewBook"/>
+      <Form @addBook="addNewBook" formType="add"/>
+     </v-dialog>
+    <v-dialog
+      v-model="editBookDialog"
+      width="550"
+    >
+      <Form @editBook="editBook" formType="edit"/>
     </v-dialog>
     <v-overlay
       :value="overlay"
@@ -20,14 +26,14 @@
 <script>
 import Search from '@/components/Search'
 import List from '@/components/List'
-import Add from '@/components/Add'
+import Form from '@/components/Form'
 import Overlay from '@/components/Overlay'
 
 export default {
   components: {
     Search,
     List,
-    Add,
+    Form,
     Overlay
   },
   data () {
@@ -35,6 +41,7 @@ export default {
       books: [],
       genres: ['test_genre', 'テストジャンル'],
       addBookDialog: false,
+      editBookDialog: false,
       overlay: false,
       ovlText: ''
     }
@@ -54,6 +61,9 @@ export default {
   methods: {
     openAddDialog () {
       this.addBookDialog = true
+    },
+    openEditDialog () {
+      this.editBookDialog = true
     },
     maxIdSearch (books) {
       return Math.max.apply(null, books.map((book) => book.id))
@@ -77,6 +87,9 @@ export default {
         this.overlay = false
         this.addBookDialog = false
       }
+    },
+    editBook () {
+      // まだ未実装
     },
     async saveOnDatabase (book) {
       return new Promise(function (resolve, reject) {
