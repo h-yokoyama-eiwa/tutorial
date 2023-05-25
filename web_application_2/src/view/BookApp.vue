@@ -12,7 +12,7 @@
       v-model="editBookDialog"
       width="550"
     >
-      <Form @editBook="editBook" formType="edit"/>
+      <Form @editBook="editBook" formType="edit" :book="this.book"/>
     </v-dialog>
     <v-overlay
       :value="overlay"
@@ -39,6 +39,7 @@ export default {
   data () {
     return {
       books: [],
+      book: {},
       genres: ['test_genre', 'テストジャンル'],
       addBookDialog: false,
       editBookDialog: false,
@@ -51,6 +52,11 @@ export default {
       this.overlay = true
       this.ovlText = '書籍情報を取得中'
       this.books = await this.getBooksFromDatabase()
+      //* 日付のフォーマット変更 *//
+      //* YYYY-MM-DD hh:mm:ss ⇒ YYYY-MM-DD *//
+      this.books.forEach(book => {
+        this.$set(book, 'boughtAt', book.boughtAt.substring(0, 10))
+      })
     } catch {
       this.onRejected()
     } finally {
@@ -62,7 +68,8 @@ export default {
     openAddDialog () {
       this.addBookDialog = true
     },
-    openEditDialog () {
+    openEditDialog (item) {
+      this.book = item
       this.editBookDialog = true
     },
     maxIdSearch (books) {
@@ -81,7 +88,7 @@ export default {
         this.$set(book, 'id', 0)
         this.$set(book, 'title', '')
         this.$set(book, 'genre', '')
-        this.$set(book, 'boughtAt', (new Date(Date.now() - (new Date()).getTimezoneOffset() * 60000)).toISOString().substr(0, 10))
+        this.$set(book, 'boughtAt', (new Date(Date.now() - (new Date()).getTimezoneOffset() * 60000)).toISOString().substring(0, 10))
         this.$set(book, 'buyer', '')
         this.$set(book, 'review', '')
         this.overlay = false
