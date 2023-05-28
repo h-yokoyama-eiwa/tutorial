@@ -28,6 +28,7 @@ import Search from '@/components/Search'
 import List from '@/components/List'
 import Form from '@/components/Form'
 import Overlay from '@/components/Overlay'
+import { getToday, changeDateFormat } from '@/components/ExternalFunc'
 
 export default {
   components: {
@@ -55,7 +56,7 @@ export default {
       //* 日付のフォーマット変更 *//
       //* YYYY-MM-DD hh:mm:ss ⇒ YYYY-MM-DD *//
       this.books.forEach(book => {
-        this.$set(book, 'boughtAt', book.boughtAt.substring(0, 10))
+        this.$set(book, 'boughtAt', changeDateFormat(book.boughtAt))
       })
     } catch {
       this.onRejected()
@@ -88,7 +89,7 @@ export default {
         this.$set(book, 'id', 0)
         this.$set(book, 'title', '')
         this.$set(book, 'genre', '')
-        this.$set(book, 'boughtAt', (new Date(Date.now() - (new Date()).getTimezoneOffset() * 60000)).toISOString().substring(0, 10))
+        this.$set(book, 'boughtAt', getToday())
         this.$set(book, 'buyer', '')
         this.$set(book, 'review', '')
         this.overlay = false
