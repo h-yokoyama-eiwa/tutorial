@@ -28,7 +28,7 @@ import Search from '@/components/Search'
 import List from '@/components/List'
 import Form from '@/components/Form'
 import Overlay from '@/components/Overlay'
-import { getToday, changeDateFormat } from '@/components/ExternalFunc'
+import { getToday, changeDateFormat } from '@/modules/util'
 
 export default {
   components: {

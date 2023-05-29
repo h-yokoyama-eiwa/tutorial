@@ -114,7 +114,7 @@
 </template>
 
 <script>
-import { getToday } from '@/components/ExternalFunc'
+import { getToday } from '@/modules/util'
 
 export default {
   props: {
