@@ -68,8 +68,8 @@ export default {
   created () {},
   computed: {},
   methods: {
-    openEditDialog () {
-      this.$emit('openEditDialog')
+    openEditDialog (item) {
+      this.$emit('openEditDialog', item)
     },
     deleteItem (item) {
       // まだ削除機能は未実装のため、確認用のログ出力のみ実施

@@ -114,17 +114,19 @@
 </template>
 
 <script>
+import { getToday } from '@/modules/util'
+
 export default {
   props: {
     book: {
       type: Object,
       default: () => ({
         id: 0,
-        createdAt: (new Date(Date.now() - (new Date()).getTimezoneOffset() * 60000)).toISOString().substr(0, 10),
-        updatedAt: (new Date(Date.now() - (new Date()).getTimezoneOffset() * 60000)).toISOString().substr(0, 10),
+        createdAt: getToday(),
+        updatedAt: getToday(),
         title: '',
         genre: '',
-        boughtAt: (new Date(Date.now() - (new Date()).getTimezoneOffset() * 60000)).toISOString().substr(0, 10),
+        boughtAt: getToday(),
         buyer: '',
         review: ''
       })
