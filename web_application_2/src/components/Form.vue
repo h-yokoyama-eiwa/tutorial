@@ -148,7 +148,7 @@ export default {
       this.$emit('addBook', this.book)
     },
     editBook () {
-      this.$emit('editBook')
+      this.$emit('editBook', this.book)
     }
   }
 }
