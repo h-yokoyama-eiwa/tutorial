@@ -70,7 +70,15 @@ export default {
       this.addBookDialog = true
     },
     openEditDialog (item) {
-      this.book = item
+      this.$set(this.book, 'id', item.id)
+      this.$set(this.book, 'createdAt', item.createdAt)
+      this.$set(this.book, 'updatedAt', item.updatedAt)
+      this.$set(this.book, 'title', item.title)
+      this.$set(this.book, 'genre', item.genre)
+      this.$set(this.book, 'boughtAt', item.boughtAt)
+      this.$set(this.book, 'buyer', item.buyer)
+      this.$set(this.book, 'review', item.review)
+
       this.editBookDialog = true
     },
     maxIdSearch (books) {
@@ -96,8 +104,17 @@ export default {
         this.addBookDialog = false
       }
     },
-    editBook () {
-      // まだ未実装
+    async editBook (book) {
+      try {
+        this.ovlText = '書籍情報を更新中'
+        this.overlay = true
+        await this.saveOnDatabase(book)
+      } catch {
+        this.onRejected()
+      } finally {
+        this.overlay = false
+        this.editBookDialog = false
+      }
     },
     async saveOnDatabase (book) {
       return new Promise(function (resolve, reject) {
