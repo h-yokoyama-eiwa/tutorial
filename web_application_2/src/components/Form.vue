@@ -7,6 +7,9 @@
       <div v-if="formType == 'edit'">
         書籍情報の修正
       </div>
+      <div v-if="formType == 'delete'">
+        書籍情報の削除
+      </div>
     </v-card-title>
 
     <v-form>
@@ -109,6 +112,14 @@
       >
         修正
       </v-btn>
+      <v-btn
+        v-if="formType == 'delete'"
+        color="primary"
+        text
+        @click="deleteBook"
+      >
+        削除
+      </v-btn>
     </v-card-actions>
   </v-card>
 </template>
@@ -149,6 +160,9 @@ export default {
     },
     editBook () {
       this.$emit('editBook', this.book)
+    },
+    deleteBook () {
+      this.$emit('deleteBook', this.book)
     }
   }
 }
