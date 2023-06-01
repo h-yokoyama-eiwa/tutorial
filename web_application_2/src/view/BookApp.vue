@@ -1,7 +1,7 @@
 <template>
   <div>
     <Search @openAddDialog="openAddDialog" :genres="genres"/>
-    <List @openEditDialog="openEditDialog" :books="books"/>
+    <List @openEditDialog="openEditDialog" @openDeleteDialog="openDeleteDialog" :books="books"/>
     <v-dialog
       v-model="addBookDialog"
       width="550"
@@ -13,6 +13,12 @@
       width="550"
     >
       <Form @editBook="editBook" formType="edit" :book="this.book"/>
+    </v-dialog>
+    <v-dialog
+      v-model="deleteBookDialog"
+      width="550"
+    >
+      <Form @deleteBook="deleteBook" formType="delete"/>
     </v-dialog>
     <v-overlay
       :value="overlay"
@@ -44,6 +50,7 @@ export default {
       genres: ['test_genre', 'テストジャンル'],
       addBookDialog: false,
       editBookDialog: false,
+      deleteBookDialog: false,
       overlay: false,
       ovlText: ''
     }
@@ -81,6 +88,9 @@ export default {
 
       this.editBookDialog = true
     },
+    openDeleteDialog () {
+      this.deleteBookDialog = true
+    },
     maxIdSearch (books) {
       return Math.max.apply(null, books.map((book) => book.id))
     },
@@ -115,6 +125,10 @@ export default {
         this.overlay = false
         this.editBookDialog = false
       }
+    },
+    deleteBook (book) {
+      console.log(book) /* 5/31時点でまだDB更新しないためログだけ出力 */
+      this.deleteBookDialog = false
     },
     async saveOnDatabase (book) {
       return new Promise(function (resolve, reject) {

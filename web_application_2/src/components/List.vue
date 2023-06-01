@@ -11,7 +11,7 @@
             <v-icon @click="openEditDialog(item)">edit</v-icon>
           </template>
           <template v-slot:[`item.delete`]="{ item }">
-            <v-icon @click="deleteItem(item)">delete</v-icon>
+            <v-icon @click="openDeleteDialog(item)">delete</v-icon>
           </template>
         </v-data-table>
       </v-col>
@@ -71,9 +71,8 @@ export default {
     openEditDialog (item) {
       this.$emit('openEditDialog', item)
     },
-    deleteItem (item) {
-      // まだ削除機能は未実装のため、確認用のログ出力のみ実施
-      console.log(`${item.title}:${item.genre}:${item.boughtAt}:${item.buyer}`)
+    openDeleteDialog (item) {
+      this.$emit('openDeleteDialog', item)
     }
   }
 }
