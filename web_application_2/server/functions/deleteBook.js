@@ -3,8 +3,8 @@
  * @param {object} book
  */
 export default function deleteBook (book) {
-	const gpcConnection = Jdbc.getCloudSqlConnection(GPC_URL, GPC_USER_NAME, GPC_PASSWORD);
-	const gpcStatement = gpcConnection.prepareStatement('DELETE FROM books WHERE id=?');
+  const gpcConnection = Jdbc.getCloudSqlConnection(GPC_URL, GPC_USER_NAME, GPC_PASSWORD);
+  const gpcStatement = gpcConnection.prepareStatement('DELETE FROM books WHERE id=?');
 
   gpcStatement.setInt(1, book.id);
   const sqlResults = gpcStatement.executeUpdate();
