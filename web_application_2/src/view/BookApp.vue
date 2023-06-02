@@ -18,7 +18,7 @@
       v-model="deleteBookDialog"
       width="550"
     >
-      <Form @deleteBook="deleteBook" formType="delete"/>
+      <Form @deleteBook="deleteBook" formType="delete" :book="this.book"/>
     </v-dialog>
     <v-overlay
       :value="overlay"
@@ -88,7 +88,16 @@ export default {
 
       this.editBookDialog = true
     },
-    openDeleteDialog () {
+    openDeleteDialog (item) {
+      this.$set(this.book, 'id', item.id)
+      this.$set(this.book, 'createdAt', item.createdAt)
+      this.$set(this.book, 'updatedAt', item.updatedAt)
+      this.$set(this.book, 'title', item.title)
+      this.$set(this.book, 'genre', item.genre)
+      this.$set(this.book, 'boughtAt', item.boughtAt)
+      this.$set(this.book, 'buyer', item.buyer)
+      this.$set(this.book, 'review', item.review)
+
       this.deleteBookDialog = true
     },
     maxIdSearch (books) {

@@ -22,6 +22,7 @@
             <v-text-field
               label="タイトル"
               v-model="book.title"
+              v-bind:disabled="disabled"
             ></v-text-field>
           </v-col>
         </v-row>
@@ -33,6 +34,7 @@
             <v-text-field
               label="ジャンル"
               v-model="book.genre"
+              v-bind:disabled="disabled"
             ></v-text-field>
           </v-col>
         </v-row>
@@ -57,6 +59,7 @@
                   readonly
                   v-bind="attrs"
                   v-on="on"
+                  v-bind:disabled="disabled"
                 ></v-text-field>
               </template>
               <v-date-picker
@@ -74,6 +77,7 @@
             <v-text-field
               label="購入者"
               v-model="book.buyer"
+              v-bind:disabled="disabled"
             ></v-text-field>
           </v-col>
         </v-row>
@@ -86,6 +90,7 @@
               name="review"
               label="レビュー"
               v-model="book.review"
+              v-bind:disabled="disabled"
             ></v-textarea>
           </v-col>
         </v-row>
@@ -149,10 +154,17 @@ export default {
   },
   data () {
     return {
-      menu: false
+      menu: false,
+      disabled: false
     }
   },
-  created () {},
+  created () {
+    if (this.formType === 'delete') {
+      this.disabled = true
+    } else {
+      this.disabled = false
+    }
+  },
   computed: {},
   methods: {
     addNewBook () {
