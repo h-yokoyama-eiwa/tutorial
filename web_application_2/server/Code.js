@@ -8,6 +8,7 @@ import doGet from './functions/doGet'
 // import sample from './functions/sample'
 import updateBooksTable from './functions/updateBooksTable'
 import getBooks from './functions/getBooks'
+import deleteBook from './functions/deleteBook'
 
 global.GPC_CONNECTION_NAME = GPC_CONNECTION_NAME
 global.GPC_USER_NAME = GPC_USER_NAME
@@ -18,3 +19,4 @@ global.doGet = doGet
 // global.sample = sample
 global.updateBooksTable = updateBooksTable
 global.getBooks = getBooks
+global.deleteBook = deleteBook
