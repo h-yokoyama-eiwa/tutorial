@@ -135,8 +135,8 @@ export default {
         this.editBookDialog = false
       }
     },
-    deleteBook (book) {
-      console.log(book) /* 5/31時点でまだDB更新しないためログだけ出力 */
+    async deleteBook (book) {
+      await this.deleteBookFromDatabase(book)
       this.deleteBookDialog = false
     },
     async saveOnDatabase (book) {
@@ -161,6 +161,18 @@ export default {
             reject(error)
           })
           .getBooks()
+      })
+    },
+    async deleteBookFromDatabase (book) {
+      return new Promise(function (resolve, reject) {
+        window.google.script.run
+          .withSuccessHandler(function (result) {
+            resolve(result)
+          })
+          .withFailureHandler(function (error) {
+            reject(error)
+          })
+          .deleteBook(book)
       })
     },
     onRejected () {
