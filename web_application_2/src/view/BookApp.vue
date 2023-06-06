@@ -136,8 +136,16 @@ export default {
       }
     },
     async deleteBook (book) {
-      await this.deleteBookFromDatabase(book)
-      this.deleteBookDialog = false
+      try {
+        this.ovlText = '書籍情報を削除中'
+        this.overlay = true
+        await this.deleteBookFromDatabase(book)
+      } catch {
+        this.onRejected()
+      } finally {
+        this.overlay = false
+        this.deleteBookDialog = false
+      }
     },
     async saveOnDatabase (book) {
       return new Promise(function (resolve, reject) {
