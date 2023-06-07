@@ -24,7 +24,7 @@
       :value="overlay"
       :z-index="300"
     >
-      <Overlay :ovlText="ovlText"/>
+      <Overlay :overlayText="overlayText"/>
     </v-overlay>
   </div>
 </template>
@@ -52,13 +52,13 @@ export default {
       editBookDialog: false,
       deleteBookDialog: false,
       overlay: false,
-      ovlText: ''
+      overlayText: ''
     }
   },
   async created () {
     try {
       this.overlay = true
-      this.ovlText = '書籍情報を取得中'
+      this.overlayText = '書籍情報を取得中'
       this.books = await this.getBooksFromDatabase()
       //* 日付のフォーマット変更 *//
       //* YYYY-MM-DD hh:mm:ss ⇒ YYYY-MM-DD *//
@@ -105,7 +105,7 @@ export default {
     },
     async addNewBook (book) {
       try {
-        this.ovlText = '書籍情報を登録中'
+        this.overlayText = '書籍情報を登録中'
         this.overlay = true
         const maxId = this.maxIdSearch(this.books)
         this.$set(book, 'id', maxId + 1)
@@ -125,7 +125,7 @@ export default {
     },
     async editBook (book) {
       try {
-        this.ovlText = '書籍情報を更新中'
+        this.overlayText = '書籍情報を更新中'
         this.overlay = true
         await this.saveOnDatabase(book)
       } catch {
@@ -137,7 +137,7 @@ export default {
     },
     async deleteBook (book) {
       try {
-        this.ovlText = '書籍情報を削除中'
+        this.overlayText = '書籍情報を削除中'
         this.overlay = true
         await this.deleteBookFromDatabase(book)
       } catch {

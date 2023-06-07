@@ -1,6 +1,6 @@
 <template>
   <div>
-    <v-subheader>{{ovlText}}</v-subheader>
+    <v-subheader>{{overlayText}}</v-subheader>
     <v-progress-linear
       indeterminate
       color="cyan"
@@ -11,7 +11,7 @@
 <script>
 export default {
   props: {
-    ovlText: {
+    overlayText: {
       type: String,
       default: ''
     }
