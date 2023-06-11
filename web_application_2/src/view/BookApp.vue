@@ -150,6 +150,11 @@ export default {
     async searchBooks () {
       try {
         this.books = await this.getBooksFromDatabase()
+        //* 日付のフォーマット変更 *//
+        //* YYYY-MM-DD hh:mm:ss ⇒ YYYY-MM-DD *//
+        this.books.forEach(book => {
+          this.$set(book, 'boughtAt', changeDateFormat(book.boughtAt))
+        })
       } catch {
         this.onRejected()
       } finally {
