@@ -15,9 +15,11 @@
         ></v-select>
       </v-col>
       <v-col cols="12" md="6" lg="6">
-        <v-btn>検索</v-btn>
+        <v-btn @click="searchBooks">
+          検索
+        </v-btn>
         <v-btn>検索条件クリア</v-btn>
-        <v-btn v-on:click="openAddDialog">
+        <v-btn @click="openAddDialog">
           新規登録
         </v-btn>
       </v-col>
@@ -42,6 +44,9 @@ export default {
   methods: {
     openAddDialog () {
       this.$emit('openAddDialog')
+    },
+    searchBooks () {
+      this.$emit('searchBooks')
     }
   }
 }

@@ -1,6 +1,6 @@
 <template>
   <div>
-    <Search @openAddDialog="openAddDialog" :genres="genres"/>
+    <Search @openAddDialog="openAddDialog" @searchBooks="searchBooks" :genres="genres"/>
     <List @openEditDialog="openEditDialog" @openDeleteDialog="openDeleteDialog" :books="books"/>
     <v-dialog
       v-model="addBookDialog"
@@ -145,6 +145,20 @@ export default {
       } finally {
         this.overlay = false
         this.deleteBookDialog = false
+      }
+    },
+    async searchBooks () {
+      try {
+        this.books = await this.getBooksFromDatabase()
+        //* 日付のフォーマット変更 *//
+        //* YYYY-MM-DD hh:mm:ss ⇒ YYYY-MM-DD *//
+        this.books.forEach(book => {
+          this.$set(book, 'boughtAt', changeDateFormat(book.boughtAt))
+        })
+      } catch {
+        this.onRejected()
+      } finally {
+        console.log(this.books) // 6/8時点では何もしないのでログだけ出力しておく
       }
     },
     async saveOnDatabase (book) {
