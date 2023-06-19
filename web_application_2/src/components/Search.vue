@@ -9,9 +9,9 @@
       </v-col>
       <v-col cols="12" md="6" lg="3">
         <v-select
-          clearable
           label="ジャンル検索"
           :items="genres"
+          v-model="genre"
         ></v-select>
       </v-col>
       <v-col cols="12" md="6" lg="6">
@@ -37,7 +37,9 @@ export default {
     }
   },
   data () {
-    return {}
+    return {
+      genre: ''
+    }
   },
   created () {},
   computed: {},
@@ -46,7 +48,7 @@ export default {
       this.$emit('openAddDialog')
     },
     searchBooks () {
-      this.$emit('searchBooks')
+      this.$emit('searchBooks', this.genre)
     }
   }
 }

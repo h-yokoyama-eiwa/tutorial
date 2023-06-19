@@ -59,7 +59,7 @@ export default {
     try {
       this.overlay = true
       this.overlayText = '書籍情報を取得中'
-      await this.getBooks()
+      this.books = await this.getBooks()
     } catch {
       this.onRejected()
     } finally {
@@ -96,7 +96,11 @@ export default {
       this.deleteBookDialog = true
     },
     maxIdSearch (books) {
-      return Math.max.apply(null, books.map((book) => book.id))
+      let maxId = 0
+      if (Object.keys(books).length > 0) {
+        maxId = Math.max.apply(null, books.map((book) => book.id))
+      }
+      return maxId
     },
     async addNewBook (book) {
       try {
@@ -142,9 +146,13 @@ export default {
         this.deleteBookDialog = false
       }
     },
-    async searchBooks () {
+    async searchBooks (genre) {
       try {
-        await this.getBooks()
+        let books = await this.getBooks()
+        if (genre !== '') {
+          books = books.filter(book => book.genre === genre)
+        }
+        this.books = books
       } catch {
         this.onRejected()
       } finally {
@@ -152,13 +160,15 @@ export default {
       }
     },
     async getBooks () {
-      this.books = await this.getBooksFromDatabase()
+      let books = await this.getBooksFromDatabase()
       //* 日付のフォーマット変更 *//
       //* YYYY-MM-DD hh:mm:ss ⇒ YYYY-MM-DD *//
-      this.books.forEach(book => {
+      books.forEach(book => {
         this.$set(book, 'boughtAt', changeDateFormat(book.boughtAt))
       })
-      this.genres = this.books.map(book => book.genre)
+      this.genres = books.map(book => book.genre)
+
+      return books
     },
     async saveOnDatabase (book) {
       return new Promise(function (resolve, reject) {
