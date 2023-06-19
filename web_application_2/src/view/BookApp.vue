@@ -47,7 +47,7 @@ export default {
     return {
       books: [],
       book: {},
-      genres: ['test_genre', 'テストジャンル'],
+      genres: [],
       addBookDialog: false,
       editBookDialog: false,
       deleteBookDialog: false,
@@ -59,12 +59,7 @@ export default {
     try {
       this.overlay = true
       this.overlayText = '書籍情報を取得中'
-      this.books = await this.getBooksFromDatabase()
-      //* 日付のフォーマット変更 *//
-      //* YYYY-MM-DD hh:mm:ss ⇒ YYYY-MM-DD *//
-      this.books.forEach(book => {
-        this.$set(book, 'boughtAt', changeDateFormat(book.boughtAt))
-      })
+      await this.getBooks()
     } catch {
       this.onRejected()
     } finally {
@@ -149,17 +144,21 @@ export default {
     },
     async searchBooks () {
       try {
-        this.books = await this.getBooksFromDatabase()
-        //* 日付のフォーマット変更 *//
-        //* YYYY-MM-DD hh:mm:ss ⇒ YYYY-MM-DD *//
-        this.books.forEach(book => {
-          this.$set(book, 'boughtAt', changeDateFormat(book.boughtAt))
-        })
+        await this.getBooks()
       } catch {
         this.onRejected()
       } finally {
         console.log(this.books) // 6/8時点では何もしないのでログだけ出力しておく
       }
+    },
+    async getBooks () {
+      this.books = await this.getBooksFromDatabase()
+      //* 日付のフォーマット変更 *//
+      //* YYYY-MM-DD hh:mm:ss ⇒ YYYY-MM-DD *//
+      this.books.forEach(book => {
+        this.$set(book, 'boughtAt', changeDateFormat(book.boughtAt))
+      })
+      this.genres = this.books.map(book => book.genre)
     },
     async saveOnDatabase (book) {
       return new Promise(function (resolve, reject) {
