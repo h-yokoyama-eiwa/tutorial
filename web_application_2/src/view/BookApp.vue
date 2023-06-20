@@ -149,7 +149,7 @@ export default {
     async searchBooks (genre) {
       try {
         let books = await this.getBooks()
-        if (genre !== '') {
+        if (genre) {
           books = books.filter(book => book.genre === genre)
         }
         this.books = books
