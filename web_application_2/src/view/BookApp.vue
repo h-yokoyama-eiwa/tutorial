@@ -97,7 +97,7 @@ export default {
     },
     maxIdSearch (books) {
       let maxId = 0
-      if (Object.keys(books).length > 0) {
+      if (books.length > 0) {
         maxId = Math.max.apply(null, books.map((book) => book.id))
       }
       return maxId
