@@ -148,6 +148,9 @@ export default {
     },
     async searchBooks (genre) {
       try {
+        this.overlayText = '書籍情報を検索中'
+        this.overlay = true
+
         let books = await this.getBooks()
         if (genre) {
           books = books.filter(book => book.genre === genre)
@@ -156,7 +159,7 @@ export default {
       } catch {
         this.onRejected()
       } finally {
-        console.log(this.books) // 6/8時点では何もしないのでログだけ出力しておく
+        this.overlay = false
       }
     },
     async getBooks () {

@@ -56,6 +56,11 @@ git push origin *** ⇒ ローカルブランチ***をリモートブランチ�
 **git管理対象外に変更する**
 git rm -r --cached *** ⇒ ***をgit管理対象外にする。（ローカルファイルは残す)
 
+**間違ってcommitした場合の取り消し
+git reset --soft ⇒commitのみ取り消し
+git reset --mixed ⇒commitとaddの取り消し
+git reset --hard ⇒すべて取り消し（ワーキングツリーも戻る）
+
 <unix/linuxコマンド>
 入出力
 > ⇒ 標準出力の変更
