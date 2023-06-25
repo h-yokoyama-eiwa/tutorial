@@ -146,12 +146,15 @@ export default {
         this.deleteBookDialog = false
       }
     },
-    async searchBooks (genre) {
+    async searchBooks (title, genre) {
       try {
         this.overlayText = '書籍情報を検索中'
         this.overlay = true
 
         let books = await this.getBooks()
+        if (title) {
+          books = books.filter(book => book.title.includes(title))
+        }
         if (genre) {
           books = books.filter(book => book.genre === genre)
         }
