@@ -18,7 +18,9 @@
         <v-btn @click="searchBooks">
           検索
         </v-btn>
-        <v-btn>検索条件クリア</v-btn>
+        <v-btn @click="clearSearchBox">
+          検索条件クリア
+        </v-btn>
         <v-btn @click="openAddDialog">
           新規登録
         </v-btn>
@@ -50,6 +52,10 @@ export default {
     },
     searchBooks () {
       this.$emit('searchBooks', this.title, this.genre)
+    },
+    clearSearchBox () {
+      this.genre = ''
+      this.title = ''
     }
   }
 }
