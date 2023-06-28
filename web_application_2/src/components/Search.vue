@@ -3,8 +3,8 @@
     <v-row>
       <v-col cols="12" md="6" lg="3">
         <v-text-field
-          clearable
           label="書籍名検索"
+          v-model="title"
         ></v-text-field>
       </v-col>
       <v-col cols="12" md="6" lg="3">
@@ -38,7 +38,8 @@ export default {
   },
   data () {
     return {
-      genre: ''
+      genre: '',
+      title: ''
     }
   },
   created () {},
@@ -48,7 +49,7 @@ export default {
       this.$emit('openAddDialog')
     },
     searchBooks () {
-      this.$emit('searchBooks', this.genre)
+      this.$emit('searchBooks', this.title, this.genre)
     }
   }
 }
