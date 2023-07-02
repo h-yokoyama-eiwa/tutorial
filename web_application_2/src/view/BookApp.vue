@@ -109,6 +109,7 @@ export default {
         const maxId = this.maxIdSearch(this.books)
         this.$set(book, 'id', maxId + 1)
         await this.saveOnDatabase(book)
+        this.books = await this.getBooks()
       } catch {
         this.onRejected()
       } finally {
@@ -127,6 +128,7 @@ export default {
         this.overlayText = '書籍情報を更新中'
         this.overlay = true
         await this.saveOnDatabase(book)
+        this.books = await this.getBooks()
       } catch {
         this.onRejected()
       } finally {
@@ -139,6 +141,7 @@ export default {
         this.overlayText = '書籍情報を削除中'
         this.overlay = true
         await this.deleteBookFromDatabase(book)
+        this.books = await this.getBooks()
       } catch {
         this.onRejected()
       } finally {
