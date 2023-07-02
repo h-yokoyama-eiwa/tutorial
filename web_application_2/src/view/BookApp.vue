@@ -52,7 +52,8 @@ export default {
       editBookDialog: false,
       deleteBookDialog: false,
       overlay: false,
-      overlayText: ''
+      overlayText: '',
+      maxID: 0
     }
   },
   async created () {
@@ -106,8 +107,7 @@ export default {
       try {
         this.overlayText = '書籍情報を登録中'
         this.overlay = true
-        const maxId = this.maxIdSearch(this.books)
-        this.$set(book, 'id', maxId + 1)
+        this.$set(book, 'id', this.maxId + 1)
         await this.saveOnDatabase(book)
         this.books = await this.getBooks()
       } catch {
@@ -175,6 +175,7 @@ export default {
       books.forEach(book => {
         this.$set(book, 'boughtAt', changeDateFormat(book.boughtAt))
       })
+      this.maxId = this.maxIdSearch(books)
       this.genres = books.map(book => book.genre)
 
       return books
