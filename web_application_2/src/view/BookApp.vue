@@ -95,20 +95,12 @@ export default {
 
       this.deleteBookDialog = true
     },
-    maxIdSearch (books) {
-      let maxId = 0
-      if (books.length > 0) {
-        maxId = Math.max.apply(null, books.map((book) => book.id))
-      }
-      return maxId
-    },
     async addNewBook (book) {
       try {
         this.overlayText = '書籍情報を登録中'
         this.overlay = true
-        const maxId = this.maxIdSearch(this.books)
-        this.$set(book, 'id', maxId + 1)
         await this.saveOnDatabase(book)
+        this.books = await this.getBooks()
       } catch {
         this.onRejected()
       } finally {
@@ -127,6 +119,7 @@ export default {
         this.overlayText = '書籍情報を更新中'
         this.overlay = true
         await this.saveOnDatabase(book)
+        this.books = await this.getBooks()
       } catch {
         this.onRejected()
       } finally {
@@ -139,6 +132,7 @@ export default {
         this.overlayText = '書籍情報を削除中'
         this.overlay = true
         await this.deleteBookFromDatabase(book)
+        this.books = await this.getBooks()
       } catch {
         this.onRejected()
       } finally {
