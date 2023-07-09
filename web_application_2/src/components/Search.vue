@@ -53,6 +53,9 @@ export default {
     searchBooks () {
       this.$emit('searchBooks', this.title, this.genre)
     },
+    getSearchTitleAndGenre () {
+      this.$emit('getSearchTitleAndGenre', this.title, this.genre)
+    },
     clearSearchBox () {
       this.genre = ''
       this.title = ''
