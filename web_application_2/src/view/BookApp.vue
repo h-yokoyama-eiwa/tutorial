@@ -124,7 +124,6 @@ export default {
         this.overlayText = '書籍情報を登録中'
         this.overlay = true
         await this.saveOnDatabase(book)
-
         this.$refs.search.getSearchTitleAndGenre()
         this.books = await this.filterBooks(this.searchCondition.title, this.searchCondition.genre)
       } catch {
@@ -145,7 +144,8 @@ export default {
         this.overlayText = '書籍情報を更新中'
         this.overlay = true
         await this.saveOnDatabase(book)
-        this.books = await this.getBooks()
+        this.$refs.search.getSearchTitleAndGenre()
+        this.books = await this.filterBooks(this.searchCondition.title, this.searchCondition.genre)
       } catch {
         this.onRejected()
       } finally {
@@ -158,7 +158,8 @@ export default {
         this.overlayText = '書籍情報を削除中'
         this.overlay = true
         await this.deleteBookFromDatabase(book)
-        this.books = await this.getBooks()
+        this.$refs.search.getSearchTitleAndGenre()
+        this.books = await this.filterBooks(this.searchCondition.title, this.searchCondition.genre)
       } catch {
         this.onRejected()
       } finally {
