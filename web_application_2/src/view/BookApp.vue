@@ -1,30 +1,53 @@
 <template>
   <div>
-    <Search @openAddDialog="openAddDialog" @searchBooks="searchBooks" :genres="genres"/>
-    <List @openEditDialog="openEditDialog" @openDeleteDialog="openDeleteDialog" :books="books"/>
+    <Search
+      ref="search"
+      @openAddDialog="openAddDialog"
+      @searchBooks="searchBooks"
+      @getSearchTitleAndGenre="getSearchTitleAndGenre"
+      :genres="genres"
+    />
+    <List
+      @openEditDialog="openEditDialog"
+      @openDeleteDialog="openDeleteDialog"
+      :books="books"
+    />
     <v-dialog
       v-model="addBookDialog"
       width="550"
     >
-      <Form @addBook="addNewBook" formType="add"/>
+      <Form
+        @addBook="addNewBook"
+        formType="add"
+      />
      </v-dialog>
     <v-dialog
       v-model="editBookDialog"
       width="550"
     >
-      <Form @editBook="editBook" formType="edit" :book="this.book"/>
+      <Form
+        @editBook="editBook"
+        formType="edit"
+        :book="this.book"
+      />
     </v-dialog>
     <v-dialog
       v-model="deleteBookDialog"
       width="550"
     >
-      <Form @deleteBook="deleteBook" formType="delete" :book="this.book"/>
+      <Form
+        @deleteBook="deleteBook"
+        formType="delete"
+        :book="this.book"
+      />
     </v-dialog>
     <v-overlay
       :value="overlay"
       :z-index="300"
     >
-      <Overlay :overlayText="overlayText"/>
+      <Overlay
+        :overlayText="overlayText"
+      />
     </v-overlay>
   </div>
 </template>
@@ -52,7 +75,8 @@ export default {
       editBookDialog: false,
       deleteBookDialog: false,
       overlay: false,
-      overlayText: ''
+      overlayText: '',
+      searchCondition: {}
     }
   },
   async created () {
@@ -100,7 +124,8 @@ export default {
         this.overlayText = '書籍情報を登録中'
         this.overlay = true
         await this.saveOnDatabase(book)
-        this.books = await this.getBooks()
+        this.$refs.search.getSearchTitleAndGenre()
+        this.books = await this.filterBooks(this.searchCondition.title, this.searchCondition.genre)
       } catch {
         this.onRejected()
       } finally {
@@ -119,7 +144,8 @@ export default {
         this.overlayText = '書籍情報を更新中'
         this.overlay = true
         await this.saveOnDatabase(book)
-        this.books = await this.getBooks()
+        this.$refs.search.getSearchTitleAndGenre()
+        this.books = await this.filterBooks(this.searchCondition.title, this.searchCondition.genre)
       } catch {
         this.onRejected()
       } finally {
@@ -132,7 +158,8 @@ export default {
         this.overlayText = '書籍情報を削除中'
         this.overlay = true
         await this.deleteBookFromDatabase(book)
-        this.books = await this.getBooks()
+        this.$refs.search.getSearchTitleAndGenre()
+        this.books = await this.filterBooks(this.searchCondition.title, this.searchCondition.genre)
       } catch {
         this.onRejected()
       } finally {
@@ -145,14 +172,7 @@ export default {
         this.overlayText = '書籍情報を検索中'
         this.overlay = true
 
-        let books = await this.getBooks()
-        if (title) {
-          books = books.filter(book => book.title.includes(title))
-        }
-        if (genre) {
-          books = books.filter(book => book.genre === genre)
-        }
-        this.books = books
+        this.books = await this.filterBooks(title, genre)
       } catch {
         this.onRejected()
       } finally {
@@ -167,6 +187,19 @@ export default {
         this.$set(book, 'boughtAt', changeDateFormat(book.boughtAt))
       })
       this.genres = books.map(book => book.genre)
+
+      return books
+    },
+    //* 指定されたタイトル、ジャンルで絞り込んだ結果を返す *//
+    async filterBooks (title, genre) {
+      let books = await this.getBooks()
+
+      if (title) {
+        books = books.filter(book => book.title.includes(title))
+      }
+      if (genre) {
+        books = books.filter(book => book.genre === genre)
+      }
 
       return books
     },
@@ -208,6 +241,10 @@ export default {
     },
     onRejected () {
       alert('エラーが発生しました。')
+    },
+    getSearchTitleAndGenre (title, genre) {
+      this.searchCondition.title = title
+      this.searchCondition.genre = genre
     }
   }
 }
